@@ -7,7 +7,7 @@ tags: ["General"]
 slug: "pushing-a-local-repository-to-github"
 ---
 
-[![GitToGitHub](https://mallibone.com/posts/files/248ce163-960e-4988-86e2-a114b8cd8578.png "GitToGitHub")](https://mallibone.com/posts/files/a757994b-b1c4-47a7-b714-fb6caa940cba.png)
+[![GitToGitHub]({{ site.url }}{{ site.baseurl }}/images/248ce163-960e-4988-86e2-a114b8cd8578.png "GitToGitHub")]({{ site.url }}{{ site.baseurl }}/images/a757994b-b1c4-47a7-b714-fb6caa940cba.png)
 
 I usually end up looking for these steps every time I write a blog post with a code sample that I in the end push up to [GitHub](https://github.com/). So the steps I do are:
 

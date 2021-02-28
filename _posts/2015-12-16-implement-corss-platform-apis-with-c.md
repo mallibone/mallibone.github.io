@@ -23,7 +23,7 @@ The library consists of four projects:
 
 One thing which is a bit special about all the projects is that all of their Default Namespace and the Assembly name all have the same name.
 
-[![NamespaceBinaryName](https://mallibone.com/posts/files/307903e9-e59a-44ad-8b15-6d2a32744bb9.png "Shows the assembly name and default namespace set to OsVersionAPI.Core")](https://mallibone.com/posts/files/d8a1c0b1-6975-484d-b15f-113de2bc0e63.png)
+[![NamespaceBinaryName]({{ site.url }}{{ site.baseurl }}/images/307903e9-e59a-44ad-8b15-6d2a32744bb9.png "Shows the assembly name and default namespace set to OsVersionAPI.Core")]({{ site.url }}{{ site.baseurl }}/images/d8a1c0b1-6975-484d-b15f-113de2bc0e63.png)
 
 In each project we implement the <font face="Consolas">SystemInformationHandler.cs</font> class, on the PCL we simply implement a stub:
 
@@ -68,7 +68,7 @@ So in the end we have implemented the generic class in the PCL and specific clas
 
 The app will exist of the usual cross platform mobile app setup which means we will have usual suspects covering Windows, Android and iOS with a Portable Class Library aka Core to share the reusable code.
 
-[![NativePclProjectOverview](https://mallibone.com/posts/files/65f7e8f5-fba3-4fac-9ed3-7ed379232d61.png "NativePcl Project overview")](https://mallibone.com/posts/files/11ad1c26-d030-4412-928b-1e9f7a2f9ace.png)
+[![NativePclProjectOverview]({{ site.url }}{{ site.baseurl }}/images/65f7e8f5-fba3-4fac-9ed3-7ed379232d61.png "NativePcl Project overview")]({{ site.url }}{{ site.baseurl }}/images/11ad1c26-d030-4412-928b-1e9f7a2f9ace.png)
 
 In the core we have our business logic code and view models (I’m a huge fan of the MVVM Light library, to find out more just view my [mvvm light posts](https://mallibone.com/category/mvvm+light)). In the NativePcl.Core project we have a service <font face="Consolas">OsVersionService.cs</font> for returning the version number:
 
@@ -82,7 +82,7 @@ In the core we have our business logic code and view models (I’m a huge fan of
     }
 
 
-Reference the OSVersion.Core library as binary – DO NOT reference it as project or you will be facing compile errors in one of the next steps. Don’t ask me how I know ![Winking smile](https://mallibone.com/posts/files/d308138c-2d39-4319-9975-7826ec2e971e.png)
+Reference the OSVersion.Core library as binary – DO NOT reference it as project or you will be facing compile errors in one of the next steps. Don’t ask me how I know ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/d308138c-2d39-4319-9975-7826ec2e971e.png)
 
 
 > Because all our assemblies of the OSVersion library will be compiled to assemblies with the same name we can’t just simply reference the project file but have to add the binary i.e. the compiled version of the library. If you are looking at the sample from GitHub, make sure to compile the solution under release build as the OSVersion is referenced via binary in the release output folder of the projects.
@@ -126,11 +126,11 @@ And the corresponding code behind or as we are using view models <font face="Con
 
 If we now run the app we will get the follow output:
 
-[![coreVersion](https://mallibone.com/posts/files/69028bb5-5621-4546-a3d1-24e94e12bfd3.png "coreVersion of the OS version")](https://mallibone.com/posts/files/614f7d6c-241e-4d47-a09a-dd19bb73a062.png)
+[![coreVersion]({{ site.url }}{{ site.baseurl }}/images/69028bb5-5621-4546-a3d1-24e94e12bfd3.png "coreVersion of the OS version")]({{ site.url }}{{ site.baseurl }}/images/614f7d6c-241e-4d47-a09a-dd19bb73a062.png)
 
 Now this is the output we defined in the <font face="Consolas">OSVersion.Core</font>, if we now reference the binary of the <font face="Consolas">OSVersion.UWP</font> in the <font face="Consolas">NativePcl.UWP</font> project things get really interesting. Instead of receiving an error because we are adding two assemblies with the same name the compiler will prefer the platform specific library over the PCL implementation. And even though we never invoke the library directly from our <font face="Consolas">NativePcl.UWP</font> app the OS version returned now is returned from the platform specific i.e. <font face="Consolas">OSVersion.UWP</font> implementation of the <font face="Consolas">GetVersion()</font> method resulting in the following output:
 
-[![uwpVersion](https://mallibone.com/posts/files/df98e477-49f3-4552-9e18-3e51b246b998.png "UWP version information screenshot")](https://mallibone.com/posts/files/50f060de-8b98-46d1-bd79-e51883be369a.png)
+[![uwpVersion]({{ site.url }}{{ site.baseurl }}/images/df98e477-49f3-4552-9e18-3e51b246b998.png "UWP version information screenshot")]({{ site.url }}{{ site.baseurl }}/images/50f060de-8b98-46d1-bd79-e51883be369a.png)
 
 Now while this approach allows for writing platform independent logic in the PCL and calling platform specific implementations during runtime it is somewhat tedious as it requires that the developer will reference the correct version of the library. And all of them have the same name which is just calling for some frustrated minutes to happen due to referencing the wrong version of the library. Luckily there is a technique that allows to use the approach described above without burdening the developer consuming the library of referencing the binaries correctly. [By wrapping the library in a NuGet package](https://mallibone.com/post/wrapping-c-cross-platform-libraries-in-a-nuget-package) consuming the library is as simple as adding the package to all of your projects and the NuGet package manager will just like the build engine prefer to link the platform specific binary over the PCL library to the project. So instead of having to choose which binary to add the developer can now simply add the identical NuGet package to all of the projects and it will just work.
 

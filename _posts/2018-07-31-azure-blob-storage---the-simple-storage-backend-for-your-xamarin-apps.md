@@ -7,7 +7,7 @@ tags: ["Azure", "Xamarin"]
 slug: "azure-blob-storage---the-simple-storage-backend-for-your-xamarin-apps"
 ---
 
-# [![Image with red dots - intended to look fancy](https://mallibone.com/posts/files/28f53761-1734-4655-9377-cf5300032c2d.png "Image with red dots - intended to look fancy")](https://mallibone.com/posts/files/6c80eacb-0cbc-4d7e-8875-cf697e46a593.png)
+# [![Image with red dots - intended to look fancy]({{ site.url }}{{ site.baseurl }}/images/28f53761-1734-4655-9377-cf5300032c2d.png "Image with red dots - intended to look fancy")]({{ site.url }}{{ site.baseurl }}/images/6c80eacb-0cbc-4d7e-8875-cf697e46a593.png)
 
 Some apps require quite a bit of content which is fairly static but changes over time and then the app should adjust and provide the user with the new content. Let's assume we want an app that provides us with quotes and their authors. We could just add the quotes to our app but whenever we wanted to update the app we would have to redeploy our app to the store(s). This can range from an inconvenience to requiring technical expertise for  updating the app for simply correcting such a simple thing as a comma. So it becomes evident that in these cases we would like to separate the content from the app itself.
 
@@ -17,11 +17,11 @@ Hosting content does not require running any logic on the server. We do not need
 
 You are required to have an Azure Account to create a blob storage, the steps, therefore, you can find [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&amp;tabs=portal). On Azure create a blob storage, under containers, create a Container if you haven't done so already and then upload your data to it. In this sample, we will upload a single JSON file.
 
-[![Showing Blobstorage Container with one JSON File](https://mallibone.com/posts/files/50ef7f86-29f9-4f06-83e1-130c54df8398.png "Showing Blobstorage Container with one JSON File")](https://mallibone.com/posts/files/0b6b8da7-f0b9-422d-ac4d-7c814e421bca.png)
+[![Showing Blobstorage Container with one JSON File]({{ site.url }}{{ site.baseurl }}/images/50ef7f86-29f9-4f06-83e1-130c54df8398.png "Showing Blobstorage Container with one JSON File")]({{ site.url }}{{ site.baseurl }}/images/0b6b8da7-f0b9-422d-ac4d-7c814e421bca.png)
 
 In a real application, we could also provide multiple other files including videos and other static files. But for this simple demo, we will stick to a lonely JSON file. We can access the content by calling the URL:
 
-[![Sample get request with Postman](https://mallibone.com/posts/files/038513b0-2768-406d-8e00-435c2bbc7dbb.png "Sample get request with Postman")](https://mallibone.com/posts/files/e1353896-63d6-4425-8ade-cb49974e63a7.png)
+[![Sample get request with Postman]({{ site.url }}{{ site.baseurl }}/images/038513b0-2768-406d-8e00-435c2bbc7dbb.png "Sample get request with Postman")]({{ site.url }}{{ site.baseurl }}/images/e1353896-63d6-4425-8ade-cb49974e63a7.png)
 
 Having something on a public server always raises questions about security and the sorts. So let's have a look at them.
 
@@ -38,7 +38,7 @@ In our sample, we will stick with anonymous blob access. But if you are interest
 
 ## The client
 
-[![AppInAction](https://mallibone.com/posts/files/39b5d0ba-7da8-42f4-a725-31fb0a903c48.png "AppInAction")](https://mallibone.com/posts/files/d616793d-769e-48fd-ba61-d7fa67082d45.png)
+[![AppInAction]({{ site.url }}{{ site.baseurl }}/images/39b5d0ba-7da8-42f4-a725-31fb0a903c48.png "AppInAction")]({{ site.url }}{{ site.baseurl }}/images/d616793d-769e-48fd-ba61-d7fa67082d45.png)
 
 On the client, we will want to consume the hosted resource and use it in our app. You can do this rather simply within a .Net Standard library using [JSON.Net](https://www.newtonsoft.com/json) as follows:
 

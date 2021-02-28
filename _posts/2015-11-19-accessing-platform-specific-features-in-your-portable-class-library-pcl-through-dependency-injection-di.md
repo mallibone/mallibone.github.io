@@ -7,7 +7,7 @@ tags: ["Android", "MVVM Light", "UWP", "Windows", "Xamarin", "Windows Phone", "X
 slug: "accessing-platform-specific-features-in-your-portable-class-library-pcl-through-dependency-injection-di"
 ---
 
-[![3856456237_f05ebd2602_o](https://mallibone.com/posts/files/623a47e3-57b5-4c30-904f-062c5c09e625.jpg "3856456237_f05ebd2602_o")](https://mallibone.com/posts/files/bb33281a-154e-456c-a77c-00b9df76790d.jpg)
+[![3856456237_f05ebd2602_o]({{ site.url }}{{ site.baseurl }}/images/623a47e3-57b5-4c30-904f-062c5c09e625.jpg "3856456237_f05ebd2602_o")]({{ site.url }}{{ site.baseurl }}/images/bb33281a-154e-456c-a77c-00b9df76790d.jpg)
  
 The Portable Class Library (PCL) allows developers to share C#, F# and VB code across multiple devices, platforms and runtime environments such as .Net, Xamarin or Windows Store Apps. In this previous post you can see how you can write portable business logic and integrate it with all the various platforms. But what if you actually want to use something the other way round say the GPS position, file system etc.. What then? This is exactly his post we will look at the following topics:
  
@@ -24,7 +24,7 @@ So lets get to it!
  
 Remember [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29 "link to solid explenation on wikipedia")? Well it turns out the last letter stand exactly for the pattern we will be using to solve our “How will I be able to use a platform specific feature cross platform “. The PCL code is platform independent and therefore can be used across multiple platforms, so we want to put near to all of our business logic into a PCL. Further by accessing concrete class implementations via interfaces we can define an Interface in the PCL and create it’s concrete implementation in a platform specific project.
  
-[![PCLDIOverview](https://mallibone.com/posts/files/f9d40d73-7cff-430d-9ddb-5e54a4988567.png "PCLDIOverview")](https://mallibone.com/posts/files/31b74c3f-c869-4dac-8da5-933f2136b3a1.png)
+[![PCLDIOverview]({{ site.url }}{{ site.baseurl }}/images/f9d40d73-7cff-430d-9ddb-5e54a4988567.png "PCLDIOverview")]({{ site.url }}{{ site.baseurl }}/images/31b74c3f-c869-4dac-8da5-933f2136b3a1.png)
  
 # Dependency Injection in action
  

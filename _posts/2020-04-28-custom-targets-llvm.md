@@ -7,13 +7,13 @@ tags: ["Xamarin.iOS", "Xamarin.Forms"]
 slug: "custom-targets-llvm"
 ---
 
-[![Title image showing a rev counter gauge](https://mallibone.com/posts/files/73503f52-0a3a-49f9-a6cf-3ee47a31c3a0.jpg "Title image showing a rev counter gauge")](https://mallibone.com/posts/files/b282fc7c-de5c-42e4-9e21-09107926d7ac.jpg)
+[![Title image showing a rev counter gauge]({{ site.url }}{{ site.baseurl }}/images/73503f52-0a3a-49f9-a6cf-3ee47a31c3a0.jpg "Title image showing a rev counter gauge")]({{ site.url }}{{ site.baseurl }}/images/b282fc7c-de5c-42e4-9e21-09107926d7ac.jpg)
 
 Build targets are not only great to differentiate between a Debug and Release builds. You can also use them for targeting different environments or configurations of your app. Now I always like the idea of getting the best performance for apps that I put into my user's hands - in other words; I fancy to enable [LLVM](https://en.wikipedia.org/wiki/LLVM)
 
 Unfortunately when creating a new Target with [Visual Studio 2019](https://visualstudio.microsoft.com/) (as of writing 16.5.4) the option to enable LLVM is disabled.
 
-[![Showing disabled LLVM option in Visual Studio - and a screaming emoji](https://mallibone.com/posts/files/6ca080fb-e56a-4e1e-a598-577855555ac0.png "Showing disabled LLVM option in Visual Studio - and a screaming emoji")](https://mallibone.com/posts/files/614a5719-17a7-4950-b570-3d7de89842ba.png)
+[![Showing disabled LLVM option in Visual Studio - and a screaming emoji]({{ site.url }}{{ site.baseurl }}/images/6ca080fb-e56a-4e1e-a598-577855555ac0.png "Showing disabled LLVM option in Visual Studio - and a screaming emoji")]({{ site.url }}{{ site.baseurl }}/images/614a5719-17a7-4950-b570-3d7de89842ba.png)
 
 The [issue](https://developercommunity.visualstudio.com/content/problem/1001497/xamarinios-llvm-cant-be-enabled-for-custom-build-t.html) is under consideration by the team, and for the time being, there is no way to enable LLVM via the UI Wizard in Visual Studio. Now one way to solve this is to clone your solution on to a machine running macOS and then enabling it in Visual Studio for Mac. But under Windows, the only option is to open up the `csproj` file and enable LLVM manually:
 

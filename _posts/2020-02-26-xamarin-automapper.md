@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms", "AutoMapper"]
 slug: "xamarin-automapper"
 ---
 
-[![Icons of Xamarin &amp; Automapper in a mobile phone](https://mallibone.com/posts/files/d5bd01c1-11cf-47ee-b1c2-4f17bd587ff7.png "Icons of Xamarin &amp; Automapper in a mobile phone")](https://mallibone.com/posts/files/0ba0e9a8-7c08-4191-9516-2c7e01e877fd.png)
+[![Icons of Xamarin &amp; Automapper in a mobile phone]({{ site.url }}{{ site.baseurl }}/images/d5bd01c1-11cf-47ee-b1c2-4f17bd587ff7.png "Icons of Xamarin &amp; Automapper in a mobile phone")]({{ site.url }}{{ site.baseurl }}/images/0ba0e9a8-7c08-4191-9516-2c7e01e877fd.png)
 
 You might have already heard of [AutoMapper](https://automapper.org/), the library that helps you to copy Properties form Object to another written by [Jimmy Bogard](https://twitter.com/jbogard). Whenever you are creating a larger Xamarin Forms application, you usually end up with different models representing similar data but for different areas of your app. For example, you will get a minimalist Data Transfer Object (DTO) from your backend, which you might copy into another app-internal model or directly to the View Model representing the data displayed on your view. And this is where AutoMapper will help you out and prevent you from writing all that copy code.
 
@@ -44,7 +44,7 @@ Then there is still the Linker under iOS that tries to remove the `System.Conver
 
 And setting the build property to `LinkDescription`:
 
-[![Showing Visual Studio Properties Pane](https://mallibone.com/posts/files/d6ffc41e-bd07-44f5-b087-0525df99eb0a.png "Showing Visual Studio Properties Pane")](https://mallibone.com/posts/files/fffafeef-db25-4a63-b700-6d26cc57374b.png)
+[![Showing Visual Studio Properties Pane]({{ site.url }}{{ site.baseurl }}/images/d6ffc41e-bd07-44f5-b087-0525df99eb0a.png "Showing Visual Studio Properties Pane")]({{ site.url }}{{ site.baseurl }}/images/fffafeef-db25-4a63-b700-6d26cc57374b.png)
 
 ### Configuration and usage
 
@@ -115,7 +115,7 @@ This test will tell you if AutoMapper has all the information necessary to copy 
 
 But what when we add a data field `WriterMood` to the DTO and forget to add it to the View Model? Correct, the test will fail and inform us that we have forgotten to add the field.
 
-[![Screenshot of failed AutoMapper config test](https://mallibone.com/posts/files/32821658-e8fe-4afd-ab5f-0bf60554165e.png "Screenshot of failed AutoMapper config test")](https://mallibone.com/posts/files/93dd03ba-dcf8-4247-9589-426c80fc939a.png)
+[![Screenshot of failed AutoMapper config test]({{ site.url }}{{ site.baseurl }}/images/32821658-e8fe-4afd-ab5f-0bf60554165e.png "Screenshot of failed AutoMapper config test")]({{ site.url }}{{ site.baseurl }}/images/93dd03ba-dcf8-4247-9589-426c80fc939a.png)
 
 And that test has saved me from so many forgotten data fields - ahem what I meant to say it saved a friend of mine... 😅
 

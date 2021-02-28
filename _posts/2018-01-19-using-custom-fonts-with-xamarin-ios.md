@@ -7,7 +7,7 @@ tags: ["Xamarin.iOS", "Xamarin"]
 slug: "using-custom-fonts-with-xamarin-ios"
 ---
 
-[![pexels-photo-316465](https://mallibone.com/posts/files/059a46f3-4dc4-459a-99b2-80940039e7a9.jpg "pexels-photo-316465")](https://mallibone.com/posts/files/aff3840c-e17b-46fc-8aff-e140e6156cdb.jpg)
+[![pexels-photo-316465]({{ site.url }}{{ site.baseurl }}/images/059a46f3-4dc4-459a-99b2-80940039e7a9.jpg "pexels-photo-316465")]({{ site.url }}{{ site.baseurl }}/images/aff3840c-e17b-46fc-8aff-e140e6156cdb.jpg)
 
 
 
@@ -17,17 +17,17 @@ When developing an app your design might require to use a font that is not avail
 
 Assuming you already have the font, note that iOS supports fonts that are stored in TTF or OTF formats. Custom fonts are copied into the Resource folder of your iOS project.
 
-[![image of ios project, showing the custom font file in a subfolder named fonts in the resoucres folder](https://mallibone.com/posts/files/db01b14b-0e86-4165-b13f-46ebf788fa8c.png "image of ios project, showing the custom font file in a subfolder named fonts in the resoucres folder")](https://mallibone.com/posts/files/c8f01385-4c27-49e4-98d2-97c35375a369.png)
+[![image of ios project, showing the custom font file in a subfolder named fonts in the resoucres folder]({{ site.url }}{{ site.baseurl }}/images/db01b14b-0e86-4165-b13f-46ebf788fa8c.png "image of ios project, showing the custom font file in a subfolder named fonts in the resoucres folder")]({{ site.url }}{{ site.baseurl }}/images/c8f01385-4c27-49e4-98d2-97c35375a369.png)
 
 
 > Ensure that the properties of the font file are set to *BundleResource.*
 
 
-Creating the Fonts subfolder is optional. But since the Resources projects tends to collect a couple of items in larger projects. Let’s tidy things up from the start ![Smile](https://mallibone.com/posts/files/dc3de230-94db-4cfe-96c7-0b06e0819e9a.png)
+Creating the Fonts subfolder is optional. But since the Resources projects tends to collect a couple of items in larger projects. Let’s tidy things up from the start ![Smile]({{ site.url }}{{ site.baseurl }}/images/dc3de230-94db-4cfe-96c7-0b06e0819e9a.png)
 
 To use the font we will have to update the <font face="Consolas">Info.plist</font> file with the following lines:
 
-[![image](https://mallibone.com/posts/files/7e608fe7-adf4-4cc4-a763-826e8af7db43.png "image")](https://mallibone.com/posts/files/471a87a1-b7e4-4e98-8f20-44fbd12b05d4.png)
+[![image]({{ site.url }}{{ site.baseurl }}/images/7e608fe7-adf4-4cc4-a763-826e8af7db43.png "image")]({{ site.url }}{{ site.baseurl }}/images/471a87a1-b7e4-4e98-8f20-44fbd12b05d4.png)
 
 
 > Note: At the time of writing in Visual Studio 15.5.4 you will have to open the <font face="Consolas">Info.plist</font> file in an XML Editor. For this right click the file and select “*Open with…*” then choose the *XML (Text) Editor*. In Visual Studio for Mac the GUI Info.plist editor supports editing the source directly.
@@ -37,17 +37,17 @@ To use the font we will have to update the <font face="Consolas">Info.plist</fon
 
 After adding for example a <font face="Consolas">UILabel</font> to the storyboard, select it. In the options click on the font and choose the custom font.
 
-[![Storyboard](https://mallibone.com/posts/files/e8ed476c-8894-4371-9343-5682c4c0950d.png "Storyboard")](https://mallibone.com/posts/files/c4eb5723-7cb1-45d5-8aa3-5d48676b6b19.png)
+[![Storyboard]({{ site.url }}{{ site.baseurl }}/images/e8ed476c-8894-4371-9343-5682c4c0950d.png "Storyboard")]({{ site.url }}{{ site.baseurl }}/images/c4eb5723-7cb1-45d5-8aa3-5d48676b6b19.png)
 
 ## Using custom fonts in Code
 
 In code behind using a custom font is pretty straight forward. For example in a label we can set the Font attribute as follows:
 
-[![image](https://mallibone.com/posts/files/554c2cd5-4da7-469d-86bf-29b0ebd5cca2.png "image")](https://mallibone.com/posts/files/155a6e61-59bd-4e43-b623-999a8ebccb03.png)
+[![image]({{ site.url }}{{ site.baseurl }}/images/554c2cd5-4da7-469d-86bf-29b0ebd5cca2.png "image")]({{ site.url }}{{ site.baseurl }}/images/155a6e61-59bd-4e43-b623-999a8ebccb03.png)
 
 The result when running app with the combined storyboard and new label is:
 
-[![Custom Font Screenshot](https://mallibone.com/posts/files/91449354-238c-48da-a8c2-067bc367151c.jpg "Custom Font Screenshot")](https://mallibone.com/posts/files/b08b6923-d09f-4572-9287-654f17f640e9.jpg)
+[![Custom Font Screenshot]({{ site.url }}{{ site.baseurl }}/images/91449354-238c-48da-a8c2-067bc367151c.jpg "Custom Font Screenshot")]({{ site.url }}{{ site.baseurl }}/images/b08b6923-d09f-4572-9287-654f17f640e9.jpg)
 
 ## Conclusion
 

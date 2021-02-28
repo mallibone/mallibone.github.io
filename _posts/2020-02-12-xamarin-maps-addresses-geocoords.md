@@ -7,11 +7,11 @@ tags: ["Xamarin.Forms"]
 slug: "xamarin-maps-addresses-geocoords"
 ---
 
-[![00_TitleImage](https://mallibone.com/posts/files/fa8b38b3-5a2a-4d8b-8b01-8c1d3a455058.jpg "00_TitleImage")](https://mallibone.com/posts/files/bad03f25-d450-4278-ac55-69ca9780a8c5.jpg)
+[![00_TitleImage]({{ site.url }}{{ site.baseurl }}/images/fa8b38b3-5a2a-4d8b-8b01-8c1d3a455058.jpg "00_TitleImage")]({{ site.url }}{{ site.baseurl }}/images/bad03f25-d450-4278-ac55-69ca9780a8c5.jpg)
 
 Ever had to develop an app where the position of something was of interest. An address of a user, store, restaurant or some other point of interest? The straight forward version might be to provide the user with a simple form.
 
-[![Address entry form](https://mallibone.com/posts/files/12a03657-6545-411a-9d6a-2a211da91186.png "Address entry form")](https://mallibone.com/posts/files/89cdb3df-7181-406a-a3e4-c86aa3cfb554.png)
+[![Address entry form]({{ site.url }}{{ site.baseurl }}/images/12a03657-6545-411a-9d6a-2a211da91186.png "Address entry form")]({{ site.url }}{{ site.baseurl }}/images/89cdb3df-7181-406a-a3e4-c86aa3cfb554.png)
 
 While the form is easy to implement and reliable, it can be cumbersome. Plus what if you want to navigate to the location? Or why not use the position of the device? Tap on a map to get the address? Well, all of these things can be achieved quite easily with a few helpful libraries provided by the Xamarin team.
 
@@ -168,7 +168,7 @@ So when the view appears, we can try to get the users position and tell the map 
 
 I hope you could see that it does not take much to go from tiresome form to a "fun" maps control.
 
-[![GifRecordingSmall](https://mallibone.com/posts/files/22099ce0-7096-40b0-bbe3-0372018dcf9c.gif "GifRecordingSmall")](https://mallibone.com/posts/files/eab4d0b1-27ff-4149-a2e7-834f0ee0ef3e.gif)
+[![GifRecordingSmall]({{ site.url }}{{ site.baseurl }}/images/22099ce0-7096-40b0-bbe3-0372018dcf9c.gif "GifRecordingSmall")]({{ site.url }}{{ site.baseurl }}/images/eab4d0b1-27ff-4149-a2e7-834f0ee0ef3e.gif)
 
 And all by using standard libraries offered to you by Microsoft. You can find the complete sample on [GitHub](https://github.com/mallibone/XamarinAddressPosition).
 

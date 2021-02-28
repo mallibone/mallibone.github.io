@@ -7,7 +7,7 @@ tags: ["Surface", "General"]
 slug: "surface-book-2-a-mobile-devs-review"
 ---
 
-# [![00_TitleImage](https://mallibone.com/posts/files/f00d1fd1-b071-4e19-a240-65236e85f2c6.png "00_TitleImage")](https://mallibone.com/posts/files/8ffc274e-1df5-4ad2-87fa-8ad2238bc0f6.png)
+# [![00_TitleImage]({{ site.url }}{{ site.baseurl }}/images/f00d1fd1-b071-4e19-a240-65236e85f2c6.png "00_TitleImage")]({{ site.url }}{{ site.baseurl }}/images/8ffc274e-1df5-4ad2-87fa-8ad2238bc0f6.png)
 
 I recently upgraded my developer machine from a Surface Pro 3 to a Surface Book 2. I have been using it now for a good month and wanted to write down my experiences, and how it holds up to the daily tasks, I throw at it as a mainly mobile developer. That is at the office and during leisure time.
 
@@ -29,7 +29,7 @@ The trackpad is okay. It is a glass trackpad and allows you to get where you wan
 
 Coming with a 16-hour battery life and coming with dedicated GPU power does make the Surface Book 2 a touch heavier than other devices at 1.642 kilograms (for you imperialists that's 3.62 lbs). Especially compared to a Surface Pro. But the 13.5" is still a portable machine which you can carry around in your bag and coming with a large battery it does mean you can leave that bulky charger at home. The charger does come with a handy USB-A port which allows you to charge your phone/smart-watch/kindle etc. without requiring additional chargers to be brought along.
 
-[![adapter](https://mallibone.com/posts/files/724836b0-32c0-494a-97bc-c99dc0b365b0.jpg "adapter")](https://mallibone.com/posts/files/628e9e59-711f-488e-8556-055739fda440.jpg)
+[![adapter]({{ site.url }}{{ site.baseurl }}/images/724836b0-32c0-494a-97bc-c99dc0b365b0.jpg "adapter")]({{ site.url }}{{ site.baseurl }}/images/628e9e59-711f-488e-8556-055739fda440.jpg)
 
 # Using it as my daily development machine
 
@@ -69,7 +69,7 @@ The 16-hour battery life means you will stay productive for at least half a day,
 
 During downtimes, I tend to use the Surface Book 2 more in tablet mode or in the view mode which is excellent for streaming a movie while doing some household chores. The tablet is light but is still sporting you with everything apart from the NVIDIA GPU, so you are holding a full blown pc in your hands. The battery in the tablet is not as big as the one in the base. You can, however, connect the tablet part directly to a charger/dock connector if you want to.
 
-[![04_ViewMode](https://mallibone.com/posts/files/bc3e727d-0ced-4f15-b1f5-2446cd2754cd.png "04_ViewMode")](https://mallibone.com/posts/files/db438673-eec0-4a70-8ae9-f12206808dc3.png)
+[![04_ViewMode]({{ site.url }}{{ site.baseurl }}/images/bc3e727d-0ced-4f15-b1f5-2446cd2754cd.png "04_ViewMode")]({{ site.url }}{{ site.baseurl }}/images/db438673-eec0-4a70-8ae9-f12206808dc3.png)
 
 You quickly notice that there are not many well-designed apps on Windows 10 for tablet use. There are good (PDF) readers, Netflix, OneNote etc. but compared to iOS and Android there is still space for some well thought out and implemented apps. Which is a shame since it would make a great tablet and with Face ID it comes close to the instant feel.
 

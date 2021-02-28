@@ -7,7 +7,7 @@ tags: ["F#", "Fabulous", "Xamarin"]
 slug: "fabulous-signalr"
 ---
 
-[![00_Title](https://mallibone.com/posts/files/cb40190b-4067-4a64-abdd-e9eed5239514.jpg "00_Title")](https://mallibone.com/posts/files/7cba682c-d343-40d8-857f-e4e6be2ac4e5.jpg)
+[![00_Title]({{ site.url }}{{ site.baseurl }}/images/cb40190b-4067-4a64-abdd-e9eed5239514.jpg "00_Title")]({{ site.url }}{{ site.baseurl }}/images/7cba682c-d343-40d8-857f-e4e6be2ac4e5.jpg)
 
 This blog post is part of the [F# Advent Calendar 2020](https://sergeytihon.com/2020/10/22/f-advent-calendar-in-english-2020/). A big thank you to [Sergey](https://twitter.com/sergey_tihon) for organizing this year and be sure to check out the other blog posts - after reading this one .
 
@@ -40,7 +40,7 @@ In other words, two actions are entirely UI driven, the user enters his username
 
 We connect to the service after the user has provided his name. Not because it is required per se. But if at some later point we decide to add some proper authentication this will not change the flow of the app. Without further ado, let's implement the login view.
 
-[![Image showing the login view](https://mallibone.com/posts/files/da072851-7565-45ef-90f6-582a06dba440.png "00_Login")](https://mallibone.com/posts/files/378e89d0-ef8e-41fc-9adc-5a748026b3fd.png)
+[![Image showing the login view]({{ site.url }}{{ site.baseurl }}/images/da072851-7565-45ef-90f6-582a06dba440.png "00_Login")]({{ site.url }}{{ site.baseurl }}/images/378e89d0-ef8e-41fc-9adc-5a748026b3fd.png)
 
 The view we use for this part is as described below.
 
@@ -96,7 +96,7 @@ Since we will want to hold on to the connection, we will invoke a `Command` whic
 
 Now, after the user is connected to the chat, we will present the chat view. This view allows the user to type a message, send it and read the responses or questions by other users connected to the service.
 
-[![Image showing the chat view in action](https://mallibone.com/posts/files/ede82d45-3b3d-462c-8b2b-39b7aec24fa1.png "01_Chat")](https://mallibone.com/posts/files/821ba9bd-000a-4626-ac22-e6b5a8bf7ded.png)
+[![Image showing the chat view in action]({{ site.url }}{{ site.baseurl }}/images/ede82d45-3b3d-462c-8b2b-39b7aec24fa1.png "01_Chat")]({{ site.url }}{{ site.baseurl }}/images/821ba9bd-000a-4626-ac22-e6b5a8bf7ded.png)
 
 Let's start with writing messages. Similar as with the username we again have an `Entry` and a button for sending the messages. Once the user sends a message, we invoke `SendAsync` in our SignalR module:
 

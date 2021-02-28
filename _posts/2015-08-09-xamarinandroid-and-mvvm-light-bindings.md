@@ -7,7 +7,7 @@ tags: ["MVVM Light", "Xamarin", "Android"]
 slug: "xamarinandroid-and-mvvm-light-bindings"
 ---
 
-[![androidMvvmLight]({{ site.url }}{{ site.baseurl }}/images/e65c27c2-091e-4dd9-8a3b-118635050893.png "androidMvvmLight")]({{ site.url }}{{ site.baseurl }}/images/34a6e965-07f2-4694-9ca8-e295cac95191.png)
+[![androidMvvmLight](http://mallibone.com/posts/files/e65c27c2-091e-4dd9-8a3b-118635050893.png "androidMvvmLight")](http://mallibone.com/posts/files/34a6e965-07f2-4694-9ca8-e295cac95191.png)
  
 This week we’ll have a look at how we can use the MVVM pattern on Xamarin.Android using the MVVM Light framework from [Laurent Bugnion](http://www.galasoft.ch/).
  
@@ -90,7 +90,7 @@ With in the ViewModel we need a property to store the entered message, another o
     }
 
 
-If you have been using ViewModels before you will not notice anything out of the ordinary with this code which means you could reuse this ViewModel for a WPF, Windows 8, UWP apps or even Xamarin.iOS i.e. Xamarin.Forms app. (This is good ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/ed272fe7-d8a4-4e5d-b5b4-c3dab96e2dcf.png))
+If you have been using ViewModels before you will not notice anything out of the ordinary with this code which means you could reuse this ViewModel for a WPF, Windows 8, UWP apps or even Xamarin.iOS i.e. Xamarin.Forms app. (This is good ![Winking smile](http://mallibone.com/posts/files/ed272fe7-d8a4-4e5d-b5b4-c3dab96e2dcf.png))
 
 ## Setting up the Locator
 

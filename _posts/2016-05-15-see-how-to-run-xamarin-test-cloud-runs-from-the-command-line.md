@@ -7,7 +7,7 @@ tags: ["Xamarin Test Cloud", "Xamarin", "testing"]
 slug: "see-how-to-run-xamarin-test-cloud-runs-from-the-command-line"
 ---
 
-[![title image showing 1s and 0s in a green console style.](https://mallibone.com/posts/files/c0c61947-1ed2-4304-bdb6-5ec45e00a7fe.jpg "title image showing 1s and 0s in a green console style.")](https://mallibone.com/posts/files/22d78ac7-7894-4c29-a692-089fa9abe23f.jpg)
+[![title image showing 1s and 0s in a green console style.]({{ site.url }}{{ site.baseurl }}/images/c0c61947-1ed2-4304-bdb6-5ec45e00a7fe.jpg "title image showing 1s and 0s in a green console style.")]({{ site.url }}{{ site.baseurl }}/images/22d78ac7-7894-4c29-a692-089fa9abe23f.jpg)
  
 Running your tests on [Xamarin Test Cloud](https://www.xamarin.com/test-cloud "The Xamarin Testcloud website") (XTC) is as easy as right clicking onto tests and select run in XTC. As easy as this approach is – as limited it becomes when more sophisticated demands arise. Those might be running a group of tests, running on preconfigured device groups or integrating into an automated Continuous Integration (CI) and Continuous Deployment (CD) process. But there are also some additional useful features and information which we shall see in the follow up of this blog post.
  
@@ -19,7 +19,7 @@ Thereby the focus will be on the following:
 - Using the XTC API to retrieve even more information
 
  
-So lets get started ![Smile](https://mallibone.com/posts/files/54ed6407-2cfa-4866-8eea-e3a55f99072d.png)
+So lets get started ![Smile]({{ site.url }}{{ site.baseurl }}/images/54ed6407-2cfa-4866-8eea-e3a55f99072d.png)
  
 # The basics Command
  

@@ -7,7 +7,7 @@ tags: ["Android", "Xamarin"]
 slug: "xamarinandroid-remove-previous-activity-from-navigation-stack"
 ---
 
-[![Android logo portraied in stack of squares with rounded edges.]({{ site.url }}{{ site.baseurl }}/images/8eef1a9f-001d-4107-a409-33d0ce30bfed.png "Android logo portraied in a navigation stack.")]({{ site.url }}{{ site.baseurl }}/images/f10c920f-8f3e-4671-a6ba-19ce7e47c355.png)
+[![Android logo portraied in stack of squares with rounded edges.](http://mallibone.com/posts/files/8eef1a9f-001d-4107-a409-33d0ce30bfed.png "Android logo portraied in a navigation stack.")](http://mallibone.com/posts/files/f10c920f-8f3e-4671-a6ba-19ce7e47c355.png)
  
 In this weeks blog post we will look at how we can remove an Activity from the Navigation Stack. This can be very useful if your are implementing an extended splash screen and don’t want to navigate back to it when the user selects the back button.
  

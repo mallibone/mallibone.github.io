@@ -7,7 +7,7 @@ tags: ["F#"]
 slug: "fsharp-twilio-secret-santa"
 ---
 
-[![Photograph showing christmas gifts](https://mallibone.com/posts/files/e9f5059a-74b4-4ee5-b6a5-e109919a90c9.jpg "00_TitlePhoto")](https://mallibone.com/posts/files/39281630-cc03-4a9a-900f-8772501bfb26.jpg)
+[![Photograph showing christmas gifts]({{ site.url }}{{ site.baseurl }}/images/e9f5059a-74b4-4ee5-b6a5-e109919a90c9.jpg "00_TitlePhoto")]({{ site.url }}{{ site.baseurl }}/images/39281630-cc03-4a9a-900f-8772501bfb26.jpg)
 
 So with a pandemic, Christmas was interesting, to say the least, this year. Following the COVID-19 guidelines, we were able to exchange our secret Santa gifts this year. There was only one problem. We usually have a little paper-based lottery for assigning the secret Santa. And we tend to do it on the same evening. But with COVID-19 doing its thing there was FaceTime and such involved this year. FaceTime was great but not so good when it comes to the lottery part, especially since no one should know who got who.
 

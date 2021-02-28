@@ -9,7 +9,7 @@ slug: "enable-powershell-scripts-on-windows-8.1"
 
 When ever you want to automate some mundane work or setup steps on your Windows computer the word PowerShell seems to be starting to pop up. But before the fun even can begin one will hit a wall pretty quickly.
 
-[![FailureRunningScript]({{ site.url }}{{ site.baseurl }}/images/a47559ed-fe11-4afa-9597-a0a8d1178de1.png "FailureRunningScript")]({{ site.url }}{{ site.baseurl }}/images/d097830b-db83-4015-b5d8-1458d3a60b84.png)
+[![FailureRunningScript](http://mallibone-blog.azurewebsites.net/posts/files/a47559ed-fe11-4afa-9597-a0a8d1178de1.png "FailureRunningScript")](http://mallibone-blog.azurewebsites.net/posts/files/d097830b-db83-4015-b5d8-1458d3a60b84.png)
 
 # Get scripting enabled
 
@@ -31,7 +31,7 @@ For now I'll go with the Remote Signed level. As I'm not planning on downloading
     Set-ExecutionPolicy RemoteSigned
 
 
-[![SetupRemoteSigned]({{ site.url }}{{ site.baseurl }}/images/c83367fe-a3e1-4809-b4c0-849e13379061.png "SetupRemoteSigned")]({{ site.url }}{{ site.baseurl }}/images/9b0c9fd9-5993-49f1-a519-b8d26b67d4c1.png)
+[![SetupRemoteSigned](http://mallibone-blog.azurewebsites.net/posts/files/c83367fe-a3e1-4809-b4c0-849e13379061.png "SetupRemoteSigned")](http://mallibone-blog.azurewebsites.net/posts/files/9b0c9fd9-5993-49f1-a519-b8d26b67d4c1.png)
 
 Now you should be able to start writing the little helpers for your system with the help of PowerShell.
 

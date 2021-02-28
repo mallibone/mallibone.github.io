@@ -7,7 +7,7 @@ tags: ["Windows", "UWP", "Mobile", "Windows 10"]
 slug: "unviersal-windows-platform-uwp-apps-adapting-to-multiple-devices"
 ---
 
-[![Overview of UWP Apps Platforms](https://mallibone.com/posts/files/21b42d15-6444-44a7-9c0b-0d71b0dbd43d.png "Overview of UWP Apps Platforms")](https://mallibone.com/posts/files/3d3c67f4-2dee-461d-ac8b-c7ae9adc1569.png)
+[![Overview of UWP Apps Platforms]({{ site.url }}{{ site.baseurl }}/images/21b42d15-6444-44a7-9c0b-0d71b0dbd43d.png "Overview of UWP Apps Platforms")]({{ site.url }}{{ site.baseurl }}/images/3d3c67f4-2dee-461d-ac8b-c7ae9adc1569.png)
  
 With UWP apps it has become easier then ever to write a single app that will run natively on all Windows 10 devices be it a phone, tablet, PC, Xbox et. al. Now we don’t just want our apps to be able to run on a device we want them to shine while they are running. In this blog post we will look at the basics on how to adopt to different screen sizes within your UWP app.
  
@@ -17,7 +17,7 @@ With UWP apps it has become easier then ever to write a single app that will run
  
 UWP runs on many different platforms some might not even come with a screen by default e.g. Internet of Things (IoT) devices or others that require a unique UI such as [HoloLens](https://www.microsoft.com/microsoft-hololens/en-us) which should be available for a few lucky developers later this year. Now while those platforms are very interesting in certain scenarios a wide array of apps will most probably be developed for mobile devices such as phones, tablets and phablets aka BAPHs (Big a\*\* Phones). The unique thing about the UWPs in comparison to Android and iOS apps is that you apps will not only run on mobile devices but on desktop machines, laptops and even larger screens such as the new [Surface Hub](https://www.microsoft.com/microsoft-surface-hub/en-us).
  
-[![Windows 10 Devices](https://mallibone.com/posts/files/6631697a-1134-4bf8-9cb5-fc77dc54effa.png "Windows 10 Devices such as Phone, Tablet, Laptop and Surface Hub")](https://mallibone.com/posts/files/c23aef10-6de3-458c-b1db-881fd1913e20.png)  
+[![Windows 10 Devices]({{ site.url }}{{ site.baseurl }}/images/6631697a-1134-4bf8-9cb5-fc77dc54effa.png "Windows 10 Devices such as Phone, Tablet, Laptop and Surface Hub")]({{ site.url }}{{ site.baseurl }}/images/c23aef10-6de3-458c-b1db-881fd1913e20.png)  
 Now write once run everywhere and look like crap is easy to do. But the great benefit of creating a UWP app is that you can adopt to the different screen sizes and even adopt to different user input such as touch vs mouse and keyboard. But before we dive into the details of how we can write responsive UIs with XAML lets have a look at some basic layout rules.
  
 ## Devices and screen sizes
@@ -42,7 +42,7 @@ A general split up of the devices can be made as follows.
  
 Since UWP apps are built from the ground up to run on all kinds of different devices i.e. form factors the platform comes with many helpers that make life easier to design for multiple platforms. One basic concept are effective pixels. Effective pixels differ from actual physical pixels so 24 effective pixels on a phone will scale up to a larger physical appearance on a larger screen. The scaling of effective to physical pixels is all done by the framework and does not require any special attendance by the developer i.e. designer.
  
-[![Image showing the diferent scale factors accroding to the device.](https://mallibone.com/posts/files/5f0ebba0-6b8c-482f-bb8d-0af2291338fb.png "Image showing the diferent scale factors accroding to the device.")](https://mallibone.com/posts/files/43a725a6-9bfe-44e3-9b80-5cfee8dc144f.png)
+[![Image showing the diferent scale factors accroding to the device.]({{ site.url }}{{ site.baseurl }}/images/5f0ebba0-6b8c-482f-bb8d-0af2291338fb.png "Image showing the diferent scale factors accroding to the device.")]({{ site.url }}{{ site.baseurl }}/images/43a725a6-9bfe-44e3-9b80-5cfee8dc144f.png)
  
 
 > Note: Often small screens do have very large Dots Per Inch ([DPI](https://en.wikipedia.org/wiki/Dots_per_inch "DPI explanation on Wikipedia")), this is also handled by the platform so even if you are running on a small device with a cheap display i.e. low DPI the text will still be readable as clearly as on a higher end display with more pixels i.e. a higher DPI.
@@ -65,13 +65,13 @@ So lets dive into how we can change the layout of UI elements according to the s
  
 ## Responsive Layout
  
-[![ResponsiveDesign](https://mallibone.com/posts/files/fe384d1d-1ab4-4b6a-b806-652d5c57b0f4.png "ResponsiveDesign")](https://mallibone.com/posts/files/bcf7f3de-5fae-4f90-94c3-4d6bc3ea4da5.png)
+[![ResponsiveDesign]({{ site.url }}{{ site.baseurl }}/images/fe384d1d-1ab4-4b6a-b806-652d5c57b0f4.png "ResponsiveDesign")]({{ site.url }}{{ site.baseurl }}/images/bcf7f3de-5fae-4f90-94c3-4d6bc3ea4da5.png)
  
 One new feature of UWP apps is the possibility to adapt the layout of the controls according the available screen size i.e. the effective pixels width of the app windows. This lets the UI adapt to different screen sizes e.g. phones and tablets but also lets the UI adapt to the size a Window has on a desktop.
  
 Lets assume you have the following screen flow and layout in your app:
  
-[![Shows app running with fewer than 720 effective pixels.](https://mallibone.com/posts/files/d44c4d9b-7ec5-472d-838c-d97a946a2215.png "Shows app running with fewer than 720 effective pixels.")](https://mallibone.com/posts/files/03704f3a-7289-4144-9368-a3850cb9f111.png)
+[![Shows app running with fewer than 720 effective pixels.]({{ site.url }}{{ site.baseurl }}/images/d44c4d9b-7ec5-472d-838c-d97a946a2215.png "Shows app running with fewer than 720 effective pixels.")]({{ site.url }}{{ site.baseurl }}/images/03704f3a-7289-4144-9368-a3850cb9f111.png)
  
 The basic Layout of the app looks as follows:
 
@@ -118,7 +118,7 @@ For instance when displayed on a tablet you might not just want to show a small 
 
 The name of the Target matches the <font face="Consolas">x:Name</font> given to the controls. The page will now re-render if the app has more then 720 effective pixels:
 
-[![Shows app running with more than 720 effective pixels.](https://mallibone.com/posts/files/182ec6bd-9224-41a4-b3f5-6a4f23b60616.png "Shows app running with more than 720 effective pixels.")](https://mallibone.com/posts/files/623b6c2b-c013-4395-a644-e8ab3371ac7f.png)
+[![Shows app running with more than 720 effective pixels.]({{ site.url }}{{ site.baseurl }}/images/182ec6bd-9224-41a4-b3f5-6a4f23b60616.png "Shows app running with more than 720 effective pixels.")]({{ site.url }}{{ site.baseurl }}/images/623b6c2b-c013-4395-a644-e8ab3371ac7f.png)
 
 The page will also adjust when resizing the window on a Windows 10 desktop machine which allows the user to have multiple applications open at once with them seamlessly adapting to new windows sizes.
 

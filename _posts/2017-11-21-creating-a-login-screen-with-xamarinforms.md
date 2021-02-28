@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms", "Xamarin"]
 slug: "creating-a-login-screen-with-xamarinforms"
 ---
 
-[![pexels-photo-277803](https://mallibone.com/posts/files/1b20fcbe-941f-4fef-beea-afcdf4bc9e7c.jpg "pexels-photo-277803")](https://mallibone.com/posts/files/c85b8f48-62da-4286-a0e2-fb749466beb6.jpg)
+[![pexels-photo-277803]({{ site.url }}{{ site.baseurl }}/images/1b20fcbe-941f-4fef-beea-afcdf4bc9e7c.jpg "pexels-photo-277803")]({{ site.url }}{{ site.baseurl }}/images/c85b8f48-62da-4286-a0e2-fb749466beb6.jpg)
 
 When writing an app that only allows access to certain or all parts of the app when a user is logged in requires a login screen which can be presented to the user at every screen in the app I.e. as soon as he is required to login or re-login.
 
@@ -17,7 +17,7 @@ In this post you will see how to create a view that can be used to enter the use
 
 Let’s consider a view as follows.
 
-[![LoginScreen](https://mallibone.com/posts/files/78932983-cb59-4a1c-b4d4-4610b521e5f4.gif "LoginScreen")](https://mallibone.com/posts/files/763c9659-1cfd-427f-93f4-42055ed22fec.gif)
+[![LoginScreen]({{ site.url }}{{ site.baseurl }}/images/78932983-cb59-4a1c-b4d4-4610b521e5f4.gif "LoginScreen")]({{ site.url }}{{ site.baseurl }}/images/763c9659-1cfd-427f-93f4-42055ed22fec.gif)
 
 It requires a username and password, the user can confirm his entry by hitting a button which will validate his entry.
 

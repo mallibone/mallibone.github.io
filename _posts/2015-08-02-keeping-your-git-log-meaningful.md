@@ -7,7 +7,7 @@ tags: ["General", "git"]
 slug: "keeping-your-git-log-meaningful"
 ---
 
-[![git-logo_thumb2]({{ site.url }}{{ site.baseurl }}/images/84bb742f-8265-4ce1-9e6b-3f2522d6afdf.jpg "git-logo_thumb2")]({{ site.url }}{{ site.baseurl }}/images/85b628c5-e7ef-4c4d-9bc0-cc567f483da4.jpg)
+[![git-logo_thumb2](http://mallibone.com/posts/files/84bb742f-8265-4ce1-9e6b-3f2522d6afdf.jpg "git-logo_thumb2")](http://mallibone.com/posts/files/85b628c5-e7ef-4c4d-9bc0-cc567f483da4.jpg)
  
 In this blog post we will look at how we can merge multiple commits into a single one with the goal of reducing the chatter in a git log. This technique is generally known as *squashing*.
  

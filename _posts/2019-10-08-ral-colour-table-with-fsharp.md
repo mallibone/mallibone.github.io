@@ -7,7 +7,7 @@ tags: ["F#"]
 slug: "ral-colour-table-with-fsharp"
 ---
 
-[![A picture containing colour crayons](https://mallibone.com/posts/files/c82746ea-9147-409a-a4f1-01a312c06f36.jpg "A picture containing colour crayons")](https://mallibone.com/posts/files/8258d68a-8d7d-491d-bea0-984f02b1c0b8.jpg)
+[![A picture containing colour crayons]({{ site.url }}{{ site.baseurl }}/images/c82746ea-9147-409a-a4f1-01a312c06f36.jpg "A picture containing colour crayons")]({{ site.url }}{{ site.baseurl }}/images/8258d68a-8d7d-491d-bea0-984f02b1c0b8.jpg)
 
 I recently was faced with the task to render [RAL Colours](https://en.wikipedia.org/wiki/RAL_colour_standard) on an app that I was developing. RAL Colours are used mainly in industrial colour appliances - i.e. powder coating. So while well known in the powder coating industry it was quite an exciting read on Wikipedia to find out how RAL colours came to life. The good thing is that there is a finite set of classic RAL colours. Even better there is a table on [Wikipedia](https://en.wikipedia.org/wiki/List_of_RAL_colors) which contains a good enough approximation for the classic RAL colours.
 
@@ -54,7 +54,7 @@ In the JSON file, we will want to store the RAL, RGB and colour name. So let's c
 
 Now that we have our types, we are all set to extract that data. By looking at the website, we can see in which section the table is located:
 
-[![Picture showing part of the Wikipedia RalColor List](https://mallibone.com/posts/files/3de4d662-5203-4b5c-b3ea-19c34e65d7d4.png "Picture showing part of the Wikipedia RalColor List")](https://mallibone.com/posts/files/1d87ff95-20d6-4a8e-8b10-6fd79d8c3fce.png)
+[![Picture showing part of the Wikipedia RalColor List]({{ site.url }}{{ site.baseurl }}/images/3de4d662-5203-4b5c-b3ea-19c34e65d7d4.png "Picture showing part of the Wikipedia RalColor List")]({{ site.url }}{{ site.baseurl }}/images/1d87ff95-20d6-4a8e-8b10-6fd79d8c3fce.png)
 
 Knowing this location, we can scan the site and hone in on the data we are looking for:
 

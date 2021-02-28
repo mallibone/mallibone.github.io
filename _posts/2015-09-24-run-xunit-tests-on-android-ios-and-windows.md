@@ -7,7 +7,7 @@ tags: ["Xamarin", "Xamarin.Forms", "Windows Phone", "iOS", "Mobile", "Android", 
 slug: "run-xunit-tests-on-android-ios-and-windows"
 ---
 
-[![TitleImage]({{ site.url }}{{ site.baseurl }}/images/046ec8c1-37e6-41a2-90fd-a613d88f8a55.png "TitleImage")]({{ site.url }}{{ site.baseurl }}/images/1fedfe9f-b93e-44bd-aee3-65d25dedf6d1.png)
+[![TitleImage](http://mallibone.com/posts/files/046ec8c1-37e6-41a2-90fd-a613d88f8a55.png "TitleImage")](http://mallibone.com/posts/files/1fedfe9f-b93e-44bd-aee3-65d25dedf6d1.png)
  
 Writing Unit, Component and Integration tests allows to test functionality of software modules. In other words letting developers sleep tightly without worries at night. These tests run against certain parts of the code verifying the logic and interaction between modules of the app. All this is usually performed on the developers machine powered by a beefy processor and often unheard amount of RAM when it comes to mobile devices. Wouldn’t it be great if we could get a bit closer to the real thing? Well we can…
  
@@ -118,13 +118,13 @@ Written by [Oren Novotny](https://twitter.com/onovotny) whom we have to thank fo
 
 ## 
 
-Simply replace the content of their default counterparts e.g. for iOS replace the <font face="Consolas">AppDelegate.cs</font> with the content of the <font face="Consolas">App.Delegate.cs.txt</font> (and thanks to some extra effort by [Oren Novotny](https://twitter.com/onovotny) even the namespaces will just simply match ![Smile]({{ site.url }}{{ site.baseurl }}/images/7f9d38b7-159d-4e1f-9d51-5be18da182f1.png)). Now you could simply start adding new class files and write out tests. The runner will automatically find them via reflection (even if you place them in subfolders).
+Simply replace the content of their default counterparts e.g. for iOS replace the <font face="Consolas">AppDelegate.cs</font> with the content of the <font face="Consolas">App.Delegate.cs.txt</font> (and thanks to some extra effort by [Oren Novotny](https://twitter.com/onovotny) even the namespaces will just simply match ![Smile](http://mallibone.com/posts/files/7f9d38b7-159d-4e1f-9d51-5be18da182f1.png)). Now you could simply start adding new class files and write out tests. The runner will automatically find them via reflection (even if you place them in subfolders).
 
 # Using existing tests
 
 What is probably a more useful approach is to simply reuse existing tests. This is why in a next step lets see how we can add the unit test file <font face="Consolas">BasicMathServiceTest.cs</font> without creating a duplicate dopy. Simply right click on the Project then Add/Existing Item… browse to the unit test file and add it as link.
 
-[![Shows the dropdown on the Add button that can be used to add a file as a link.]({{ site.url }}{{ site.baseurl }}/images/c2e88d77-2ef2-4881-b207-71468a9cea4b.png "AddAsLink")]({{ site.url }}{{ site.baseurl }}/images/20ee62ef-48ea-4615-af74-789cbb376542.png)
+[![Shows the dropdown on the Add button that can be used to add a file as a link.](http://mallibone.com/posts/files/c2e88d77-2ef2-4881-b207-71468a9cea4b.png "AddAsLink")](http://mallibone.com/posts/files/20ee62ef-48ea-4615-af74-789cbb376542.png)
 
 
 > As a link to the file is simply a pointer to the original we only have to maintain one unit test file and all the links will automatically “update” as they simply reference the original.
@@ -132,11 +132,11 @@ What is probably a more useful approach is to simply reuse existing tests. This 
 
 Now the Project can be set as startup project and executed on the device. Bellow you see some sample screenshots from an iOS Emulator.
 
-[![TestOverview]({{ site.url }}{{ site.baseurl }}/images/afa8e738-8977-44cd-852f-8c4232278112.png "TestOverview")]({{ site.url }}{{ site.baseurl }}/images/b6bc3b3b-7cb7-48a9-af91-4021b5bc12fc.png)
+[![TestOverview](http://mallibone.com/posts/files/afa8e738-8977-44cd-852f-8c4232278112.png "TestOverview")](http://mallibone.com/posts/files/b6bc3b3b-7cb7-48a9-af91-4021b5bc12fc.png)
 
 You can even dig into the error messages and see what went wrong during a test.
 
-[![TestDetails]({{ site.url }}{{ site.baseurl }}/images/80ffcab8-0692-476d-bfbc-54891fcf352d.png "TestDetails")]({{ site.url }}{{ site.baseurl }}/images/49191a8d-098a-4da0-ba2a-cfd37421c890.png)
+[![TestDetails](http://mallibone.com/posts/files/80ffcab8-0692-476d-bfbc-54891fcf352d.png "TestDetails")](http://mallibone.com/posts/files/49191a8d-098a-4da0-ba2a-cfd37421c890.png)
 
 # Conclusion
 

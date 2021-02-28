@@ -19,13 +19,13 @@ To deploy to Azure you will need a valid Azure account. Alternatively you can ru
  
 I’ll be using Visual Studio 2015 RC for this setup but you can follow along on VS 2013 just as well. Create a new project then go to ***Online*** projects, Select ***Visual F#*** and then select ***F# MVC 5***. This only has to be done during the first setup. From now on you will find the project template under the ***Installed***project templates.
  
-[![NewProjectFromOnlineTemplate]({{ site.url }}{{ site.baseurl }}/images/01a6225b-0f9f-4c8a-98f5-77af21c2f351.png "NewProjectFromOnlineTemplate")]({{ site.url }}{{ site.baseurl }}/images/76307dbb-7756-4509-acbb-a0384356b95c.png)
+[![NewProjectFromOnlineTemplate](http://mallibone.com/posts/files/01a6225b-0f9f-4c8a-98f5-77af21c2f351.png "NewProjectFromOnlineTemplate")](http://mallibone.com/posts/files/76307dbb-7756-4509-acbb-a0384356b95c.png)
  
 ## Having a look at the solution
  
 If you are familiar with a Web API solution you will find yourself right at home.
  
-[![WebApiSolution]({{ site.url }}{{ site.baseurl }}/images/d83af68e-fa02-4354-b5a1-0d27bb5b0cb9.png "WebApiSolution")]({{ site.url }}{{ site.baseurl }}/images/e84b12c0-2846-4c3f-b5fa-4966eb1339f0.png)
+[![WebApiSolution](http://mallibone.com/posts/files/d83af68e-fa02-4354-b5a1-0d27bb5b0cb9.png "WebApiSolution")](http://mallibone.com/posts/files/e84b12c0-2846-4c3f-b5fa-4966eb1339f0.png)
  
 Under Controllers you find the expected definitions, as well as under models. The ***Global.asax.fs*** also has a familiar ring to it:
 

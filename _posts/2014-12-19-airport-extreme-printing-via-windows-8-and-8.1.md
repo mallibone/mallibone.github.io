@@ -7,7 +7,7 @@ tags: ["General"]
 slug: "airport-extreme-printing-via-windows-8-and-8.1"
 ---
 
-[![windows_airportExtreme]({{ site.url }}{{ site.baseurl }}/images/8914e51e-deb8-4666-84b2-7e7c9092d2ab.png "windows_airportExtreme")]({{ site.url }}{{ site.baseurl }}/images/1394e2a7-873f-44ba-a1c7-66ef7da02e8f.png)
+[![windows_airportExtreme](http://mallibone-blog.azurewebsites.net/posts/files/8914e51e-deb8-4666-84b2-7e7c9092d2ab.png "windows_airportExtreme")](http://mallibone-blog.azurewebsites.net/posts/files/1394e2a7-873f-44ba-a1c7-66ef7da02e8f.png)
 
 These 14 steps show in great detail how you can add a printer that is connected to your Airport Extreme Router and print via your Network or even wirelessly if you happen to use WiFi from you Windows Device.
 

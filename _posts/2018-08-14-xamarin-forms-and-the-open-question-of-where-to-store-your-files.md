@@ -7,7 +7,7 @@ tags: ["Xamarin", "DotNetStandard", "Xamarin.Forms"]
 slug: "xamarin-forms-and-the-open-question-of-where-to-store-your-files"
 ---
 
-[![Title Image showing a library](https://mallibone.com/posts/files/925e8e48-a5ab-4b0a-bf2b-167458053a4d.png "Title Image showing a library")](https://mallibone.com/posts/files/da62308c-40f7-49b0-a0dc-e075607b93a6.png)
+[![Title Image showing a library]({{ site.url }}{{ site.baseurl }}/images/925e8e48-a5ab-4b0a-bf2b-167458053a4d.png "Title Image showing a library")]({{ site.url }}{{ site.baseurl }}/images/da62308c-40f7-49b0-a0dc-e075607b93a6.png)
 
 When it comes to file handling and Xamarin Forms you can find all you need in the official Documentation. However, when it comes to where the data should be stored the documentation leaves some points open. Moreover, might even lead to, dear I say it, your rejection in the App Store...
 
@@ -98,7 +98,7 @@ Similar the other locations can be accessed for example the roaming folder (whic
 
 The following directories are present in a UWP apps sandbox:
 
-[![UWP Container folders: AC, AppData, LocalCache, LocalState, RoamingState, Settings, SystemAppData, TempState](https://mallibone.com/posts/files/0ad0e054-a156-4dcb-828e-f77403e9ee21.png "UWP Container folders: AC, AppData, LocalCache, LocalState, RoamingState, Settings, SystemAppData, TempState")](https://mallibone.com/posts/files/0522aa3a-386f-41b5-b7bd-87d384d07e46.png)
+[![UWP Container folders: AC, AppData, LocalCache, LocalState, RoamingState, Settings, SystemAppData, TempState]({{ site.url }}{{ site.baseurl }}/images/0ad0e054-a156-4dcb-828e-f77403e9ee21.png "UWP Container folders: AC, AppData, LocalCache, LocalState, RoamingState, Settings, SystemAppData, TempState")]({{ site.url }}{{ site.baseurl }}/images/0522aa3a-386f-41b5-b7bd-87d384d07e46.png)
 
 # However, what if I am targeting other platforms?
 

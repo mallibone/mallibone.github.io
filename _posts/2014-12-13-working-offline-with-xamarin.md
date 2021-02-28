@@ -13,9 +13,9 @@ I’ll admit it I like working on the go. Whenever I’m not responsible in the 
 
 To work offline you will have to download your licenses from your Xamarin account. So head to the Xamarin website, login and navigate to computers.
 
-[![theRightMenuOptionForCerts]({{ site.url }}{{ site.baseurl }}/images/4da34cbe-ffad-4f73-a601-e132b6616a46.png "theRightMenuOptionForCerts")]({{ site.url }}{{ site.baseurl }}/images/20c64478-2e16-4fa0-b0cc-22f5d3a336e2.png)
+[![theRightMenuOptionForCerts](http://mallibone-blog.azurewebsites.net/posts/files/4da34cbe-ffad-4f73-a601-e132b6616a46.png "theRightMenuOptionForCerts")](http://mallibone-blog.azurewebsites.net/posts/files/20c64478-2e16-4fa0-b0cc-22f5d3a336e2.png)
 
-[![saveCert]({{ site.url }}{{ site.baseurl }}/images/0b6e9f85-d3a9-483f-9ccf-9c97eadd4f0d.png "saveCert")]({{ site.url }}{{ site.baseurl }}/images/04623410-e266-4c13-8138-fdbabec1941b.png)
+[![saveCert](http://mallibone-blog.azurewebsites.net/posts/files/0b6e9f85-d3a9-483f-9ccf-9c97eadd4f0d.png "saveCert")](http://mallibone-blog.azurewebsites.net/posts/files/04623410-e266-4c13-8138-fdbabec1941b.png)
 
 
 

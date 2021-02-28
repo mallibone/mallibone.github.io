@@ -7,7 +7,7 @@ tags: ["Xamarin.iOS"]
 slug: "detect-back-navigation-event-on-backnavigation-under-xamarinios"
 ---
 
-[![Traffic lights at the crossroads](https://mallibone.com/posts/files/942a2190-a407-4e7a-b911-5fef2a98897a.jpg "Traffic lights at the crossroads")](https://mallibone.com/posts/files/8b53bc17-00f8-49dd-9a1c-0f3d73276899.jpg)
+[![Traffic lights at the crossroads]({{ site.url }}{{ site.baseurl }}/images/942a2190-a407-4e7a-b911-5fef2a98897a.jpg "Traffic lights at the crossroads")]({{ site.url }}{{ site.baseurl }}/images/8b53bc17-00f8-49dd-9a1c-0f3d73276899.jpg)
 
 In this post we look at getting notified when the user chooses to navigate back. If you have to be in control of your navigation under iOS I strongly recommend you check out using a modal navigation. But what if you simply want to track when the navigation hits the back button. Or uses the swipe gesture to go back to a previous page.
 

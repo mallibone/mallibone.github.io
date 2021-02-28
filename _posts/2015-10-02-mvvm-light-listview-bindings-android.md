@@ -7,7 +7,7 @@ tags: ["MVVM Light", "Mobile", "Xamarin", "Android"]
 slug: "mvvm-light-listview-bindings-android"
 ---
 
-[![Screenshot_2015-10-02-08-41-47](https://mallibone.com/posts/files/bb6a944f-4067-48c0-a6c7-464be87be12c.png "Screenshot_2015-10-02-08-41-47")](https://mallibone.com/posts/files/1b923374-d5ba-4e52-a6d7-fc5354d3d182.png)
+[![Screenshot_2015-10-02-08-41-47]({{ site.url }}{{ site.baseurl }}/images/bb6a944f-4067-48c0-a6c7-464be87be12c.png "Screenshot_2015-10-02-08-41-47")]({{ site.url }}{{ site.baseurl }}/images/1b923374-d5ba-4e52-a6d7-fc5354d3d182.png)
  
 This is an extension to a previous [post](https://mallibone.com/post/xamarinandroid-and-mvvm-light-bindings) that describes how to create bindings for controls. In this post we will look at how to bind a collection to a Android <font face="Consolas">ListView</font> and update the View every time an item is added or removed from the collection in the View Model.
  

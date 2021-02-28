@@ -7,7 +7,7 @@ tags: ["Azure DevOps", "Mobile", "F#", "Fabulous"]
 slug: "building-with-fake-on-azure-devops"
 ---
 
-[![Showing Wall-E infront of a yellow VW bus with taxi stripes](https://mallibone.com/posts/files/cbd8f3a6-3222-454b-9123-889428497f30.jpg "Showing Wall-E infront of a yellow VW bus with taxi stripes")](https://mallibone.com/posts/files/291cd57e-ac98-4fdc-9519-ab37855338a6.jpg)
+[![Showing Wall-E infront of a yellow VW bus with taxi stripes]({{ site.url }}{{ site.baseurl }}/images/cbd8f3a6-3222-454b-9123-889428497f30.jpg "Showing Wall-E infront of a yellow VW bus with taxi stripes")]({{ site.url }}{{ site.baseurl }}/images/291cd57e-ac98-4fdc-9519-ab37855338a6.jpg)
 
 I have taken quite a liking into [Fabulous](https://github.com/fsprojects/Fabulous) - a wrapper around Xamarin.Forms allowing you to write functional UIs with F#. When first looking at the project I noticed that is was being built on [AppVeyor](https://www.appveyor.com/) and [Travis](https://travis-ci.org/). I asked myself: Why use two CI Systems for compiling one project? After some further digging I found out that there are no hosted macOS Agent on AppVeyor. Travis on the other hand did come with agents for Windows and macOS but did not have the Xamarin Toolchain installed on the agents. Installing the Xamarin Toolchain on every run lead to a build time of over 30 minutes. Since [Azure DevOps](https://azure.microsoft.com/en-us/solutions/devops/) supports building on Windows and macOS I thought I would give it a go and setup a Pipeline to build Fabulous - I mean how hard can it be? Well hard enough to write a blog post to sum up the steps to get over the pitfalls
 

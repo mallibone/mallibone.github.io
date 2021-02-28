@@ -18,7 +18,7 @@ In the first part of the series we covered the [development environment setup](h
 - File handling
 
 
-So let’s get going ![Smile](https://mallibone.com/posts/files/8bb3ab55-a4fe-4350-a71f-1a4fa0879d3f.png)
+So let’s get going ![Smile]({{ site.url }}{{ site.baseurl }}/images/8bb3ab55-a4fe-4350-a71f-1a4fa0879d3f.png)
 
 # Variables
 
@@ -62,7 +62,7 @@ Note that we do not need any Class or Method to get started. Simply start writin
 <script src="https://gist.github.com/mallibone/212b5f20a11d89e0044ea28c5a9e9e72.js"></script>
 Resulting in the following output:
 
-[![Variable is first of Type Int32 after assignment of a string has the type String.](https://mallibone.com/posts/files/c236ed19-a1c8-499d-ae27-0a7c43e593f6.png "Variable is first of Type Int32 after assignment of a string has the type String.")](https://mallibone.com/posts/files/c639864b-59d0-49e1-9c24-9ed9826f8b50.png)
+[![Variable is first of Type Int32 after assignment of a string has the type String.]({{ site.url }}{{ site.baseurl }}/images/c236ed19-a1c8-499d-ae27-0a7c43e593f6.png "Variable is first of Type Int32 after assignment of a string has the type String.")]({{ site.url }}{{ site.baseurl }}/images/c639864b-59d0-49e1-9c24-9ed9826f8b50.png)
 
 We can be more strict in PowerShell by defining the type of the variable which will make the second assignment illegal. But this requires some additional effort on your end.
 <script src="https://gist.github.com/mallibone/50cffc143d6ced8680f362aa1d3bd36a.js"></script>
@@ -70,7 +70,7 @@ If we would run the strict assignment we would be greeted by an error message wh
 
 And one more thing. Even though the variable <font face="Consolas">$neverDefined</font> never got defined. Well we can still access it’s value without an exception or error being raised.
 <script src="https://gist.github.com/mallibone/676f9af42f8850f61137c35bca618d34.js"></script>
-[![PowerShell output showing that the variable $neverDefined simply shows an empty string](https://mallibone.com/posts/files/f487fdf0-67ed-419c-bb82-9fe953e7d86d.png "PowerShell output showing that the variable $neverDefined simply shows an empty string")](https://mallibone.com/posts/files/c949c9eb-241c-4d2d-8686-16429fd58c1a.png)
+[![PowerShell output showing that the variable $neverDefined simply shows an empty string]({{ site.url }}{{ site.baseurl }}/images/f487fdf0-67ed-419c-bb82-9fe953e7d86d.png "PowerShell output showing that the variable $neverDefined simply shows an empty string")]({{ site.url }}{{ site.baseurl }}/images/c949c9eb-241c-4d2d-8686-16429fd58c1a.png)
 
 Keep this in mind while developing since they might just come around and bight you in the foot later on.
 
@@ -78,7 +78,7 @@ Keep this in mind while developing since they might just come around and bight y
 
 When writing conditional code in C#, the standard choice is using if and else or for multiple options a switch/case. So a possible option would be to use them as follows:
 <script src="https://gist.github.com/mallibone/6de3744a2b0811dc882f933d21238e59.js"></script>
-Apologizing to all the readers who have to work shifts ![Winking smile](https://mallibone.com/posts/files/bbe945ac-d417-406c-ae30-b4aa13440726.png) Lets look at how the same code would be implement in PowerShell:
+Apologizing to all the readers who have to work shifts ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/bbe945ac-d417-406c-ae30-b4aa13440726.png) Lets look at how the same code would be implement in PowerShell:
 <script src="https://gist.github.com/mallibone/ff1423c0ff626237cb879b05c4fb6086.js"></script>
 No huge changes or surprises So no surprises here. The major difference is the equality sign in the if check. Here is a small translation table of the equality signs you find in C# and PowerShell:
 
@@ -101,7 +101,7 @@ In PowerShell the equivalent can be  implemented like so:
 <script src="https://gist.github.com/mallibone/463ed7c506c81825f49321414454d505.js"></script>
 Now the <font face="Consolas">ForEach</font> loop is really great when having to iterate over a list of items. This is often what we end up doing e.g. “Iterating over a list of people to get the count by city” or a bit more PowerShelly “Iterate over number of host information to ensure that everything is okay and no action is needed”. While we could write that with the above for loop, there is a PowerShell called piping. Piping allows us to Take a collection and forward it to the next operation. We could rewrite the <font face="Consolas">ForEach</font> sample as follows:
 <script src="https://gist.github.com/mallibone/909cb3762bdeac415fe576168d6048da.js"></script>
-Pretty cool no? ![Smile](https://mallibone.com/posts/files/8bb3ab55-a4fe-4350-a71f-1a4fa0879d3f.png) We can even use the <font face="Consolas">ForEach</font> construct to loop over every item being forwarded:
+Pretty cool no? ![Smile]({{ site.url }}{{ site.baseurl }}/images/8bb3ab55-a4fe-4350-a71f-1a4fa0879d3f.png) We can even use the <font face="Consolas">ForEach</font> construct to loop over every item being forwarded:
 <script src="https://gist.github.com/mallibone/17587abda84f01c0cc4927612244563c.js"></script>
 Note that $\_ is always the current item we are going over in the <font face="Consolas">ForEach</font> Loop. The equal construct in C# is achieved with Extension Methods. Piping can be great to enhance readability since one can see the flow. But it also can make the code harder to debug, so be sure to keep the balance here.
 

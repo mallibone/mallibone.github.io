@@ -11,7 +11,7 @@ When ever you want to display a list or collection of information under iOS tabl
 
 Welcome to our countdown app. As you can see basically it is a list of timers, that are displayed in a cell and updated as they are ticking down.
 
-[![CellBinding](https://mallibone.com/posts/files/a5eb35f0-1edd-43e2-ad94-3c5e5db11210.gif "Showing cell bindings in action with a timer per cell counting down.")](https://mallibone.com/posts/files/2a9dd168-44e7-4fec-8f62-5ff30792603f.gif)
+[![CellBinding]({{ site.url }}{{ site.baseurl }}/images/a5eb35f0-1edd-43e2-ad94-3c5e5db11210.gif "Showing cell bindings in action with a timer per cell counting down.")]({{ site.url }}{{ site.baseurl }}/images/2a9dd168-44e7-4fec-8f62-5ff30792603f.gif)
 
 If we look at the basic setup of a displayed table, we will have `UITableView` which uses a `UITableViewSource` for managing the collection to be displayed and the rendering of the `UITableViewCells`. Then there is the view model which is providing a list of items, in our case timers, that should be displayed. So let's go through each of the items from View Model to Cell.
 

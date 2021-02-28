@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms", "Xamarin.Android", "Xamarin.iOS", "UWP"]
 slug: "lets-improve-that-xamarin-forms-startup-experience"
 ---
 
-[![Image of an escalator going towards the light](https://mallibone.com/posts/files/a98a96fa-d1e3-4ff4-92f2-817831409f1e.jpg "Image of an escalator going towards the light")](https://mallibone.com/posts/files/580b36a8-b509-4a28-a540-c0be421bd2ca.jpg)
+[![Image of an escalator going towards the light]({{ site.url }}{{ site.baseurl }}/images/a98a96fa-d1e3-4ff4-92f2-817831409f1e.jpg "Image of an escalator going towards the light")]({{ site.url }}{{ site.baseurl }}/images/580b36a8-b509-4a28-a540-c0be421bd2ca.jpg)
 
 This post is part of the Xamarin Month, which is about community and love. Looking after a nice UI and User Experience is one way how a product team or developer can show love to its user. So let focus on a small detail which always makes me smile when done right 🙂
 
@@ -19,7 +19,7 @@ However, before we get started with the animation part, I'm afraid we have to ta
 
 Have you ever wondered why the startup screen experience of your Xamarin app on Android differs from iOS or UWP? While we are greeted instantly with a logo when starting up our Xamarin.iOS app, when starting the same app on Android, a blank screen stares at us. Why is that so?
 
-[![Screenshot_1550416214](https://mallibone.com/posts/files/0992ae5a-a7f4-4e0d-a191-7fcfc375afba.png "Screenshot_1550416214")](https://mallibone.com/posts/files/fc01e7a6-558b-46b6-b57f-84a5fac54f0b.png)
+[![Screenshot_1550416214]({{ site.url }}{{ site.baseurl }}/images/0992ae5a-a7f4-4e0d-a191-7fcfc375afba.png "Screenshot_1550416214")]({{ site.url }}{{ site.baseurl }}/images/fc01e7a6-558b-46b6-b57f-84a5fac54f0b.png)
 
 Just point it out: this is not the fault of Xamarin Forms, it is more a difference in the two platforms. While iOS forces you to provide a startup storyboard (a single view), there is no such thing under Android. At least that may seem so at first. However, from where is this blank screen? You probably already know that the starting point of a Xamarin.Forms app on Android is the `MainActivity.cs` or to be more precise that one activity which has the following attribute set:
 
@@ -65,7 +65,7 @@ Now we can modify `styles.xml` by adding new style with the following lines:
 
 Starting the app and we see the Xamarin logo while starting up. Unfortunately, it does not go away when we get to our Hello World page in Xamarin Forms. The reason being that we have overwritten the default style which is also used by our Xamarin.Forms app. However, we can fix this by adding an activity solely to display this new style, once the new `SplashActivity.cs` is rendered we switch over to the current `MainActivity.cs`. The `MainActivity.cs` uses the original style and starts the Xamarin.Forms part of our app.
 
-[![Screenshot_1550416896](https://mallibone.com/posts/files/93993bbc-37b2-4f8e-ae88-97ef5b1a45ef.png "Screenshot_1550416896")](https://mallibone.com/posts/files/f6975711-66c1-46ea-b0c9-0debc0b2a8f8.png)
+[![Screenshot_1550416896]({{ site.url }}{{ site.baseurl }}/images/93993bbc-37b2-4f8e-ae88-97ef5b1a45ef.png "Screenshot_1550416896")]({{ site.url }}{{ site.baseurl }}/images/f6975711-66c1-46ea-b0c9-0debc0b2a8f8.png)
 
 If we let the app run the app now. We do see a splash screen which disappears after starting up the app. So now that we have Android on par with iOS and UWP let's shift gears and implement that bouncy startup animation.
 
@@ -112,7 +112,7 @@ The above lines insert the main page as the first page in the navigation stack. 
 
 The resulting app looks something like this:
 
-[![Animation splash screen on iOS](https://mallibone.com/posts/files/533ff281-d9d5-48d7-ba9f-063fd426756b.gif "Animation splash screen on iOS")](https://mallibone.com/posts/files/bdd46516-0544-4b9e-aad6-5bcce1e7b76f.gif)
+[![Animation splash screen on iOS]({{ site.url }}{{ site.baseurl }}/images/533ff281-d9d5-48d7-ba9f-063fd426756b.gif "Animation splash screen on iOS")]({{ site.url }}{{ site.baseurl }}/images/bdd46516-0544-4b9e-aad6-5bcce1e7b76f.gif)
 
 I am a firm believer that these little things can go a long way and show your user right from the get-go that you care about your app. While the native splash screen is a good start. The animated load screen can buy you a bit of extra time to start up your app while distracting the user. You can find the entire demo app on [GitHub](https://github.com/mallibone/LaunchExperience).
 

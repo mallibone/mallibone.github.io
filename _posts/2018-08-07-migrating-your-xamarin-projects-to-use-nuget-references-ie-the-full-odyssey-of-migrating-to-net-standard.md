@@ -7,7 +7,7 @@ tags: ["Xamarin", "DotNetStandard"]
 slug: "migrating-your-xamarin-projects-to-use-nuget-references-ie-the-full-odyssey-of-migrating-to-net-standard"
 ---
 
-[![Image showing a laptop with graphs on it -looking fancy that's all...](https://mallibone.com/posts/files/7ef2d663-6185-4287-9845-78482fb270fa.png "Image showing a laptop with graphs on it -looking fancy that's all...")](https://mallibone.com/posts/files/eeff83de-30aa-4877-84ae-1f3a7f954ad1.png)
+[![Image showing a laptop with graphs on it -looking fancy that's all...]({{ site.url }}{{ site.baseurl }}/images/7ef2d663-6185-4287-9845-78482fb270fa.png "Image showing a laptop with graphs on it -looking fancy that's all...")]({{ site.url }}{{ site.baseurl }}/images/eeff83de-30aa-4877-84ae-1f3a7f954ad1.png)
 
 Did you know that with Visual Studio 2017 there was an update in the target project files of your Xamarin Projects? They no longer contain a `packages.config` file but contain the NuGet references directly in the `csproj`. Using NuGet references instead of the `packages.config` file has numerous benefits ranging from performance improvements to only showing your top-level dependencies (no longer will you have a scajilion package references ).
 
@@ -15,7 +15,7 @@ They also fix a pesky bug I have experienced since partially migrating to .Net S
 
 But depending on when you have created your project you will start running into compile errors after the migration telling you that a dll from a NuGet which you have only referenced in the .Net Standard project(s) can not be found in the output folder. As is the case in our sample app which I have created for this blog post:
 
-[![Showing compile error that ReactiveUI dll was not found in app output folder](https://mallibone.com/posts/files/b90eeb4d-96c6-4ab4-9834-99bef38e8a08.png "Showing compile error that ReactiveUI dll was not found in app output folder")](https://mallibone.com/posts/files/210484fd-42ab-430b-8bfc-42f95e3d1bee.png)
+[![Showing compile error that ReactiveUI dll was not found in app output folder]({{ site.url }}{{ site.baseurl }}/images/b90eeb4d-96c6-4ab4-9834-99bef38e8a08.png "Showing compile error that ReactiveUI dll was not found in app output folder")]({{ site.url }}{{ site.baseurl }}/images/210484fd-42ab-430b-8bfc-42f95e3d1bee.png)
 
 In the sample project, we are referencing the [ReactiveUI](https://reactiveui.net/) NuGet only in our .Net Standard code and therefore do not have a direct NuGet reference in our platform projects. When looking closely at the platform projects we can see that the Android and iOS project are using a `packages.config` file to reference their NuGet packages.
 
@@ -25,7 +25,7 @@ In the sample project, we are referencing the [ReactiveUI](https://reactiveui.ne
 
 Migrating to the newer Package Reference style can be done by simply right clicking on your `packages.config` and selecting `Migrate packages.config to PackageReference...`:
 
-[![Visual Studio dialog showing Migrate To PackageReference](https://mallibone.com/posts/files/7b19ac8d-5f71-45c1-8149-c248378c6464.png "Visual Studio dialog showing Migrate To PackageReference")](https://mallibone.com/posts/files/f15c6b16-5dbc-4008-9315-a4bad95fb335.png)
+[![Visual Studio dialog showing Migrate To PackageReference]({{ site.url }}{{ site.baseurl }}/images/7b19ac8d-5f71-45c1-8149-c248378c6464.png "Visual Studio dialog showing Migrate To PackageReference")]({{ site.url }}{{ site.baseurl }}/images/f15c6b16-5dbc-4008-9315-a4bad95fb335.png)
 
 This action will change the `csproj` from this:
 

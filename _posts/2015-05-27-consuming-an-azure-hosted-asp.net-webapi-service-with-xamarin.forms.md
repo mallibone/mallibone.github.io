@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms", "Mobile", "Azure"]
 slug: "consuming-an-azure-hosted-asp.net-webapi-service-with-xamarin.forms"
 ---
 
-[![RESTXamarintTitleLogo]({{ site.url }}{{ site.baseurl }}/images/85978cd3-e10e-4321-95b0-3c2fb7f79ce0.png "RESTXamarintTitleLogo")]({{ site.url }}{{ site.baseurl }}/images/c7cb845c-a8c6-4863-8fb2-96cd9dc0c824.png)
+[![RESTXamarintTitleLogo](http://mallibone.com/posts/files/85978cd3-e10e-4321-95b0-3c2fb7f79ce0.png "RESTXamarintTitleLogo")](http://mallibone.com/posts/files/c7cb845c-a8c6-4863-8fb2-96cd9dc0c824.png)
  
 Lets have a look at how we can consume a REST based web service in a Xamarin.Forms application. In this blog post we will look at how an ASP.Net WebAPI service that is hosted on Azure and how it can be consumed in the Portable Class Library (PCL) of your Xamarin.Forms application and write a small UI to interact with the REST service. Please note that I used Visual Studio 2013 while creating the example for this project.
  

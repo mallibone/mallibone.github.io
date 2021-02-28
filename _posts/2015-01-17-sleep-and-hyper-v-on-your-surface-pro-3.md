@@ -7,7 +7,7 @@ tags: ["Surface", "General"]
 slug: "sleep-and-hyper-v-on-your-surface-pro-3"
 ---
 
-[![surfacepro3]({{ site.url }}{{ site.baseurl }}/images/bd4d8773-09af-464f-890a-ddc8ca36b330.jpg "surfacepro3")]({{ site.url }}{{ site.baseurl }}/images/c632f0c2-91c9-4b88-803f-e85a188a102d.jpg)
+[![surfacepro3](http://mallibone-blog.azurewebsites.net/posts/files/bd4d8773-09af-464f-890a-ddc8ca36b330.jpg "surfacepro3")](http://mallibone-blog.azurewebsites.net/posts/files/c632f0c2-91c9-4b88-803f-e85a188a102d.jpg)
  
 I got a Surface 3 Pro recently and I really love the fact that I can use it as a tablet and as a normal Laptop but am not bound to carrying two devices with me. One problem I received was after installing Visual Studio which installs and activates Hyper-V automatically. Hyper-V disables the connected Stand-By mode on your Surface. No problem there but that connected stand-by is also your sleep mode and living without a sleep mode on your tablet is a real pain point.
  

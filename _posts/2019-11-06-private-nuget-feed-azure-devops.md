@@ -56,7 +56,7 @@ Now for accessing a private NuGet feed, you will have to provide a username and 
 
 The only issue being you probably do not want to store your Azure DevOps password in plain text on a computer. And you shouldn't do that either. So let's head back over to Azure DevOps, click on your profile picture and select "Security". Now generate a new token. Be sure to select "Show all scopes" then under Packaging choose the "Read" permissions.
 
-[![Image showing the dialog to generate a token for readonly access to your package feed](https://mallibone.com/posts/files/f6f77fca-f0cc-48a2-902e-14a35b753f67.png "GenerateToken")](https://mallibone.com/posts/files/b93fda55-7f79-452d-8d6f-527a83cc3a74.png)
+[![Image showing the dialog to generate a token for readonly access to your package feed]({{ site.url }}{{ site.baseurl }}/images/f6f77fca-f0cc-48a2-902e-14a35b753f67.png "GenerateToken")]({{ site.url }}{{ site.baseurl }}/images/b93fda55-7f79-452d-8d6f-527a83cc3a74.png)
 
 Copy the generated token and store it in the NuGet.config within the `PlainTextPassword` field. You can now `dotnet restore` your packages from the private Package feed.
 

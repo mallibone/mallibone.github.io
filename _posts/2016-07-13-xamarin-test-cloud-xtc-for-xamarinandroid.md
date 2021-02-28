@@ -7,7 +7,7 @@ tags: ["Xamarin Test Cloud", "Xamarin", "Android"]
 slug: "xamarin-test-cloud-xtc-for-xamarinandroid"
 ---
 
-[![image](https://mallibone.com/posts/files/c2526010-57a9-4e1b-8ffc-120819ebbeee.png "image")](https://mallibone.com/posts/files/ee2e2ffd-ec1d-4d37-8ac8-a49e8b26b2e4.png)
+[![image]({{ site.url }}{{ site.baseurl }}/images/c2526010-57a9-4e1b-8ffc-120819ebbeee.png "image")]({{ site.url }}{{ site.baseurl }}/images/ee2e2ffd-ec1d-4d37-8ac8-a49e8b26b2e4.png)
  
 In this post we will look at how we can write UI tests for a Xamarin.Android app. The app which we are testing is a basic app based on the MVVM pattern. You can find a detailed blog post on the in and outs of the app under test [here](https://mallibone.com/post/xamarinandroid-and-mvvm-light-bindings "Link to post describing the MVVM based app").
  
@@ -31,7 +31,7 @@ When the UI is prepared accordingly we can start writing the test. One way is to
 > The REPL is especially useful once you have a large testing framework. Having a framework i.e. helpers in place you can run those before firing up the REPL. So you can start exploring and interacting with the UI right were you need to.
 
  
-[![XtcTreeWithIds_thumb](https://mallibone.com/posts/files/6e9ed995-95fe-4b94-a312-23d3d70634ef.png "XtcTreeWithIds_thumb")](https://mallibone.com/posts/files/5d547587-883e-440e-927c-edc999e8cc31.png)
+[![XtcTreeWithIds_thumb]({{ site.url }}{{ site.baseurl }}/images/6e9ed995-95fe-4b94-a312-23d3d70634ef.png "XtcTreeWithIds_thumb")]({{ site.url }}{{ site.baseurl }}/images/5d547587-883e-440e-927c-edc999e8cc31.png)
  
 Starting the REPL is as easy as adding the following line to your test method:
  
@@ -46,7 +46,7 @@ Now we can define the steps we want to perform in our test:
 Note how the test takes screenshots at every stage. This allows to easily identify the steps on the Xamarin test cloud and give them a label. While this might seem to be a bit of an overkill for such a small sample. When writing larger tests naming your steps i.e. screen shots will help you narrowing down where an error is happening.  
 One good thing about the tests is that they also run well on your local machine. So using e.g. the al Studio we can execute the tests over the NUnit Runner:
 
-[![shows resharper testrunner in visual studio after executing a test](https://mallibone.com/posts/files/43cad23d-c32c-44b9-885a-70e450ea286e.png "shows resharper testrunner in visual studio after executing a test")](https://mallibone.com/posts/files/2ec1e9fc-2cd7-42c7-aba2-9a8b95c5754f.png)
+[![shows resharper testrunner in visual studio after executing a test]({{ site.url }}{{ site.baseurl }}/images/43cad23d-c32c-44b9-885a-70e450ea286e.png "shows resharper testrunner in visual studio after executing a test")]({{ site.url }}{{ site.baseurl }}/images/2ec1e9fc-2cd7-42c7-aba2-9a8b95c5754f.png)
  
 You can choose to run the tests on an emulator or device as you like. Just select the desired target as you would when starting the application. Or submit it to the test cloud i.e. [integrate it in our build process](https://mallibone.com/post/see-how-to-run-xamarin-test-cloud-runs-from-the-command-line).
  

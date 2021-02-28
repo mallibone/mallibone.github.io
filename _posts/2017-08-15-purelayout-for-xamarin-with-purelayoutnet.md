@@ -25,7 +25,7 @@ Since the storyboard is one large (generated) XML file. Any change to the UI is 
 
 If you are working on a larger app, you will (want to) have some sort of a style guide. In it you will define a set of defined constants for your colours, margins, text sizes, fonts etc.. Going with the Storyboard or XIB designer will not provide you with a central coded style file. The only way to define and distribute the style is in a written text document such as a Word-, PDF-File or a Wiki page. This approach comes down to every one, who works on the UI, needing to know this document. The current version may I add and apply the styles. This can be a challenge to say the least.
 
-All this can easily be avoided by using PureLayout.Net. - Which I hope does not come as surprise at this moment ![Winking smile](https://mallibone.com/posts/files/c56015e2-6edd-427e-a304-0ac4a4a1d989.png)
+All this can easily be avoided by using PureLayout.Net. - Which I hope does not come as surprise at this moment ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/c56015e2-6edd-427e-a304-0ac4a4a1d989.png)
 
 ## Where to get it
 

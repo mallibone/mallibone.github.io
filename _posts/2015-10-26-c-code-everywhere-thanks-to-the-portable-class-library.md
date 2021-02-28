@@ -7,7 +7,7 @@ tags: ["Android", "UWP", "Windows", "Windows Phone", "Xamarin", "iOS", "MVVM Lig
 slug: "c-code-everywhere-thanks-to-the-portable-class-library"
 ---
 
-These days if you can write code with C# you can write code for Windows, Linux and OSX, your code can run on Desktop, Server, Mobile or Embedded Devices. So C# runs pretty much everywhere which if you are a C# developer is a great thing! ![Smile](https://mallibone.com/posts/files/96cb8970-8084-4ab4-ac6b-0e01dbabf7f3.png) Only little hiccup, even though C# is a standardised language, there are multiple runtimes existing today on which C# runs. This may lead to the assumption of having to rewrite code for every runtime. As the standard .Net C# library can not be reused on a Silverlight runtime, or the new Windows RT runtime, or I think you get the message. But fear not – thanks to the Portable Class Library (PCL) one is able to write code that can be reused over multiple platforms.
+These days if you can write code with C# you can write code for Windows, Linux and OSX, your code can run on Desktop, Server, Mobile or Embedded Devices. So C# runs pretty much everywhere which if you are a C# developer is a great thing! ![Smile]({{ site.url }}{{ site.baseurl }}/images/96cb8970-8084-4ab4-ac6b-0e01dbabf7f3.png) Only little hiccup, even though C# is a standardised language, there are multiple runtimes existing today on which C# runs. This may lead to the assumption of having to rewrite code for every runtime. As the standard .Net C# library can not be reused on a Silverlight runtime, or the new Windows RT runtime, or I think you get the message. But fear not – thanks to the Portable Class Library (PCL) one is able to write code that can be reused over multiple platforms.
 
 # Portable Class Libraries
 
@@ -27,7 +27,7 @@ To keep things simple the logic in the app will be creating a list of people. We
 
 Adding the platform specific projects is pretty straight forward. Simply add the corresponding project template to the solution when adding a new project, so I’ll leave it at that and go over to adding a PCL. When adding the PCL a dialog will be opened offering to choose the platforms that shall be supported i.e. can consume the PCL.
 
-[![Showing Add Portable Class Library Visual Studio dialog with .Net Framework 4.6, Windows Universal 10.0, Xamarin.Android and Xamarin.iOS selected](https://mallibone.com/posts/files/d883359b-3484-4e89-a41b-57500d4b5462.png "Showing Add Portable Class Library Visual Studio dialog with .Net Framework 4.6, Windows Universal 10.0, Xamarin.Android and Xamarin.iOS selected")](https://mallibone.com/posts/files/c6637561-1e3f-4139-8bc6-9326dda1ad79.png)
+[![Showing Add Portable Class Library Visual Studio dialog with .Net Framework 4.6, Windows Universal 10.0, Xamarin.Android and Xamarin.iOS selected]({{ site.url }}{{ site.baseurl }}/images/d883359b-3484-4e89-a41b-57500d4b5462.png "Showing Add Portable Class Library Visual Studio dialog with .Net Framework 4.6, Windows Universal 10.0, Xamarin.Android and Xamarin.iOS selected")]({{ site.url }}{{ site.baseurl }}/images/c6637561-1e3f-4139-8bc6-9326dda1ad79.png)
 
 
 > The iOS and Android option will show up after installing the Xamarin tool chain.
@@ -59,7 +59,7 @@ To present our data to the UI we will use the MVVM pattern.
 
 ## Adding MVVM Light
 
-When using MVVM in a project (which is like always for me ![Winking smile](https://mallibone.com/posts/files/e9a9d73c-7bab-4c6b-80b6-05f750bd80da.png)) I prefer using MVVM Light. MVVM Light can be added by simply installing a [NuGet](https://www.nuget.org/ "link to nuget page") package:
+When using MVVM in a project (which is like always for me ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/e9a9d73c-7bab-4c6b-80b6-05f750bd80da.png)) I prefer using MVVM Light. MVVM Light can be added by simply installing a [NuGet](https://www.nuget.org/ "link to nuget page") package:
 
 
     PM> Install-Package MvvmLightLibs
@@ -197,21 +197,21 @@ This allows us to access properties from the <font face="Consolas">ViewModelLoca
 
 Now all is set and we can enjoy the view of our light weight UWA.
 
-[![Screenshot of the UWA running in the Windows 10 Mobile Emulator](https://mallibone.com/posts/files/3a33da57-4c43-46c9-8b07-b0acaca834bb.png "Screenshot of the UWA running in the Windows 10 Mobile Emulator")](https://mallibone.com/posts/files/502e66e6-7b21-40c9-85ef-7602852b6093.png)
+[![Screenshot of the UWA running in the Windows 10 Mobile Emulator]({{ site.url }}{{ site.baseurl }}/images/3a33da57-4c43-46c9-8b07-b0acaca834bb.png "Screenshot of the UWA running in the Windows 10 Mobile Emulator")]({{ site.url }}{{ site.baseurl }}/images/502e66e6-7b21-40c9-85ef-7602852b6093.png)
 
 ## Windows Presentation Foundation (WPF)
 
 Following the same steps as in the UWA in a WPF app will lead to the same result.
 
-[![Shows sample app running in as a WPF desktop application](https://mallibone.com/posts/files/c7a64078-ad28-496b-b40b-ca006407121b.png "Shows sample app running in as a WPF desktop application")](https://mallibone.com/posts/files/026d1274-3a5b-4e95-ae6b-e383c305df77.png)
+[![Shows sample app running in as a WPF desktop application]({{ site.url }}{{ site.baseurl }}/images/c7a64078-ad28-496b-b40b-ca006407121b.png "Shows sample app running in as a WPF desktop application")]({{ site.url }}{{ site.baseurl }}/images/026d1274-3a5b-4e95-ae6b-e383c305df77.png)
 
-So we can reuse all of our business logic from one Microsoft client development model to an other one. Isn’t that just great? ![Smile](https://mallibone.com/posts/files/96cb8970-8084-4ab4-ac6b-0e01dbabf7f3.png) But wait there is more. We can take the C# code outside of the Microsoft Ecosystem. With for example Xamarin we can reuse our C# code on iOS and Android.
+So we can reuse all of our business logic from one Microsoft client development model to an other one. Isn’t that just great? ![Smile]({{ site.url }}{{ site.baseurl }}/images/96cb8970-8084-4ab4-ac6b-0e01dbabf7f3.png) But wait there is more. We can take the C# code outside of the Microsoft Ecosystem. With for example Xamarin we can reuse our C# code on iOS and Android.
 
 ## iOS
 
 Under iOS the UI is usually created in a designer (similar to Windows Forms) so there is not much code to show. We add the <font face="Consolas">ListView</font> equivalent from iOS a <font face="Consolas">UITableView</font> to a page and give it a name, in this sample *PeopleTableView*.
 
-[![Showing iOS Designer and where the name of the UITableView is set.](https://mallibone.com/posts/files/f4df40a1-1994-4848-a1f6-a41959d91096.png "Showing iOS Designer and where the name of the UITableView is set.")](https://mallibone.com/posts/files/eca8f591-ead3-4d23-aa45-b81ae6158ca5.png)
+[![Showing iOS Designer and where the name of the UITableView is set.]({{ site.url }}{{ site.baseurl }}/images/f4df40a1-1994-4848-a1f6-a41959d91096.png "Showing iOS Designer and where the name of the UITableView is set.")]({{ site.url }}{{ site.baseurl }}/images/eca8f591-ead3-4d23-aa45-b81ae6158ca5.png)
 
 Setting up the <font face="Consolas">ViewModelLocator.cs</font> is not quite as elegant when we leave the Microsoft platforms but then again it is done just as easily. In the <font face="Consolas">AppDelegate.cs</font> which is the start up point of every iOS app we simply create an Instance of the <font face="Consolas">ViewModelLocator.cs</font> and store it in a property. The property then can be accessed throughout the iOS app. The Wiring up of the view model is done in the <font face="Consolas">ViewController.cs</font> which is linked to the view that we setup earlier:
 
@@ -262,7 +262,7 @@ Setting up the <font face="Consolas">ViewModelLocator.cs</font> is not quite as 
 
 Now all that is left to do for us is again fire up the iOS Simulator to verify all is correct and there we have it, the same C# code we used for our WPF and UWA apps is now running under iOS:
 
-[![iphone](https://mallibone.com/posts/files/38b3c252-301f-430f-a935-a746e7065bc1.png "iphone")](https://mallibone.com/posts/files/9196fc2c-f978-4d18-a62b-5a8bcf36a992.png)
+[![iphone]({{ site.url }}{{ site.baseurl }}/images/38b3c252-301f-430f-a935-a746e7065bc1.png "iphone")]({{ site.url }}{{ site.baseurl }}/images/9196fc2c-f978-4d18-a62b-5a8bcf36a992.png)
 
 ## Android
 
@@ -332,7 +332,7 @@ Wiring up the view model is done in the <font face="Consolas">MainActivity.cs</f
 
 At this point we can start up the Android Emulator and just to have mentioned it Visual Studio 2015 provides a great Android Emulator – way better then the stock emulator! And once again we can see the app is running reusing the C# code we tucked away in our PCL.
 
-[![Shows app running in the Android Emulator](https://mallibone.com/posts/files/6a0d8429-7bba-4454-9be2-0236b20206a6.png "Shows app running in the Android Emulator")](https://mallibone.com/posts/files/4d7d7498-875e-4301-b7df-51ef274c86a2.png)
+[![Shows app running in the Android Emulator]({{ site.url }}{{ site.baseurl }}/images/6a0d8429-7bba-4454-9be2-0236b20206a6.png "Shows app running in the Android Emulator")]({{ site.url }}{{ site.baseurl }}/images/4d7d7498-875e-4301-b7df-51ef274c86a2.png)
 
 # Conclusions
 

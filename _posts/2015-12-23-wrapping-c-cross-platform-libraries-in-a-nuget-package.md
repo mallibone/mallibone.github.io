@@ -7,7 +7,7 @@ tags: ["UWP", "iOS", "Xamarin", "Xamarin.Forms", "Android", "Windows Phone"]
 slug: "wrapping-c-cross-platform-libraries-in-a-nuget-package"
 ---
 
-[![nuget](https://mallibone.com/posts/files/fc2b63ed-0934-4d7d-aae0-be5fba0a2475.png "nuget logo")](https://mallibone.com/posts/files/a5ef11ae-a5be-41d9-b40d-492bf5417ae4.png)
+[![nuget]({{ site.url }}{{ site.baseurl }}/images/fc2b63ed-0934-4d7d-aae0-be5fba0a2475.png "nuget logo")]({{ site.url }}{{ site.baseurl }}/images/a5ef11ae-a5be-41d9-b40d-492bf5417ae4.png)
  
 See how you can easily create NuGet packages to publish cross platform C# libraries that allow to integrate platform specific code in your Portable Class Library (PCL) based Projects. In a [former post](https://mallibone.com/post/implement-corss-platform-apis-with-c "Former Post") you can read about how to create a cross platform library and see how the library has to be consumed by the e.g. app consuming the library. This post builds up on where that last post left off and shows how we can use the library providing the OS version number in a NuGet package. So the package we want to create has the following structure:
  
@@ -108,11 +108,11 @@ Now we can simply add the OS Version library over the package manager. Notice th
 
 So when we now run the app under UWP we get the following output.
 
-[![Win10VersionNumber](https://mallibone.com/posts/files/e16f8be0-b087-4d4b-b72d-9614ac4a6628.png "Windows 10 App showing Version Number")](https://mallibone.com/posts/files/cc7adb78-38cf-4ac6-8e18-f3f362cad4da.png)
+[![Win10VersionNumber]({{ site.url }}{{ site.baseurl }}/images/e16f8be0-b087-4d4b-b72d-9614ac4a6628.png "Windows 10 App showing Version Number")]({{ site.url }}{{ site.baseurl }}/images/cc7adb78-38cf-4ac6-8e18-f3f362cad4da.png)
 
 Note if we would only add the NuGet package to the <font face="Consolas">NativePcl.Core</font> project the output would simply show the stub implementation.
 
-[![StubVersionNumber](https://mallibone.com/posts/files/a40c6aed-89b4-4b41-8340-a4688f2592e7.png "App running showing Stub Version Number")](https://mallibone.com/posts/files/5dd4e2fe-ca8d-427c-8841-8d922b59644f.png)
+[![StubVersionNumber]({{ site.url }}{{ site.baseurl }}/images/a40c6aed-89b4-4b41-8340-a4688f2592e7.png "App running showing Stub Version Number")]({{ site.url }}{{ site.baseurl }}/images/5dd4e2fe-ca8d-427c-8841-8d922b59644f.png)
 
 So all the principals that were described in the [last post](https://mallibone.com/post/implement-corss-platform-apis-with-c "Post showing how to create cross plattform APIs") still apply. But adding the library has been greatly simplified.
 

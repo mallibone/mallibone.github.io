@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms", "Windows Phone", "iOS", "Android", "Mobile"]
 slug: "integrating-a-wcf-service-in-xamarin.forms"
 ---
 
-[![WCFXamarinTitleLogo]({{ site.url }}{{ site.baseurl }}/images/db8355f4-f027-43cb-a945-f4c5607e753a.png "WCFXamarinTitleLogo")]({{ site.url }}{{ site.baseurl }}/images/5e993793-b8b7-4b95-92d5-ddd6de345fa4.png)
+[![WCFXamarinTitleLogo](http://mallibone.com/posts/files/db8355f4-f027-43cb-a945-f4c5607e753a.png "WCFXamarinTitleLogo")](http://mallibone.com/posts/files/5e993793-b8b7-4b95-92d5-ddd6de345fa4.png)
 
 Windows Communication Foundation (WCF) used to be the way how web services were created in .Net. Allegedly it comes at no surprise that many backend services are implemented with WCF and therefore if you are in the business of writing mobile clients may face the task of integrating such a service. In this post we will look at how a WCF service can be integrated into a Xamarin.Forms app and how Begin/End async methods can be wrapped into task based async/await methods which are the defacto standard since C# 5/.Net 4.5.
 
@@ -62,7 +62,7 @@ We simply implement the command which enables the **ActivityIndicator** to show 
 
 We will integrate the WCF service in the PCL which will allow us to use the interface for each platform. This approach is also valid when you develop for one single platform such as Windows (Phone), Android or iOS, so I really recommend you choose to implement your service in a PCL even if for now you are only targeting one platform. Adding WCF services i.e. creating the proxy classes and calls has always been a very trivial process and hasn’t changed in the modern world. Expand the PCL project, right click on **References** and select **Add Service Reference…**enter the URL of your web service and click **OK**.
 
-[![AddServiceReference]({{ site.url }}{{ site.baseurl }}/images/e428c6ac-770d-4d35-8ff8-9895ce99f194.png "AddServiceReference")]({{ site.url }}{{ site.baseurl }}/images/7c61bfd8-2584-4a99-91bb-60994fc2b815.png)
+[![AddServiceReference](http://mallibone.com/posts/files/e428c6ac-770d-4d35-8ff8-9895ce99f194.png "AddServiceReference")](http://mallibone.com/posts/files/7c61bfd8-2584-4a99-91bb-60994fc2b815.png)
 
 This will generate all the necessary proxy classes and definitions so you can call the Webservice. Unfortunately though all the asynchronous are implemented with the Begin/End asynchronous pattern. Luckily we can easily wrap those calls and use the newer async/await model of asynchronous programming with C#.
 
