@@ -7,7 +7,7 @@ tags: ["Xamarin", "Mobile", "testing", "Xamarin Test Cloud"]
 slug: "thoroughly-testing-your-mobile-app"
 ---
 
-[![testcloud_devices]({{ site.url }}{{ site.baseurl }}/images/8f22c8bc-a8da-424d-b7a0-b8fd5704fa83.png "testcloud_devices")]({{ site.url }}{{ site.baseurl }}/images/1de4c855-d59f-4afd-a8ab-1bad7317bbce.png)
+[![testcloud_devices]({{ site.url }}{{ site.baseurl }}/assets/images/8f22c8bc-a8da-424d-b7a0-b8fd5704fa83.png "testcloud_devices")]({{ site.url }}{{ site.baseurl }}/assets/images/1de4c855-d59f-4afd-a8ab-1bad7317bbce.png)
  
 When developing an app e.g. a mobile app for iOS, Android and Windows 10 or a web app what initially stands in the spotlight is a core idea that brings a core value to it’s users. As soon as the scope is better known one ideally starts developing a Minimal Viable Product which demonstrates the core ideas and let’s the creators get first feedback from potential users. With the initial ideas and the feedback the team starts to add more and more functionality to the app and all is well. Until users start reporting some odd behaviour and the well intended changes start having side effects on other features. So every release gets thoroughly tested before it is sent out. The time it takes to check on all features starts to increase, but holding off of going through all the tests may lead to a new bug that snuck into the app. So what to do?
  
@@ -21,7 +21,7 @@ But as so many things in life - UI tests come at a cost. Compared to unit- or in
  
 Well lets start by looking at what kind of tests you can actually implement when considering mobile applications:
  
-[![TestDistribution]({{ site.url }}{{ site.baseurl }}/images/68134717-0591-488b-b7eb-f32c6f8d2ff5.png "TestDistribution")]({{ site.url }}{{ site.baseurl }}/images/f3e3749e-49e0-47a2-8760-6ce06590ca38.png)
+[![TestDistribution]({{ site.url }}{{ site.baseurl }}/assets/images/68134717-0591-488b-b7eb-f32c6f8d2ff5.png "TestDistribution")]({{ site.url }}{{ site.baseurl }}/assets/images/f3e3749e-49e0-47a2-8760-6ce06590ca38.png)
  
 As the graphic indicates the wider the pyramid the more tests you will probably want to have in your project. So lets dive into what the main benefits are for the different areas and let’s also look at how they could be implemented.
  

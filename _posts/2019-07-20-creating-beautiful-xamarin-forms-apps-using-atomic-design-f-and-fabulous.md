@@ -7,17 +7,17 @@ tags: ["F#", "Fabulous", "Xamarin.Forms", "Xamarin"]
 slug: "creating-beautiful-xamarin-forms-apps-using-atomic-design-f-and-fabulous"
 ---
 
-[![Showing a wodden peer and the ocean on a sunny day]({{ site.url }}{{ site.baseurl }}/images/bbf4912e-5e28-48b1-b37f-3a1e363f0a89.jpg "Showing a wodden peer and the ocean on a sunny day")]({{ site.url }}{{ site.baseurl }}/images/7a857fc7-4c13-47a6-8515-85d8ec1715d7.jpg)
+[![Showing a wodden peer and the ocean on a sunny day]({{ site.url }}{{ site.baseurl }}/assets/images/bbf4912e-5e28-48b1-b37f-3a1e363f0a89.jpg "Showing a wodden peer and the ocean on a sunny day")]({{ site.url }}{{ site.baseurl }}/assets/images/7a857fc7-4c13-47a6-8515-85d8ec1715d7.jpg)
 
 [Fabulous](https://fsprojects.github.io/Fabulous/Fabulous.XamarinForms/) allows writing Xamarin Forms apps with F# in a functional style. Fabulous has been inspired by [Elm](https://elm-lang.org/), which proved that by using the Model View Update (MVU for short) pattern functional languages are great for writing UI code. While functional code squashes a plethora of potential bugs around null and race conditions - in this post, we will not focus on that aspect of Fabulous. Instead, let us look at how you can create beautiful UIs that stay maintainable in the future.
 
 This blog post is part of the Xamarin UI July organised by [Steven Thewissen](https://twitter.com/devnl). Be sure to check out all the beautiful posts by my [fellow co-authors](https://www.thewissen.io/introducing-xamarin-ui-july/).
 
-[![Featured #XamarinUIJuly Badge]({{ site.url }}{{ site.baseurl }}/images/e6872b51-38c6-4d19-b2d4-8af138035e63.png "Featured #XamarinUIJuly Badge")]({{ site.url }}{{ site.baseurl }}/images/deeb4bba-6204-4750-ae55-91902c83ade1.png)
+[![Featured #XamarinUIJuly Badge]({{ site.url }}{{ site.baseurl }}/assets/images/e6872b51-38c6-4d19-b2d4-8af138035e63.png "Featured #XamarinUIJuly Badge")]({{ site.url }}{{ site.baseurl }}/assets/images/deeb4bba-6204-4750-ae55-91902c83ade1.png)
 
 Inspired by some of Stevens previous posts on - what I like to call - lickable UI. I wanted to show why writing UI in code allows you to write UI that is not only beautiful but easy to maintain and extend. So for this post, I will be implementing a design idea I found on [Dribbble](https://dribbble.com/shots/6756236-Travel-App-UI-UX) by [Apptaste](https://dribbble.com/apptaste).
 
-[![App design as shown on dribbble]({{ site.url }}{{ site.baseurl }}/images/623007f4-c8f4-43c9-b188-331a114fd2de.png "App design as shown on dribbble")]({{ site.url }}{{ site.baseurl }}/images/123eacff-b07a-4cc6-a08f-c363f6b3c206.png)
+[![App design as shown on dribbble]({{ site.url }}{{ site.baseurl }}/assets/images/623007f4-c8f4-43c9-b188-331a114fd2de.png "App design as shown on dribbble")]({{ site.url }}{{ site.baseurl }}/assets/images/123eacff-b07a-4cc6-a08f-c363f6b3c206.png)
 
 Though this blog post will focus on Fabulous, you could apply the same principle when writing your app using C# and XAML. But you will end up with a bunch of files, and it will feel more complicated. F# a terse language to write to begin with and Fabulous allow for writing apps with fewer lines of code than what you usually require with C# and XAML. I am not saying this is what should be your reason to check out Fabulous. But it is a fact that... If you are new to F# and Fabulous next comes a short intro. If this is all old news to you feel free to skip the intro.
 
@@ -74,13 +74,13 @@ The functions get invoked by Fabulous and do not interact with Xamarin Forms dir
 
 Writing your UI with code comes with a few perks. While you could write all of your UI in the `view` function. It might get a bit hard to view at a glance over time. But being only code, you can split up the code into different functions. This also allows you to reuse parts of the UI in different places. And reusability reusing/combining components is at the heart of Atomic Design.
 
-[![Atomic Design]({{ site.url }}{{ site.baseurl }}/images/3e5b9dac-2029-4afb-a4b8-99491e1a6fba.png "Atomic Design")]({{ site.url }}{{ site.baseurl }}/images/5ea9e1f4-9506-4afe-b57a-0f1b10499640.png)
+[![Atomic Design]({{ site.url }}{{ site.baseurl }}/assets/images/3e5b9dac-2029-4afb-a4b8-99491e1a6fba.png "Atomic Design")]({{ site.url }}{{ site.baseurl }}/assets/images/5ea9e1f4-9506-4afe-b57a-0f1b10499640.png)
 
 While unique design, reusable components sound all great, let's have a look at how we could design such an app with Fabulous. We want to start with the essential elements (Atoms) which we then put together to more significant UI components and in the end the Page.
 
 When we look at the design of the app, we can see that most of the title labels seem to have the same font. Another UI component that quickly gets my eye is the cards holding the description of the destination and the things to do:
 
-[![DestinationDescription]({{ site.url }}{{ site.baseurl }}/images/0d86ebe1-8dc3-4704-8a47-657a43eb960b.png "DestinationDescription")]({{ site.url }}{{ site.baseurl }}/images/b66c2c3c-f912-4c08-87d2-588d3e617aef.png)
+[![DestinationDescription]({{ site.url }}{{ site.baseurl }}/assets/images/0d86ebe1-8dc3-4704-8a47-657a43eb960b.png "DestinationDescription")]({{ site.url }}{{ site.baseurl }}/assets/images/b66c2c3c-f912-4c08-87d2-588d3e617aef.png)
 
 Now what we can see is that titles have the same font, are bold and apart from the cards in the "Things to do" section have the same font size. So let's create a function that allows us to create a title label with the parameters text and font size:
 
@@ -219,7 +219,7 @@ The parts are all made now let's assemble them so that we get the Image with rou
 
 Similarly, we can implement the "Things to do" section. The great thing is we can reuse a lot of components that we have already created. Then we can put all the parts together in the view method which presents us with the following UI:
 
-[![AppScreenshot]({{ site.url }}{{ site.baseurl }}/images/30bed54e-33e7-4a24-89b6-a9443f3acecf.png "AppScreenshot")]({{ site.url }}{{ site.baseurl }}/images/7168ea33-e510-44aa-8f23-35f619f90a93.png)
+[![AppScreenshot]({{ site.url }}{{ site.baseurl }}/assets/images/30bed54e-33e7-4a24-89b6-a9443f3acecf.png "AppScreenshot")]({{ site.url }}{{ site.baseurl }}/assets/images/7168ea33-e510-44aa-8f23-35f619f90a93.png)
 
 You can find the entire sample on [GitHub](https://github.com/mallibone/FabulousTravel).
 

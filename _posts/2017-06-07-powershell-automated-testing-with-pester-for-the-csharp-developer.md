@@ -7,7 +7,7 @@ tags: [" PowerShell", "testing", "PowerShell"]
 slug: "powershell-automated-testing-with-pester-for-the-csharp-developer"
 ---
 
-[![Processed with VSCO with j2 preset]({{ site.url }}{{ site.baseurl }}/images/38c2ad07-b3dd-47c4-be02-7f828ed6841a.jpg "Processed with VSCO with j2 preset")]({{ site.url }}{{ site.baseurl }}/images/7b2028b2-a2f3-4eec-8a9f-fdcaaca7309c.jpg)
+[![Processed with VSCO with j2 preset]({{ site.url }}{{ site.baseurl }}/assets/images/38c2ad07-b3dd-47c4-be02-7f828ed6841a.jpg "Processed with VSCO with j2 preset")]({{ site.url }}{{ site.baseurl }}/assets/images/7b2028b2-a2f3-4eec-8a9f-fdcaaca7309c.jpg)
  
 In the [previous post](https://mallibone.com/post/powershell-for-the-c-developer-&ndash;-part-3) we saw how methods i.e. functions can be implemented with PowerShell. Functions are not only a great way to structure code for reuse but also allow to create larger scripts. Whenever writing code that ends up in production it is always a must to ensure that the code runs as expected. When the Script is small or does not invoke any long running services we can do this quite simply by executing the script. However the more complex a script becomes or is integrated into long running processes the harder it becomes to ensure that the script is still running as intended after changes.
  
@@ -42,7 +42,7 @@ From the structure there is a lot in common.
 
 When we execute the PowerShell test from the PowerShell IDE console pane we get the following result in the PowerShell Window.
  
-[![Showing console output of the testrunner (executed in VS Code)]({{ site.url }}{{ site.baseurl }}/images/4bfd00f3-88dc-41e7-9c34-e9c6efe78274.png "Showing console output of the testrunner (executed in VS Code)")]({{ site.url }}{{ site.baseurl }}/images/4cb2e875-4ea3-454c-ae51-dfdf04c8b8ea.png)
+[![Showing console output of the testrunner (executed in VS Code)]({{ site.url }}{{ site.baseurl }}/assets/images/4bfd00f3-88dc-41e7-9c34-e9c6efe78274.png "Showing console output of the testrunner (executed in VS Code)")]({{ site.url }}{{ site.baseurl }}/assets/images/4cb2e875-4ea3-454c-ae51-dfdf04c8b8ea.png)
  
 There are multiple assertions you can use within pester as one can see in the following overview:
 
@@ -87,7 +87,7 @@ And Pester provides a handy mocking functionality:
  
 <script src="https://gist.github.com/mallibone/edeb656f9081ea19b489a62c09e59206.js"></script>
  
-Not only is this a great way to test our code without having to actually be on the filesystem but it also shows how we could mock other dependencies such as a system clock (midnight testing anyone?), network calls etc. which for one will ensure that the script does not actually invoke any external sources. Another benefit you will most probably see is a speed up in execution time. Since everything is running from in memory (aka fast ![Winking smile]({{ site.url }}{{ site.baseurl }}/images/e5961ae2-20b4-4903-a56d-651894da8c95.png)) there is no network or disk delay. For further information and options on mocking check out the [official documentation](https://github.com/pester/Pester/wiki/Mocking-with-Pester) of Pester.
+Not only is this a great way to test our code without having to actually be on the filesystem but it also shows how we could mock other dependencies such as a system clock (midnight testing anyone?), network calls etc. which for one will ensure that the script does not actually invoke any external sources. Another benefit you will most probably see is a speed up in execution time. Since everything is running from in memory (aka fast ![Winking smile]({{ site.url }}{{ site.baseurl }}/assets/images/e5961ae2-20b4-4903-a56d-651894da8c95.png)) there is no network or disk delay. For further information and options on mocking check out the [official documentation](https://github.com/pester/Pester/wiki/Mocking-with-Pester) of Pester.
  
 # Executing the Tests
  
@@ -99,7 +99,7 @@ We can also execute the test from the command line with the following command:
  
 The command can be extended with parameters described [here](https://github.com/pester/Pester/wiki/Invoke-Pester "Link to the Pester Project Page describing the execution."). While skimming through the parameters you may notice that they would provide the means to enable Continuous Integration (CI) for PowerShell Scripts. This is the case, we could add a Step to a Visual Studio Team Service (VSTS) or Team Foundation Server (TFS) build configuration by adding a PowerShell step with the following parameters:
  
-If you already have a build server setup (you can get VSTS for free within minutes….), it is easy to setup a CI job for your scripts. And CI can be a real cure to sleep problems – so if I can have it this cheap the answer is yes please ![Smile]({{ site.url }}{{ site.baseurl }}/images/8fb07399-04da-44c0-96b8-155eca499d39.png)
+If you already have a build server setup (you can get VSTS for free within minutes….), it is easy to setup a CI job for your scripts. And CI can be a real cure to sleep problems – so if I can have it this cheap the answer is yes please ![Smile]({{ site.url }}{{ site.baseurl }}/assets/images/8fb07399-04da-44c0-96b8-155eca499d39.png)
  
 # Summary
  

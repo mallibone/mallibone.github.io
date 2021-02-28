@@ -41,7 +41,7 @@ Now your Emulator should fire up.
 
 I had to repeat step 3 a couple of times – even after the emulator would start up the first time but maybe that is just a configuration issue on my machine…
 
-Hope this helps and happy coding! ![Smile]({{ site.url }}{{ site.baseurl }}/images/5bbd1b8e-ff4b-4d0d-b029-93f37da303ef.png)
+Hope this helps and happy coding! ![Smile]({{ site.url }}{{ site.baseurl }}/assets/images/5bbd1b8e-ff4b-4d0d-b029-93f37da303ef.png)
 
 ## Resources
 

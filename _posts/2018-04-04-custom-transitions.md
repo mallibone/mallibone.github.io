@@ -11,7 +11,7 @@ Ever wondered how those slick screen transitions are made by those other apps? U
 
 In this post we will implement the following transition:
 
-[![CustomTransition]({{ site.url }}{{ site.baseurl }}/images/03e55f61-7f4f-4cc8-baf7-da6ec68d408c.gif "CustomTransition")]({{ site.url }}{{ site.baseurl }}/images/687feb12-cfd9-427e-b6cf-5b0b29bc1bd2.gif)
+[![CustomTransition]({{ site.url }}{{ site.baseurl }}/assets/images/03e55f61-7f4f-4cc8-baf7-da6ec68d408c.gif "CustomTransition")]({{ site.url }}{{ site.baseurl }}/assets/images/687feb12-cfd9-427e-b6cf-5b0b29bc1bd2.gif)
 
 Before we dive into the code. Be aware that every transition follows the following steps::
 
@@ -50,7 +50,7 @@ Note that we configure the `ModalPresentationStyle` and `TransitionDelegate` on 
 
 If you are using storyboards you will be familiar with segues. To define a custom transition animation you will have to configure your segue as follows:
 
-[![Configure the storyboard segue to use Present Modal and leave the Presentation and Transition to Default.]({{ site.url }}{{ site.baseurl }}/images/0f000ee2-40e8-4d74-b8e9-285012905cc6.png "SegueConfiguration")]({{ site.url }}{{ site.baseurl }}/images/51081f6d-5d21-4cfa-ae09-f08c899708b9.png)
+[![Configure the storyboard segue to use Present Modal and leave the Presentation and Transition to Default.]({{ site.url }}{{ site.baseurl }}/assets/images/0f000ee2-40e8-4d74-b8e9-285012905cc6.png "SegueConfiguration")]({{ site.url }}{{ site.baseurl }}/assets/images/51081f6d-5d21-4cfa-ae09-f08c899708b9.png)
 
 Then in the originating view controller you can override the  `PrepareForSegue` method:
 
@@ -121,7 +121,7 @@ The animations are defined in a class that inherit from `UIViewControllerAnimate
 The `TransitionDuration`  method defines how long the animation will take. Usually this should be around 300 to 500 milliseconds. In the `AnimateTransition` method the actual transition and animation are defined.
 
 
-> The iOS SDK provides capabilities for creating animations such as transition animations. Using these will significantly reduce the effort required to create an animation to defining the initial and desired target state of a UI object. The rendering of the animation is performed by iOS on the GPU. So not only will your app look great it will also be snappy since GPUs eat transformations for breakfast ![Smile]({{ site.url }}{{ site.baseurl }}/images/68475dd9-dea1-4310-ad57-119ceccf9eb5.png)
+> The iOS SDK provides capabilities for creating animations such as transition animations. Using these will significantly reduce the effort required to create an animation to defining the initial and desired target state of a UI object. The rendering of the animation is performed by iOS on the GPU. So not only will your app look great it will also be snappy since GPUs eat transformations for breakfast ![Smile]({{ site.url }}{{ site.baseurl }}/assets/images/68475dd9-dea1-4310-ad57-119ceccf9eb5.png)
 
 
 The `AnimateTransition` method usually follows the following pattern:

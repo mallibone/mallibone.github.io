@@ -7,7 +7,7 @@ tags: ["Xamarin", "Xamarin.Forms"]
 slug: "a-simple-navigation-service-for-xamarinforms"
 ---
 
-[![pexels-photo-297755]({{ site.url }}{{ site.baseurl }}/images/7688f273-4350-4f14-b896-a4340628f48d.jpg "pexels-photo-297755")]({{ site.url }}{{ site.baseurl }}/images/d088738a-d705-4b86-bb1a-571a2bc4cbff.jpg)
+[![pexels-photo-297755]({{ site.url }}{{ site.baseurl }}/assets/images/7688f273-4350-4f14-b896-a4340628f48d.jpg "pexels-photo-297755")]({{ site.url }}{{ site.baseurl }}/assets/images/d088738a-d705-4b86-bb1a-571a2bc4cbff.jpg)
 
 If you have ever written a Xamarin Forms app and wanted to navigate from within a View Model to another page. Then you have come over the issue that the navigation logic usually resides in the view. Since every best practice blog post, course and video tells us that the view and business/control logic should be separate. We are often left with the question how to integrate a View Model based navigation.
 

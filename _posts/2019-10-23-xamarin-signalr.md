@@ -7,7 +7,7 @@ tags: ["Xamarin", "Xamarin.Forms", "Xamarin.iOS", "Xamarin.Android", "Azure"]
 slug: "xamarin-signalr"
 ---
 
-[![pexels-photo-292426]({{ site.url }}{{ site.baseurl }}/images/929dc2d8-d2b0-4f48-892f-897d78d91399.jpg "pexels-photo-292426")]({{ site.url }}{{ site.baseurl }}/images/d383a562-90f5-4368-8e07-4f97335e1d93.jpg)
+[![pexels-photo-292426]({{ site.url }}{{ site.baseurl }}/assets/images/929dc2d8-d2b0-4f48-892f-897d78d91399.jpg "pexels-photo-292426")]({{ site.url }}{{ site.baseurl }}/assets/images/d383a562-90f5-4368-8e07-4f97335e1d93.jpg)
 
 Whether writing a mobile app with Xamarin Forms or native Xamarin.iOS/Xamarin.Android sometimes the requirements demand that your app updates as quickly as possible when something changes on the server. This might be a chat application, stock ticker or any monitoring app showing live data to a user of a process currently running in the backend.
 
@@ -65,7 +65,7 @@ With the function and SignalR Service in place, we can now turn our focus to the
 
 On the mobile client, we want to be able to receive messages and type responses to the group. Our simple app will have to live with the limitation of only receiving messages while being connected. At least for the moment. But here is the chat running in all of its glory.
 
-[![SignalRChat]({{ site.url }}{{ site.baseurl }}/images/990505d4-eddb-47b0-82bf-d01361901dcc.gif "SignalRChat")]({{ site.url }}{{ site.baseurl }}/images/1eb601bc-2256-4cfb-a647-86f27674dc67.gif)
+[![SignalRChat]({{ site.url }}{{ site.baseurl }}/assets/images/990505d4-eddb-47b0-82bf-d01361901dcc.gif "SignalRChat")]({{ site.url }}{{ site.baseurl }}/assets/images/1eb601bc-2256-4cfb-a647-86f27674dc67.gif)
 
 Now let's have a look at the `ChatService` which connects us to the backend and receives messages:
 

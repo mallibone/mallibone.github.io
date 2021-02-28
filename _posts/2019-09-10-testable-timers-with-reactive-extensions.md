@@ -7,7 +7,7 @@ tags: ["testing", "xunit"]
 slug: "testable-timers-with-reactive-extensions"
 ---
 
-[![A view of Big Ben at night with traffic lights going by.]({{ site.url }}{{ site.baseurl }}/images/c994a4d1-6325-454e-b0e3-dfc61438392e.jpg "A view of Big Ben at night with traffic lights going by.")]({{ site.url }}{{ site.baseurl }}/images/e312fddb-8fa2-4f2b-bc85-a3f1519e19df.jpg)
+[![A view of Big Ben at night with traffic lights going by.]({{ site.url }}{{ site.baseurl }}/assets/images/c994a4d1-6325-454e-b0e3-dfc61438392e.jpg "A view of Big Ben at night with traffic lights going by.")]({{ site.url }}{{ site.baseurl }}/assets/images/e312fddb-8fa2-4f2b-bc85-a3f1519e19df.jpg)
 
 [Reactive Extensions](http://reactivex.io/) ([Rx.Net](https://github.com/dotnet/reactive)) was released in 2009 and therefore is celebrating it's 10th anniversary this year. Reactive Extensions is well known as a solution approach for event-based systems. However, it also features many other helpful features, such as timers! I guess the title of the blog might have given this one away - nonetheless let me show you why Rx.Net provides you with a great alternative to the standard .Net timer(s).
 

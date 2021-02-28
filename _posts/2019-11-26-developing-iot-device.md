@@ -9,7 +9,7 @@ slug: "developing-iot-device"
 
 So a while back I posted about a little pet project I am working on along the lines of how hard can it be. To see the big picture, you can read the overview [here](https://mallibone.com/post/overview-of-live-streaming-iot-data-to-a-mobile-device). The first step is writing an Internet of Things (IoT) client app that runs on a device and sends sensor readings to the cloud. In the cloud, the Azure IoT Hub manages the client and also receives the data from the client.
  
-[![PCB board]({{ site.url }}{{ site.baseurl }}/images/dbf8a388-762e-4363-b623-d2eab32e388b.jpg "PCB board")]({{ site.url }}{{ site.baseurl }}/images/9676f245-88a0-4c2b-9762-a406a1a65702.jpg)
+[![PCB board]({{ site.url }}{{ site.baseurl }}/assets/images/dbf8a388-762e-4363-b623-d2eab32e388b.jpg "PCB board")]({{ site.url }}{{ site.baseurl }}/assets/images/9676f245-88a0-4c2b-9762-a406a1a65702.jpg)
  
 As the name implies, IoT devices connect to the internet. So not so different than your client app you might think at first. But when you start thinking about how IoT devices are deployed and run in the wild, there quite a few differences setting them apart. For one, the devices are usually not operated by a person. It's not a bring your own device (BYOD) scenario, the creator of the IoT device is generally in control of the software running on the device. Being in control also means that the device gets set up by the manufacturer and connects to the backend without or little human interaction. Since the device is out in the open and connected to the internet. It is generally a good idea if not mandatory to have a plan to update the device should a security breach such as [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed) ever occur. Though generally speaking the problems are often a lot more homegrown as this [post](https://www.troyhunt.com/what-would-it-look-like-if-we-put-warnings-on-iot-devices-like-we-do-cigarette-packets/) from [Troy Hunt](https://twitter.com/troyhunt) nicely summarises. Another aspect that often arises with IoT solutions is the volume of data that has to be processed. While you can process data on the edge (on-site) - usually the desire is here to aggregate the data at a central point and act upon the live data or analyse the data in hindsight to find insights. It is often the data processing scenarios that bring the most significant business value and therefore are an essential part of the solution one tries to create with IoT solutions. Providing the developers with the challenge of creating a system that accomplishes to scale to meet the high data volumes running through the system. In short it is a different world than your traditional Xamarin, WPF, WinForms or Web client app.
  
@@ -47,7 +47,7 @@ No error means success but, another handy command is seeing which messages the I
 
 If you now open a second PowerShell to send a message as a registered device, you will see IoT Hub receiving the message.
 
-[![Showing received message]({{ site.url }}{{ site.baseurl }}/images/7248a684-64e4-42c8-a515-78260a18c18d.png "Showing received message")]({{ site.url }}{{ site.baseurl }}/images/c1cc822d-035c-4224-a094-7b8afa57b81e.png)
+[![Showing received message]({{ site.url }}{{ site.baseurl }}/assets/images/7248a684-64e4-42c8-a515-78260a18c18d.png "Showing received message")]({{ site.url }}{{ site.baseurl }}/assets/images/c1cc822d-035c-4224-a094-7b8afa57b81e.png)
 
 With all the tools installed and having a device registered, we are ready to implement our client. There are more commands which you can use with Azure CLI, you can find the full list of commands [here](https://docs.microsoft.com/en-us/cli/azure/iot?view=azure-cli-latest&amp;WT.mc_id=IoT-MVP-5002881).
 
@@ -92,11 +92,11 @@ Note that a lot of IoT devices do not come with an operating system installed du
 
 Once you have installed the app on the dev kit and connected it to WiFi, you will be able to see the messages arrive on the IoT Hub dashboard.
 
-[![Graph showing the messages being received by the Azure IoT Hub.]({{ site.url }}{{ site.baseurl }}/images/07a10f70-ab5d-4afb-a424-5f6f68b62a44.png "Graph showing the messages being received by the Azure IoT Hub.")]({{ site.url }}{{ site.baseurl }}/images/31cd5c49-011e-4030-88b7-5ea64a48b257.png)
+[![Graph showing the messages being received by the Azure IoT Hub.]({{ site.url }}{{ site.baseurl }}/assets/images/07a10f70-ab5d-4afb-a424-5f6f68b62a44.png "Graph showing the messages being received by the Azure IoT Hub.")]({{ site.url }}{{ site.baseurl }}/assets/images/31cd5c49-011e-4030-88b7-5ea64a48b257.png)
 
 And by using the CLI tools command from before we can start a listener that will receive every message sent to the Azure IoT Hub:
 
-[![ReceivingDeviceMessages]({{ site.url }}{{ site.baseurl }}/images/73f466e6-c5c5-4a8e-b670-9d738286177e.gif "ReceivingDeviceMessages")]({{ site.url }}{{ site.baseurl }}/images/1a7a8615-c81b-43b3-9278-f1dc24d0f840.gif)
+[![ReceivingDeviceMessages]({{ site.url }}{{ site.baseurl }}/assets/images/73f466e6-c5c5-4a8e-b670-9d738286177e.gif "ReceivingDeviceMessages")]({{ site.url }}{{ site.baseurl }}/assets/images/1a7a8615-c81b-43b3-9278-f1dc24d0f840.gif)
 
 You will be able to see the raw JSON coming in on the IoT hub.
 

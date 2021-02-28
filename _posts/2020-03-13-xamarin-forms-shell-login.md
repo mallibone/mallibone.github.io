@@ -7,7 +7,7 @@ tags: ["Xamarin.Forms"]
 slug: "xamarin-forms-shell-login"
 ---
 
-[![ShellLoginApp]({{ site.url }}{{ site.baseurl }}/images/f64b4ea2-637b-4f0b-9c01-3a46c35fefe1.gif "ShellLoginApp")]({{ site.url }}{{ site.baseurl }}/images/f1f041cd-6ab0-4133-bcac-ee4772d0d8f9.gif)
+[![ShellLoginApp]({{ site.url }}{{ site.baseurl }}/assets/images/f64b4ea2-637b-4f0b-9c01-3a46c35fefe1.gif "ShellLoginApp")]({{ site.url }}{{ site.baseurl }}/assets/images/f1f041cd-6ab0-4133-bcac-ee4772d0d8f9.gif)
 
 Since the release of [Xamarin Forms 4.5](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/release-notes/4.5/4.5.0), Shell now supports [modal navigation](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/configuration#set-page-presentation-mode). Since one of my highest ranking blog posts is [how to create a login page with Xamarin Forms](https://www.mallibone.com/post/creating-a-login-screen-with-xamarinforms). I thought it was time to revisit the topic and look at how to implement a login page using the Shell.
 
@@ -15,7 +15,7 @@ So what is so special about a login page? Well, to state the obvious, the user s
 
 So let's see how we can capture the user on a page and then ensure that this page is no longer on the navigation stack while using Shell. So let's get going with the UI flow of a possible login experience. Our app has the following screen flow:
 
-[![PageFlow]({{ site.url }}{{ site.baseurl }}/images/7debe0a3-5dd3-41f6-a99a-a500373040b9.png "PageFlow")]({{ site.url }}{{ site.baseurl }}/images/5476c219-84fa-4fec-b393-442a2b5a35ef.png)
+[![PageFlow]({{ site.url }}{{ site.baseurl }}/assets/images/7debe0a3-5dd3-41f6-a99a-a500373040b9.png "PageFlow")]({{ site.url }}{{ site.baseurl }}/assets/images/5476c219-84fa-4fec-b393-442a2b5a35ef.png)
 
 All of our pages have to be registered with the Shell. Note that the first `ContentPage` in the `Shell.xaml` file is the one getting displayed after start-up. So our Shell is structured accordingly:
 
@@ -36,7 +36,7 @@ All of our pages have to be registered with the Shell. Note that the first `Cont
 
 Our loading screen mainly simulates checking if the user has valid credentials. If the app was not a total fake on the business logic side. It might be using a Token-based flow; this is where one would check if the app still has a valid token and can go directly to the main screen or the user has to log in.
 
-[![LoadingPage]({{ site.url }}{{ site.baseurl }}/images/dd7aaa3e-424c-4ece-8fc7-cba50468f5dc.gif "LoadingPage")]({{ site.url }}{{ site.baseurl }}/images/04370335-ed80-4171-9450-81a55f1239c9.gif)
+[![LoadingPage]({{ site.url }}{{ site.baseurl }}/assets/images/dd7aaa3e-424c-4ece-8fc7-cba50468f5dc.gif "LoadingPage")]({{ site.url }}{{ site.baseurl }}/assets/images/04370335-ed80-4171-9450-81a55f1239c9.gif)
 
 Beautiful load animation, right? 😉 And here is the slim logic in the View Model :
 

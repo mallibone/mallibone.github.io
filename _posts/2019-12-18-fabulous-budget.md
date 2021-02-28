@@ -7,7 +7,7 @@ tags: ["F#", "Fabulous", "Xamarin.Forms"]
 slug: "fabulous-budget"
 ---
 
-[![TitleImage]({{ site.url }}{{ site.baseurl }}/images/7805b5d6-ed39-430c-a6d0-0974a6040f34.png "TitleImage")]({{ site.url }}{{ site.baseurl }}/images/60324200-638a-4cf1-a420-95ee974ccc62.png)
+[![TitleImage]({{ site.url }}{{ site.baseurl }}/assets/images/7805b5d6-ed39-430c-a6d0-0974a6040f34.png "TitleImage")]({{ site.url }}{{ site.baseurl }}/assets/images/60324200-638a-4cf1-a420-95ee974ccc62.png)
 
 A while back, I used the F# type providers to create a conversion table. That post gave me the idea if it were possible to write an app that gets its data from a website. Perhaps you have also received the request for an app. Nothing expensive and actually all the data that should be displayed is already present on the web, i.e. this website right over here. So the question is: Could such an app be created without having to write a single line of backend code?
 

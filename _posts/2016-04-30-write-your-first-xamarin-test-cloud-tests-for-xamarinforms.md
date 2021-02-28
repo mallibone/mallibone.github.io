@@ -7,7 +7,7 @@ tags: ["Xamarin", "Xamarin Test Cloud", "Xamarin.Forms"]
 slug: "write-your-first-xamarin-test-cloud-tests-for-xamarinforms"
 ---
 
-[![Xamarin Test Cloud Logo]({{ site.url }}{{ site.baseurl }}/images/38f6c9ae-a727-4029-b0d1-3004fbc18542.png "Xamarin Test Cloud Logo")]({{ site.url }}{{ site.baseurl }}/images/ef307e4e-3798-40a7-8af0-623d919ef1cf.png)
+[![Xamarin Test Cloud Logo]({{ site.url }}{{ site.baseurl }}/assets/images/38f6c9ae-a727-4029-b0d1-3004fbc18542.png "Xamarin Test Cloud Logo")]({{ site.url }}{{ site.baseurl }}/assets/images/ef307e4e-3798-40a7-8af0-623d919ef1cf.png)
  
 Automatically testing apps is not only a huge time saver but it also ensures that bugs introduced into the system get quickly caught. This leads to a shorter timespan to fixing these bugs since the memory of what has changed is still fresh in the head of the developers so overall shorter time means less money spent on hunting down bugs and more time to implement the next juicy feature. When developing a Xamarin application one can choose to run the Unit- and Integration Tests on a device/simulator to get a feeling how the logic will behave and perform in the real world. But with Xamarin Test Cloud we can go one step further and test the UI i.e. the entire stack of the application automatically. If you are interested into a general introduction into the topic I recommend you read this [post](https://mallibone.com/post/thoroughly-testing-your-mobile-app "Blog post on automated (UI) testing") before diving into the technical details of the lines to follow.
  
@@ -19,7 +19,7 @@ Automatically testing apps is not only a huge time saver but it also ensures tha
  
 Since this post focuses on writing UI tests the app is rather simple but will show the basic steps required to write maintainable UI tests. The app under test is a basic app with an input field, a button and a button that displays the entry of the input field. The app is based on the MVVM pattern (using [MVVM Light](http://www.mvvmlight.net/ "Link to MVVM Light project website")) and is based on Xamarin.Forms.
  
-[![Screenshot of app that is going to be tested.]({{ site.url }}{{ site.baseurl }}/images/df661261-510a-4768-99e2-94784e5e5ccf.png "Screenshot of app that is going to be tested.")]({{ site.url }}{{ site.baseurl }}/images/07236faa-24b7-4359-b267-e50fdcd85941.png)
+[![Screenshot of app that is going to be tested.]({{ site.url }}{{ site.baseurl }}/assets/images/df661261-510a-4768-99e2-94784e5e5ccf.png "Screenshot of app that is going to be tested.")]({{ site.url }}{{ site.baseurl }}/assets/images/07236faa-24b7-4359-b267-e50fdcd85941.png)
  
 When a user enters a message and submits it, it will appear on the label bellow. Now that the basic outline is defined, lets have a look at how we can implement a UI test for the app.
  
@@ -31,7 +31,7 @@ If you created your Xamarin.Android and iOS projects with UI tests from the begi
  
 To start writing UI tests we first have to add a UI testing project to an existing project. Simply selecting the UI Test Project will create the Project in the solution. What is still left to do is associate the Project we want to test with the test project. Right click onto References, select the Android and/or iOS Project you want to test and simply add them:
  
-[![Adding iOS And Android App Projects to a UITestProject]({{ site.url }}{{ site.baseurl }}/images/6f91fb67-32ab-4c78-8557-66b76c1360da.png "Adding iOS And Android App Projects to a UITestProject")]({{ site.url }}{{ site.baseurl }}/images/faec5ff5-24bd-4f59-bce9-5d89353d9c9b.png)
+[![Adding iOS And Android App Projects to a UITestProject]({{ site.url }}{{ site.baseurl }}/assets/images/6f91fb67-32ab-4c78-8557-66b76c1360da.png "Adding iOS And Android App Projects to a UITestProject")]({{ site.url }}{{ site.baseurl }}/assets/images/faec5ff5-24bd-4f59-bce9-5d89353d9c9b.png)
  
 If you take the default UI testing project from Visual Studio you might want to check if you have the latest version for Xamarin Test Cloud. Update XTC to 1.1.0 or higher or else you will get an error when executing the tests which is asking for an API key.
  
@@ -47,7 +47,7 @@ To run UI tests on iOS there is an additional library required that is included 
  
 Next open the Properties of your iOS project and ensure that Debug build configuration under the *Build* tab defines the Symbol: ENABLE\_TEST\_CLOUD
  
-[![iOSProjectConfiguration]({{ site.url }}{{ site.baseurl }}/images/cad3a7d3-c0cf-4cdd-be52-e8649ee52382.png "iOSProjectConfiguration")]({{ site.url }}{{ site.baseurl }}/images/2b00af5c-7dee-4d57-a48f-cd92cc2b7b27.png)
+[![iOSProjectConfiguration]({{ site.url }}{{ site.baseurl }}/assets/images/cad3a7d3-c0cf-4cdd-be52-e8649ee52382.png "iOSProjectConfiguration")]({{ site.url }}{{ site.baseurl }}/assets/images/2b00af5c-7dee-4d57-a48f-cd92cc2b7b27.png)
  
 
 > Now this symbol must only be set for Debug builds. Trying to submit an app with the calabash package included will lead to a rejection when trying to submit the app to the store.
@@ -61,7 +61,7 @@ Enough chit chat, lets start writing those tests already. In the UI test project
  
 Now when we start the test for i.e. Android the App will be started and a Read Eval Print-Loop (Repl) console will open. One of the most used commands when using the Repl is <font face="Consolas">tree</font><font face="Century Gothic"> now if we execute the command the following output will be printed:</font>
  
-[![Shows the XTC Repl tree command when a UI has no Ids set.]({{ site.url }}{{ site.baseurl }}/images/75920c43-1890-4963-ba96-2c890dda9a2b.png "Shows the XTC Repl tree command when a UI has no Ids set.")]({{ site.url }}{{ site.baseurl }}/images/01d36e82-448c-4bb7-8884-4db909443aa3.png)
+[![Shows the XTC Repl tree command when a UI has no Ids set.]({{ site.url }}{{ site.baseurl }}/assets/images/75920c43-1890-4963-ba96-2c890dda9a2b.png "Shows the XTC Repl tree command when a UI has no Ids set.")]({{ site.url }}{{ site.baseurl }}/assets/images/01d36e82-448c-4bb7-8884-4db909443aa3.png)
  
 Now we can identify some of the controls, but it would be a lot better if we could just identify the elements over Ids. So lets just do that. Lets start by adding an AutomationId to all of our controls:
  
@@ -77,15 +77,15 @@ And the MainActivity.cs of the Android project:
  
 If we rerun the test again and execute the command <font face="Consolas">tree</font> we will now see the following output:
  
-[![XTC Repl showing Ids after executing the tree command]({{ site.url }}{{ site.baseurl }}/images/02247f17-af25-4cf6-8ee0-9e580123a4c2.png "XTC Repl showing Ids after executing the tree command")]({{ site.url }}{{ site.baseurl }}/images/079488cc-92ba-45cb-8e38-be27364115a5.png)
+[![XTC Repl showing Ids after executing the tree command]({{ site.url }}{{ site.baseurl }}/assets/images/02247f17-af25-4cf6-8ee0-9e580123a4c2.png "XTC Repl showing Ids after executing the tree command")]({{ site.url }}{{ site.baseurl }}/assets/images/079488cc-92ba-45cb-8e38-be27364115a5.png)
  
 Working against Ids is considered best practice. For instance if the app is required to be available in multiple languages the UI test will work when the device is set to a different locale and can be used to acquire screenshots
  
 In the Repl, we can now type in the following commands which will write a text in the Entry control, then submit the message and read out the text value of the label displaying the last submitted message:
  
-[![Repl with the entered commands.]({{ site.url }}{{ site.baseurl }}/images/ba4656c1-ceef-442f-aeee-16d1b16c83d2.png "Repl with the entered commands.")]({{ site.url }}{{ site.baseurl }}/images/fb368afa-b3d6-4e93-80ff-38c39633d054.png)
+[![Repl with the entered commands.]({{ site.url }}{{ site.baseurl }}/assets/images/ba4656c1-ceef-442f-aeee-16d1b16c83d2.png "Repl with the entered commands.")]({{ site.url }}{{ site.baseurl }}/assets/images/fb368afa-b3d6-4e93-80ff-38c39633d054.png)
  
-One can use the copy Repl command to copy all of the executed commands to the clipboard (the tree command will be discarded from copying). We can create a new test method and simply paste the copied commands from the Repl. Add an Assert for the Text input et voila, we have created our first basic UI test. ![Smile]({{ site.url }}{{ site.baseurl }}/images/cf0207a1-554c-4bdf-9759-72f89882467c.png)
+One can use the copy Repl command to copy all of the executed commands to the clipboard (the tree command will be discarded from copying). We can create a new test method and simply paste the copied commands from the Repl. Add an Assert for the Text input et voila, we have created our first basic UI test. ![Smile]({{ site.url }}{{ site.baseurl }}/assets/images/cf0207a1-554c-4bdf-9759-72f89882467c.png)
  
 <script src="https://gist.github.com/mallibone/087161f91e644874b92e5bb94bfcd626.js"></script>
  
@@ -101,7 +101,7 @@ Further when running your tests on the Xamarin Test Cloud the screen shot will a
  
 After creating the test we can run it on either Android or iOS. Per default the IDE settings are taken for executing the test so it is possible to select different emulators e.g. in Visual Studio you can select different Android Emulators to execute the tests on. If one hooks a device to the computer it is even possible to execute the test on the device. Again for all this there are no licenses required. The tests are base on NUnit, so as long as a NUnit Testrunner is installed the tests should just simply execute.
  
-[![Showing test run result with the app in the background. The resharper NUnit Testrunner was used to perform the testrun.]({{ site.url }}{{ site.baseurl }}/images/d447ca6a-b2e0-4f4b-8647-f404b02d2c95.png "Showing test run result with the app in the background. The resharper NUnit Testrunner was used to perform the testrun.")]({{ site.url }}{{ site.baseurl }}/images/83c89d7f-3080-4bbd-bbe7-b3a1b2425921.png)
+[![Showing test run result with the app in the background. The resharper NUnit Testrunner was used to perform the testrun.]({{ site.url }}{{ site.baseurl }}/assets/images/d447ca6a-b2e0-4f4b-8647-f404b02d2c95.png "Showing test run result with the app in the background. The resharper NUnit Testrunner was used to perform the testrun.")]({{ site.url }}{{ site.baseurl }}/assets/images/83c89d7f-3080-4bbd-bbe7-b3a1b2425921.png)
  
 
 > At the time of writing this blog post the iOS execution is only possible on a Mac.
@@ -113,7 +113,7 @@ A small side note regarding the execution time of the test. Due to the fact that
  
 As stated before it is possible to execute the tests locally. This could even be integrated into an automated build process. But there are some limitations when executing the tests locally. For instance if we decide to attach a device we have to maintain that device. Ever heard of bloated batteries, broken cables and the like? Well those things can/will happen, further it is not possible to parallelise the tests locally out of the box. Another aspect is easily adding devices to the test set, well all this is what is the great strength of running your tests on [Xamarin Test Cloud](https://www.xamarin.com/test-cloud "The Xamarin Testcloud website"). Running the tests on the Xamarin Test Cloud can easily be integrated into a build server and allows to easily run the app on multiple devices (in parallel) and even allows to parallelize the execution of tests on multiple devices of the same type. So in short Xamarin Test Cloud offers a wide collection of devices with different OS versions that do not have to maintained and choosing which devices to use during the tests can be easily configured and changed. The results are displayed on a dashboard:
  
-[![Screenshot showing the dashboard of XTC results for a testrun.]({{ site.url }}{{ site.baseurl }}/images/c289fae0-16d1-4ef5-9e8a-7cf9b18547f1.png "Screenshot showing the dashboard of XTC results for a testrun.")]({{ site.url }}{{ site.baseurl }}/images/fe95e17e-7255-41c6-9620-a5aef248fabb.png)
+[![Screenshot showing the dashboard of XTC results for a testrun.]({{ site.url }}{{ site.baseurl }}/assets/images/c289fae0-16d1-4ef5-9e8a-7cf9b18547f1.png "Screenshot showing the dashboard of XTC results for a testrun.")]({{ site.url }}{{ site.baseurl }}/assets/images/fe95e17e-7255-41c6-9620-a5aef248fabb.png)
  
 There is even an API that allows to control the execution and collect the results of a test run.
  

@@ -7,7 +7,7 @@ tags: ["Xamarin", "Visual Studio Team Services", "Azure DevOps"]
 slug: "building-xamarin-ios-library-wrappers-with-azure-devops-build-pipelines"
 ---
 
-[![Title Image showing a factory]({{ site.url }}{{ site.baseurl }}/images/a5096c71-06d8-49c8-8d28-75a3670514cf.jpg "Title Image showing a factory")]({{ site.url }}{{ site.baseurl }}/images/b459e128-139a-4c1f-8c8d-8b54905b7807.jpg)
+[![Title Image showing a factory]({{ site.url }}{{ site.baseurl }}/assets/images/a5096c71-06d8-49c8-8d28-75a3670514cf.jpg "Title Image showing a factory")]({{ site.url }}{{ site.baseurl }}/assets/images/b459e128-139a-4c1f-8c8d-8b54905b7807.jpg)
 
 Azure DevOps, formerly known as Visual Studio Team Services or VSTS for short, allows you to create automated release pipelines for all different kind of projects. One of the nice things is that you get free build time for opensource projects. So why not give it a spin and look if I can set up the build pipeline for my open source project [PureLayout.Net](https://github.com/mallibone/PureLayout.Net). The PureLayout.Net library is a wrapper of the [PureLayout](https://github.com/PureLayout/PureLayout) iOS library written in Objective-C which allows you to quickly layout your UI in code. So it differs a bit from your standard Xamarin project as it involves the step of building the project, creating the bindings to C# and then packaging all up in a NuGet package. Since this is an iOS-only project, we will, of course, have to build this on a Mac.
  
@@ -22,7 +22,7 @@ Good thing then that you Azure DevOps (could we all agree on ADO for this in the
  
 Luckily on [GitHub](https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/macos/macos-Readme.md) the agents OS and tools are all listed. So we see that there is the Xamarin Toolchain and XCode. Unfortunately, objective-sharpie is not installed and while this is a bit of set back what we see installed on the hosted macOS agent is [homebrew](https://brew.sh/).
  
-[![Homebrew]({{ site.url }}{{ site.baseurl }}/images/bfaaf2e8-7a90-40c1-b01e-fb9cc061ac3c.png "Homebrew")]({{ site.url }}{{ site.baseurl }}/images/30c3d6b3-65d2-48ca-b92a-2c5ce04f111a.png)
+[![Homebrew]({{ site.url }}{{ site.baseurl }}/assets/images/bfaaf2e8-7a90-40c1-b01e-fb9cc061ac3c.png "Homebrew")]({{ site.url }}{{ site.baseurl }}/assets/images/30c3d6b3-65d2-48ca-b92a-2c5ce04f111a.png)
  
 Homebrew is THE package manager for macOS, and it allows opensource projects to provide their tools as packages. A quick search on the interwebs shows there is a keg for objective-sharpie - yes they are going all the way on that brewing analogy. So we could install the tool while before we run the build. So let's go ahead, and set up the build with the hosted macOS agent from ADO.
  
@@ -57,7 +57,7 @@ The Makefile creates the native binary (and generate the required wrapping code)
 
 Next up is building the solution of the wrapper project, which can be done with an `MSBuild` step and defining the path to the `csproj` file: `PureLayout.Binding/PureLayout.Binding/PureLayout.Net.csproj` - there is even a handy repo browser. Under Configuration, you can set the build configuration to Release, but instead of hard coding it, consider using the environment variable `$(BuildConfiguration)`. More about environment variables in a bit.
 
-[![ADOVisualBuildConfiguration]({{ site.url }}{{ site.baseurl }}/images/35962c61-42fc-4d9b-a570-7a56843bf6ed.png "ADOVisualBuildConfiguration")]({{ site.url }}{{ site.baseurl }}/images/7c95f467-e9db-4559-a146-3bc469609b0b.png)
+[![ADOVisualBuildConfiguration]({{ site.url }}{{ site.baseurl }}/assets/images/35962c61-42fc-4d9b-a570-7a56843bf6ed.png "ADOVisualBuildConfiguration")]({{ site.url }}{{ site.baseurl }}/assets/images/7c95f467-e9db-4559-a146-3bc469609b0b.png)
 
 Next up is packing the compiled output into a NuGet package. By adding a NuGet build step, setting the Command to `pack`, the path to the `csproj` file and the output folder to the ADO environment variable `$(Build.ArtifactStagingDirectory)`.
 
@@ -73,7 +73,7 @@ YAML Ain't Markup Language or YAML for short is the file format supported by ADO
 
 When selecting the build agent, we can view the YAML generated out of the build steps defined via the web UI.
 
-[![YamlExtract]({{ site.url }}{{ site.baseurl }}/images/45d77f93-1a76-4718-be60-20a179f2ce22.png "YamlExtract")]({{ site.url }}{{ site.baseurl }}/images/43580eb9-221c-4bb7-b1e5-56b180ad5579.png)
+[![YamlExtract]({{ site.url }}{{ site.baseurl }}/assets/images/45d77f93-1a76-4718-be60-20a179f2ce22.png "YamlExtract")]({{ site.url }}{{ site.baseurl }}/assets/images/43580eb9-221c-4bb7-b1e5-56b180ad5579.png)
 
 In the projects root folder, we can now create a file, e.g. `builddefinition.yaml` which we can then check in to Git. Once the Git Repo contains the YAML build configuration, we can create a new pipeline based on the build config. Unfortunately, there is currently no way to use the visual designer and YAML configuration in the same pipeline.
 

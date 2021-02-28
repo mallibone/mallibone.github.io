@@ -52,7 +52,7 @@ sass:
 
 author:
   name: "Mark Allibone"
-  avatar: "/images/mark.png"
+  avatar: "/assets/images/mark.png"
   bio: "..." # Note: Markdown is allowed
   location: "Switzerland"
   links:
