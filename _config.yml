@@ -23,11 +23,11 @@ title: Mark's Blog
 subtitle: "Contents on this Site are considered to be mobile friendly"
 description: >- # this means to ignore newlines until "baseurl:"
   Contents on this Site are considered to be mobile friendly.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mallibone
 github_username:  mallibone
-repository: "mallibone/blog"
+repository: "mallibone/mallibone.github.io"
 author_profile: true
 
 markdown: kramdown
