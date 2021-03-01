@@ -8,6 +8,6 @@ Hey there my name is Mark. I'm a Microsoft MVP living in Switzerland and love to
 
 Views and opinions are my own.
 
-[![Title image Microfost MVP Badge](/images/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png#badge "Microsoft MVP Badge")](https://mvp.microsoft.com/en-us/PublicProfile/5002881)
+[![Title image Microfost MVP Badge](/assets/images/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png#badge "Microsoft MVP Badge")](https://mvp.microsoft.com/en-us/PublicProfile/5002881)
 
-[![Title image Planet Xamarin featured blog badge](/images/planetxamarin-featured-badge.png#badge "Planet Xamarin featured blog badg")](https://www.planetxamarin.com/)
+[![Title image Planet Xamarin featured blog badge](/assets/images/planetxamarin-featured-badge.png#badge "Planet Xamarin featured blog badg")](https://www.planetxamarin.com/)
