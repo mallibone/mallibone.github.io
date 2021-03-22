@@ -42,7 +42,8 @@ paginate_path: /page:num/
 future: false
 
 feed:
-  path: '/feed/feed.xml'
+  # path: '/feed/feed.xml'
+  path: '/feed.xml'
   excerpt_only: true
 
 #sass
