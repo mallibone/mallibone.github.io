@@ -2,7 +2,7 @@ name: Daily Build
 
 on:
   schedule:
-   - cron: '0/13 1 * * *'
+   - cron: '35 8 * * *'
 jobs:
   curl:
     runs-on: ubuntu-latest
@@ -10,5 +10,5 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: "-X POST -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -H 'Accept: application/vnd.github.ant-man-preview+json' https://api.github.com/repos/mallibone/mallibone.github.io/pages/builds"
+        args: "-X POST -H 'Authorization: token ${{ secrets.ACCESS_TOKEN }}' -H 'Accept: application/vnd.github.ant-man-preview+json' https://api.github.com/repos/mallibone/mallibone.github.io/pages/builds"
 
