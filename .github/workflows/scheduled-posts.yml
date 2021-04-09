@@ -1,4 +1,4 @@
-name: Daily Build
+name: Page Build
 
 on:
   schedule:
