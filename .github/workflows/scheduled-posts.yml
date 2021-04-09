@@ -2,7 +2,7 @@ name: Daily Build
 
 on:
   schedule:
-   - cron: '35 8 * * *'
+   - cron: '* 9 * * *'
 jobs:
   curl:
     runs-on: ubuntu-latest
