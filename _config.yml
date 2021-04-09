@@ -38,7 +38,7 @@ excerpt_separator: <!--more-->
 paginate: 7
 paginate_path: /page:num/
 
-# Do not generate posts/episodes in the future
+# Do not generate posts in the future
 future: false
 
 feed:
