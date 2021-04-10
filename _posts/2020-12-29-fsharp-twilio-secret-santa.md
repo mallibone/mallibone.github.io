@@ -34,31 +34,35 @@ I figured this would allow for some flexibility and allow me to share the code w
 Reading the input can be done with a few helpers from the .Net Framework living in the `System` and `System.IO` namespace.
 
 
-    type Person = { Name : string; MobileNumber : string }
-    
-    let parseToPerson (inputString:string) =
-        let csvItems = inputString.Split(";")
-        {Name = csvItems.[0]; MobileNumber = csvItems.[1]}
+```ocaml
+type Person = { Name : string; MobileNumber : string }
+
+let parseToPerson (inputString:string) =
+    let csvItems = inputString.Split(";")
+    {Name = csvItems.[0]; MobileNumber = csvItems.[1]}
+```
 
 
 Now next to the algorithm which would assign a Secret Santa. In our family, the rules are quite simple. Everyone is the Secret Santa of someone else, and no one is his or her own Secret Santa. The random assignments can are achieved by ordering the list with a random number and then zipping it to the order of the CSV file:
 
 
-    let random = Random()
-    let rec assignSecretSantas (people : Person seq) =
-        let secretSantasAssignments =
-            people
-            |> Seq.sortBy(fun x -> random.Next())
-        
-        let assignments = 
-            secretSantasAssignments
-            |> Seq.zip people
-            |> Seq.toList
-        
-        if assignments |> Seq.exists (fun a -> fst a = snd a) then
-            assignSecretSantas people
-        else
-            assignments
+```ocaml
+let random = Random()
+let rec assignSecretSantas (people : Person seq) =
+    let secretSantasAssignments =
+        people
+        |> Seq.sortBy(fun x -> random.Next())
+    
+    let assignments = 
+        secretSantasAssignments
+        |> Seq.zip people
+        |> Seq.toList
+    
+    if assignments |> Seq.exists (fun a -> fst a = snd a) then
+        assignSecretSantas people
+    else
+        assignments
+```
 
 
 Lastly, the assignment is checked that no one is assigned to themselves. Should there be an illegal assignment, the method will execute recursively.
@@ -68,10 +72,12 @@ Now to the part which was new to me. Send a text message from code. I have heard
 The first step is adding the [NuGet package](https://www.nuget.org/packages/Twilio). When developing this, I used an F# Script file. Why am I mentioning this, well because since [F# 5](https://docs.microsoft.com/en-us/dotnet/fsharp/whats-new/fsharp-50#package-references-in-f-scripts) adding/using a NuGet package in a script is as simple as adding the following lines to the top of your script file:
 
 
-    #r "nuget: Twilio"
-    
-    open Twilio
-    open Twilio.Rest.Api.V2010.Account
+```ocaml
+#r "nuget: Twilio"
+
+open Twilio
+open Twilio.Rest.Api.V2010.Account
+```
 
 
 But in the final version, I opted for a console app, which uses the standard `dotnet add package Twilio` to add the package to your project.
@@ -79,10 +85,12 @@ But in the final version, I opted for a console app, which uses the standard `do
 Before being able to send messages, the client needs to be initialized.
 
 
-    let initTwilio =
-        let accountSid = configuration.GetSection("Twilio").["Sid"]
-        let authToken = configuration.GetSection("Twilio").["AuthToken"]
-        TwilioClient.Init(accountSid, authToken)
+```ocaml
+let initTwilio =
+    let accountSid = configuration.GetSection("Twilio").["Sid"]
+    let authToken = configuration.GetSection("Twilio").["AuthToken"]
+    TwilioClient.Init(accountSid, authToken)
+```
 
 
 I must say the [docs](https://www.twilio.com/docs/sms) from Twilio were a great help here. Be sure to check them out if you are looking into more advanced scenarios.
@@ -90,32 +98,36 @@ I must say the [docs](https://www.twilio.com/docs/sms) from Twilio were a great 
 With the client initialized, I wrote the code to send the message:
 
 
-    let secretSantaPhoneNumber = "+15551236"
-    let secretSantaMessage = "Testmessage"
-    MessageResource.Create(
-        Twilio.Types.PhoneNumber(secretSantaPhoneNumber), 
-        body=secretSantaMessage, 
-        from=Twilio.Types.PhoneNumber("Twilio-Sender-Phone-Number"))
+```ocaml
+let secretSantaPhoneNumber = "+15551236"
+let secretSantaMessage = "Testmessage"
+MessageResource.Create(
+    Twilio.Types.PhoneNumber(secretSantaPhoneNumber), 
+    body=secretSantaMessage, 
+    from=Twilio.Types.PhoneNumber("Twilio-Sender-Phone-Number"))
+```
 
 
 Sending the message was a tad more complicated than initially expected. In comparison, everything worked with my phone number, which I had to provide when signing up. When trying to send a test message to someone else in the family, I got the error message to use a number that had previously been registered with Twilio's trial version. The fix was going for a paid account - but after that, I could implement the sending of Secret Santas:
 
 
-    let rec informSecretSantas dryRun (santas: (Person * Person) list) =
-        match santas with
-        | [] -> ()
-        | head::tail ->
-            let santaName = (fst head).Name
-            let giftReceiver = (snd head).Name
-            let phoneNumber = (fst head).MobileNumber
-            let body = $"The secret santa message"
-            if dryRun then
-                printfn "%s" body
-                printfn "Sending to %s" phoneNumber
-            else
-                let msg = MessageResource.Create(Twilio.Types.PhoneNumber(phoneNumber), body=body, from=Twilio.Types.PhoneNumber("Twilio-Phone-Number"))
-                printfn "%A" msg.Status
-            informSecretSantas dryRun tail
+```ocaml
+let rec informSecretSantas dryRun (santas: (Person * Person) list) =
+    match santas with
+    | [] -> ()
+    | head::tail ->
+        let santaName = (fst head).Name
+        let giftReceiver = (snd head).Name
+        let phoneNumber = (fst head).MobileNumber
+        let body = $"The secret santa message"
+        if dryRun then
+            printfn "%s" body
+            printfn "Sending to %s" phoneNumber
+        else
+            let msg = MessageResource.Create(Twilio.Types.PhoneNumber(phoneNumber), body=body, from=Twilio.Types.PhoneNumber("Twilio-Phone-Number"))
+            printfn "%A" msg.Status
+        informSecretSantas dryRun tail
+```
 
 
 And with that Christmas 2021 was saved. Now was this the best option? Well, there are quite a few services out there - some even support SMS and don't cost you a thing. But where would have the fun been in one of those? 🙃
