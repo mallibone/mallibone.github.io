@@ -22,11 +22,17 @@ dotnet new sts -n Xamarin.OIDC
 
 The solution is pretty much ready to go but let's have a look at the configuration of the identity server in `Config.cs` and make some adjustments in the `GetClients`  method. Based on the commented code we will want to set the following parameters:
 
-* asdf
+* ClientName: The name of your client of your choosing.
+* ClientId: The id of a client of your choosing.
+* 
 
 Which leaves us with the following final configuration:
 
 CCCODE
+
+Note that by setting `AllowOfflineAccess` to true, the user can request [refresh tokens](https://identityserver4.readthedocs.io/en/latest/topics/refresh_tokens.html) which means as long as the refresh token is valid the user will not have to login but can use the refresh token to request a new access token. In mobile apps this is generally the prefered behaviour since users usually have their personal device and therefore expect the app to "store" their login.
+
+We are now close to 
 
 The users are usually stored in a database which is a good thing because having an in memory storage usually causes quite some frustration when restarting a service. The quickstart solution we have configured comes with a SQLite LLLINK database per default. While you might outgrow the SQLite database at some point, if you only have a couple of users using it, it actually works very good. To use SQLite you will have to set the XXX to YYY of the ZZZZ or it will not be deployed during a build.
 

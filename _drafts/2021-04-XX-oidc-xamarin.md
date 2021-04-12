@@ -7,15 +7,18 @@ slug: "xamarin-oidc"
 ---
 Intro
 
+big picture (what happens during OIDC)
+
 Different auth flows -> why code
 
 Explaining the auth flow
 
-Getting the code
+Getting the code (Xamarin Essentials)
 
 Getting the token
 
 Refreshing a token
 
-Storing tokens in your app
+Storing tokens in your app (Xamarin.Essentials)
 
+Conclusion
