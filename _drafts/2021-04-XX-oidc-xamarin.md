@@ -46,7 +46,15 @@ With the parameters at hand we can create a new `OidcClient` and pass in the par
 
 CCCODE
 
-There is one additional parameter that was not mentioned before. The `Browser` parameter. XXX
+There is one additional parameter that was not mentioned before. The `Browser` parameter. Since the code flow will open a browser window for the user to log in, we can provide here the browser it will use. Luckely we can use the XXX from the Xamarin.Essentials LLLINK package which will provide exactly this feature. All that we have to do is embed it in an `IBrowser` interface provided by the OidcClient library:
+
+CCCODE
+
+After all this configuration we can start the authentication process by invoking the following line of code:
+
+CCCODE
+
+XXXX
 
 
 
