@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Authentication in Xamarin Forms with Open Identity Connect / OAuth2"
-date: 2021-04-01 15:03
+date: 2021-04-01 15:03:00
 tags: ["Xamarin", "Xamarin Forms", "OIDC", "OAuth2"]
 slug: "xamarin-oidc"
 ---
@@ -34,7 +34,7 @@ The goal of this step is to get a code which will allow us to request the identi
 | ------------ | ------------------------------------------------------------ |
 | Authority    | The URL of the Identity Server.                              |
 | ClientId     | The id of the client which is defined on the server.         |
-| Scope        | The scopes you want the tokens to have access to. The scopes are defined on the server. |
+| Scope        | The scopes you want the tokens to have access to. The scopes are defined on the server. The scopes `openid` and `profile` can be expected by default with OpenId. Another scope that is often used is the `offline`. The `offline` scope will request a refresh token from the backend. More on the refresh token in a bit. |
 | RedirectUrl  | The login form will forward to this URL once the login has been successfull. We will have a closer look at this parameter in a second. |
 | ClientSecret | A secret only known by the client and the server. I am listing this to tell you that you can add this but hard coding this value into your app will not make a real secret. Decompile an app and you will find it. If the server has set a secret (usually a string) then you can set it. But generally view this parameter as optional. The undefined value is `null` which is also the default value later on. |
 
@@ -46,15 +46,19 @@ With the parameters at hand we can create a new `OidcClient` and pass in the par
 
 CCCODE
 
-There is one additional parameter that was not mentioned before. The `Browser` parameter. Since the code flow will open a browser window for the user to log in, we can provide here the browser it will use. Luckely we can use the XXX from the Xamarin.Essentials LLLINK package which will provide exactly this feature. All that we have to do is embed it in an `IBrowser` interface provided by the OidcClient library:
+There is one additional parameter that was not mentioned before. The `Browser` parameter. Since the code flow will open a browser window for the user to log in, we can provide here the browser it will use. Luckely we can use the Web Authenticator from the [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/) package which will provide exactly this feature. There are some [getting started steps](https://docs.microsoft.com/en-us/xamarin/essentials/web-authenticator?tabs=android) required which are explained in the official microsoft docs. To inoke the All that we have to do is embed it in an `IBrowser` interface provided by the OidcClient library:
 
 CCCODE
+
+Our code will be called via the `InvokeAsync` method. Here we use the Web Authenticator to open a browser, as a response we will get a `WebAuthenticatorResult`. The result will then be parsed into a string which we will use to request the access, identity and refresh tokens. The string is then added to the browser result. If anything goes wrong, we will return an error in the same object.
 
 After all this configuration we can start the authentication process by invoking the following line of code:
 
 CCCODE
 
-XXXX
+By invoking that one line, our browser object `WebAuthenticatorBrowser` is called. Should the browser return a result the OidcClient will automatically request the token from the server. We can check if there have been any errors while requesting the tokens i.e. if there was an exception in our browser code, it would be shown here.
+
+XXX
 
 
 
