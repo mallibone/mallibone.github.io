@@ -58,24 +58,40 @@ CCCODE
 
 By invoking that one line, our browser object `WebAuthenticatorBrowser` is called. Should the browser return a result the OidcClient will automatically request the token from the server. We can check if there have been any errors while requesting the tokens i.e. if there was an exception in our browser code, it would be shown here.
 
-XXX
+## Making authenticated requests
+
+The token can be added to a `HttpClient` header:
+
+CCODE
+
+Every call using this HttpClient will now provide the server with an access token. Should you want to remove the authentication header from your client you can simply set it to `null`.
+
+CCCODE
+
+When the value is `null` the header will no longer be added to a request.
+
+## Refreshing the access token
+
+An access token usually has a short time where it is valid. How long depends on what is set on the server. But we know when it will no longer be valid either by parsing the JWT Token LLLINK or we get a handy property XXXX on the response. The default with the identity server is XXX minutes. This would imply that the user will have to go through the authentication every XXX minutes. Do you remember a mobile app demanding this of you? Probably not. And if there were, you would probably be looking for an alternative. Luckely there is a way to prevent your user from having to provide the credentials over and over again. If configured on the server you can request a refresh token by adding the `offline` scope.
+
+CCCODE
+
+Then you can request a new access token from the server without asking the user for any information:
+
+CCCODE
+
+When requesting a new access token, you will also receive a new refresh token and identity token. The lifetime of a refresh token is defined (again) on the server. The default of Identity Server is XXX days. So if the user uses the app regularly no login is required. However should your app not receive the love it deserves the user may be confronted every time with a login mask.
+
+## Storing tokens
+
+So far we have received tokens after the user has logged in. We also saw how tokens can be renewed without the user needing to provide any additional information. A good thing with this token based approach is that your app will never be responsible for handling the users credentials. But it can make sense to store the tokens to ensure they can be used after restarting the app. Since tokens impersonate a user we should consider storing them in a secure location. Again the Xamarin.Essentials library will be of great help. Specifically the [Secure Storage](https://docs.microsoft.com/en-us/xamarin/essentials/secure-storage?tabs=android) functionality of the lib. This will ensure that your tokens will be stored encrypted or depending on phone and platform on a secure storage module.
 
 
 
-Intro
+## Recap
 
-big picture (what happens during OIDC)
+If you made it so far I hope that authentication has lost some of it's mistery. The process may seem a bit complex at first, but it is there to ensure that the credentials of our users do not fall into the wrong hands. We also saw that with OidcClient and Xamarin.Essentials there are libraries ready to use and help to implement the Open Id / OAuth2 standard in your Xamarin app.
 
-Different auth flows -> why code
+You can find a sample app implementing the described steps above on GitHub LLLINK.
 
-Explaining the auth flow
-
-Getting the code (Xamarin Essentials)
-
-Getting the token
-
-Refreshing a token
-
-Storing tokens in your app (Xamarin.Essentials)
-
-Conclusion
+HTH
