@@ -22,7 +22,7 @@ And in the app the first three steps look something like this.
 
 GIFFFFF
 
-You might have noticed that the user actually authenticates using a browser window. This is by intent. The code flow does not allow the user to login using a native view in the app. The reason being that this flow ensures that the username and password are never seen by the client (except the browser which is part of the OS system - aka we trust it). You could enable using a native login view with the XXX flow. But this is also an attack vector. If someone makes a fraud duplicate of your application and tricking users to enter their credentials. The fraudulent app could store those credentials inbetween. You just got to enjoy those tin-foil-hat moments when doing security right? 🙃 In other words using the code flow does not give an attacker that opportunity and therefore is the recommended option.
+You might have noticed that the user actually authenticates using a browser window. This is by intent. The code flow does not allow the user to login using a native view in the app. The reason being that this flow ensures that the username and password are never seen by the client (except the browser which is part of the OS system - aka we trust it). You could enable using a native login view with the Resource Owner Password Credentials (ROPC) flow. But this is also an attack vector. If someone makes a fraud duplicate of your application and tricking users to enter their credentials. The fraudulent app could store those credentials inbetween. You just got to enjoy those tin-foil-hat moments when doing security right? 🙃 In other words using the code flow does not give an attacker that opportunity and therefore is the recommended option for mobile clients.
 
 With that brief introduction to the authentication flow and why the code flow is recommended let's start assembling the pieces of code which will bring the chart to life.
 
@@ -92,6 +92,6 @@ So far we have received tokens after the user has logged in. We also saw how tok
 
 If you made it so far I hope that authentication has lost some of it's mistery. The process may seem a bit complex at first, but it is there to ensure that the credentials of our users do not fall into the wrong hands. We also saw that with OidcClient and Xamarin.Essentials there are libraries ready to use and help to implement the Open Id / OAuth2 standard in your Xamarin app.
 
-You can find a sample app implementing the described steps above on GitHub LLLINK.
+You can find a sample app implementing the described steps above on [GitHub](https://github.com/mallibone/XamarinIdentity101/tree/main/Mobile).
 
 HTH
