@@ -7,7 +7,7 @@ slug: "xamarin-oidc"
 ---
 Authenticating users in a Xamarin Forms app using the OpenID/OAuth standard... When overhearing people talking about authentication it almost feels like there is something mistacal to it. A secret club with handshakes unkown to the outstanders. At least that was how I rememberd it when I started looking into adding an Authenticaiton layer to an app I was working on. But as with many things, the more time you invest the more mysteries suddenly seem to make sense and before you know it, you are cruising through the authentication related tasks. Now authentication is not a new concept but it is one that you might have heard is best to follow a standard. Use a proven library and not implement your own. And we will follow those words by using OpenID/OAuth2 for authentication in a mobile Xamarin Forms application.
 
-OAuth2 is a standard LLLINK that provides different flows how the user can authenticate himself. The recommended flow when using a mobile app is the code flow. Which looks like this if we plot it on a diagram:
+OAuth2 is a [standard](https://oauth.net/2/) that provides different flows how the user can authenticate himself. The recommended flow when using a mobile app is the code flow. Which looks like this if we plot it on a diagram:
 
 IIIMAGE
 
@@ -28,7 +28,7 @@ With that brief introduction to the authentication flow and why the code flow is
 
 ## Authenticating the user
 
-The goal of this step is to get a code which will allow us to request the identity server for a token. Understanding the OAuth2 specs to build such a client from scratch is no small feat. Luckily Dominick Bayer LLINK and Brock Allen LLLINK have done a lot of heavy lifting for us on the client side by providing us with the IdentityModel.OidcClient library. The library provides the `OidcClient` class which will greatly simplify the calls to authenticate our user. We will require a few parameters to make the request:
+The goal of this step is to get a code which will allow us to request the identity server for a token. Understanding the OAuth2 specs to build such a client from scratch is no small feat. Luckily [Dominick Bayer](https://leastprivilege.com/) and [Brock Allen](https://brockallen.com/) have done a lot of heavy lifting for us on the client side by providing us with the IdentityModel.OidcClient library. The library provides the `OidcClient` class which will greatly simplify the calls to authenticate our user. We will require a few parameters to make the request:
 
 | Parameter    | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
@@ -72,7 +72,7 @@ When the value is `null` the header will no longer be added to a request.
 
 ## Refreshing the access token
 
-An access token usually has a short time where it is valid. How long depends on what is set on the server. But we know when it will no longer be valid either by parsing the JWT Token LLLINK or we get a handy property XXXX on the response. The default with the identity server is XXX minutes. This would imply that the user will have to go through the authentication every XXX minutes. Do you remember a mobile app demanding this of you? Probably not. And if there were, you would probably be looking for an alternative. Luckely there is a way to prevent your user from having to provide the credentials over and over again. If configured on the server you can request a refresh token by adding the `offline` scope.
+An access token usually has a short time where it is valid. How long depends on what is set on the server. But we know when it will no longer be valid either by parsing the [JWT Token](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Tokens.Jwt.JwtSecurityToken?view=azure-dotnet&viewFallbackFrom=netstandard-2.0) or we get a handy property `AccessTokenExpiration` on the response. The default with the identity server is 60 minutes. This would imply that the user will have to go through the authentication every hour. Do you remember a mobile app demanding this of you? Probably not. And if there were, you would probably be looking for an alternative. Luckely there is a way to prevent your user from having to provide the credentials over and over again. If configured on the server you can request a refresh token by adding the `offline` scope.
 
 CCCODE
 
@@ -80,7 +80,7 @@ Then you can request a new access token from the server without asking the user 
 
 CCCODE
 
-When requesting a new access token, you will also receive a new refresh token and identity token. The lifetime of a refresh token is defined (again) on the server. The default of Identity Server is XXX days. So if the user uses the app regularly no login is required. However should your app not receive the love it deserves the user may be confronted every time with a login mask.
+When requesting a new access token, you will also receive a new refresh token and identity token. The lifetime of a refresh token is defined (again) on the server. The default of Identity Server is 30 days. So if the user uses the app regularly no login is required. However should your app not receive the love it deserves the user may be confronted every time with a login mask.
 
 ## Storing tokens
 
