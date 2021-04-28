@@ -10,7 +10,7 @@ Authenticating users in a Xamarin Forms app using the OpenID/OAuth standard\... 
 
 OAuth2 is a [standard](https://oauth.net/2/) that provides different flows of how the user can authenticate himself. The recommended flow when using a mobile app is the code flow. Which looks like this if we plot it on a diagram:
 
-IIImage
+![Photograph showing christmas gifts]({{ site.url }}{{ site.baseurl }}/assets/images/202104_OIDC_Flows.png "OIDC Flow")
 
 You can see that the authentication is ruffly split up into four steps.
 
@@ -115,7 +115,9 @@ OidcClient oidcClient = CreateOidcClient();
 LoginResult loginResult = await oidcClient.LoginAsync(new LoginRequest());
 ```
 
-Starting the authentication will invoke our browser implementation `WebAuthenticatorBrowser`. Should the browser return a result, the OidcClient will automatically request the token from the server. If, however, there was an error at any stage, the result would provide us with the information. I.e. an exception occurred while executing the browser code.
+Starting the authentication will invoke our browser implementation `WebAuthenticatorBrowser`. Should the browser return a result, the OidcClient will automatically request the tokens from the server. If, however, there was an error at any stage, the result would provide us with the information. I.e. an exception occurred while executing the browser code.
+
+The tokens returned from the server are the access token, an id token and if requested a refresh token. The id token is a JSON Web Token ([JWT](https://en.wikipedia.org/wiki/JSON_Web_Token)) and can be viewed as the response from the identity server. You can view the content of the token using a JWT parser like [this](https://jwt.ms/) one. It is important to note that while the access token is also a JWT token and can be parsed the OAuth spec does not define it as so. It is better to not depend on information in the access token as a client but to better read it from the id token, which you can and should view as the response of the identity server. For example the id token will contain the information when the access token expires.
 
 ## Making authenticated requests
 
@@ -138,7 +140,7 @@ Setting the value to `null` will also remove it from the request header of the  
 
 ## Refreshing the access token
 
-An access token usually is only valid for a short time. How long depends on what on the server setting. The client receives the date and time when the access token expires. Either by parsing the [JWT Token](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Tokens.Jwt.JwtSecurityToken?view=azure-dotnet&viewFallbackFrom=netstandard-2.0), or we get a handy property `AccessTokenExpiration` on the response. The default with the identity server is 60 minutes. This would imply that the user will have to go through the authentication every hour. Do you remember a mobile app demanding this of you? Probably not. And if there were, you would probably be looking for an alternative. Luckily there is a way to prevent your user from having to provide the credentials over and over again. You can request a refresh token by adding the `offline` scope (this has to be allowed by the server). Then you can request a new access token from the server without asking the user for any information:
+An access token usually is only valid for a short time. How long depends on what on the server setting. The client receives the date and time when the access token expires. Either by parsing the ID Token (which is a [JWT Token](https://docs.microsoft.com/en-us/dotnet/api/System.IdentityModel.Tokens.Jwt.JwtSecurityToken?view=azure-dotnet&viewFallbackFrom=netstandard-2.0)), or we get a handy property `AccessTokenExpiration` on the response. The default with the identity server is 60 minutes. This would imply that the user will have to go through the authentication every hour. Do you remember a mobile app demanding this of you? Probably not. And if there were, you would probably be looking for an alternative. Luckily there is a way to prevent your user from having to provide the credentials over and over again. You can request a refresh token by adding the `offline` scope (this has to be allowed by the server). Then you can request a new access token from the server without asking the user for any information:
 
 ```c#
 OidcClient oidcClient = CreateOidcClient();
