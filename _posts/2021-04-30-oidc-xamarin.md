@@ -1,12 +1,13 @@
 ---
 layout: single
-title: "Authentication in Xamarin Forms with Open Identity Connect and OAuth"
-date: 2021-04-30 08:00:00
-tags: ["Xamarin", "Xamarin Forms", "OIDC", "OAuth2"]
+title: "Authentication in Xamarin Forms using Open Identity Connect and OAuth"
+date: 2021-04-30 12:03
+tags: ["Xamarin", "XamarinForms", "OIDC"]
 slug: "xamarin-oidc"
 ---
+Let us talk about authenticating users in a Xamarin Forms app using OpenID and OAuth. When overhearing people talking about authentication, it almost feels like there is something mystical to it, almost like a secret club with handshakes unknown to outsiders. At least, that was how I remember it when I started looking into adding an authentication layer to an app I was working on at the time. But as with many things, the more time you invest, the more mysteries suddenly seem to make sense, and before you know it, you are cruising through the authentication-related tasks. Now authentication is not a new concept, but it is one that you might have heard is best to follow a standard. Use a proven library and not implement your own. And we will follow those words using OpenID/OAuth2 for authentication in a mobile Xamarin Forms application.
 
-Authenticating users in a Xamarin Forms app using the OpenID/OAuth standard\... When overhearing people talking about authentication, it almost feels like there is something mystical to it, almost like a secret club with handshakes unknown to outsiders. At least, that was how I remember it when I started looking into adding an authentication layer to an app I was working on at the time. But as with many things, the more time you invest, the more mysteries suddenly seem to make sense, and before you know it, you are cruising through the authentication-related tasks. Now authentication is not a new concept, but it is one that you might have heard is best to follow a standard. Use a proven library and not implement your own. And we will follow those words using OpenID/OAuth2 for authentication in a mobile Xamarin Forms application.
+<!--more-->
 
 OAuth2 is a [standard](https://oauth.net/2/) that provides different flows of how the user can authenticate himself. The recommended flow when using a mobile app is the code flow. Which looks like this if we plot it on a diagram:
 
