@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Setting up an Idenity Server for your Xamarin app"
-date: 2021-05-11 13:03
+date: 2021-05-11 12:03
 tags: ["Xamarin", "Xamarin.Forms", "IdentityServer", "OIDC", "Authentication"]
 slug: "xamarin-identity-server"
 ---
