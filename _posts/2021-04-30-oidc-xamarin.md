@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Authentication in Xamarin Forms with Open Identity Connect / OAuth2"
-date: 2021-04-30 15:03:00
+date: 2021-04-30 15:00:00
 tags: ["Xamarin", "Xamarin Forms", "OIDC", "OAuth2"]
 slug: "xamarin-oidc"
 ---
