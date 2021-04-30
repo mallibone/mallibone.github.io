@@ -10,7 +10,7 @@ Authenticating users in a Xamarin Forms app using the OpenID/OAuth standard\... 
 
 OAuth2 is a [standard](https://oauth.net/2/) that provides different flows of how the user can authenticate himself. The recommended flow when using a mobile app is the code flow. Which looks like this if we plot it on a diagram:
 
-![Photograph showing christmas gifts]({{ site.url }}{{ site.baseurl }}/assets/images/202104_OIDC_Flows.png "OIDC Flow")
+![OAuth Code Flow Diagram]({{ site.url }}{{ site.baseurl }}/assets/images/202104_OIDC_Flows.png "OIDC Flow")
 
 You can see that the authentication is ruffly split up into four steps.
 
@@ -24,7 +24,7 @@ You can see that the authentication is ruffly split up into four steps.
 
 And in the app, the first three steps look something like this.
 
-![Photograph showing christmas gifts]({{ site.url }}{{ site.baseurl }}/assets/images/202104_XamarinOIDC_01_Screenflow.gif "OIDC Flow")
+![Animated screen flow of the login process in the Xamarin Forms app.]({{ site.url }}{{ site.baseurl }}/assets/images/202104_XamarinOIDC_01_Screenflow.gif "OIDC Flow")
 
 You might have noticed that the user authenticates using a browser window. This is by intent. The code flow does not allow the user to log in using a native view in the app. The reason being that this flow ensures that the username and password are never seen by the client (except the browser, which is part of the OS system - aka we trust it). You could enable using a native login view with the Resource Owner Password Credentials (ROPC) flow. But this is also an attack vector. Suppose someone makes a fraud duplicate of your application and tricking users into entering their credentials. The fraudulent app could store those credentials in-between. You just got to enjoy those tin-foil-hat moments when doing security. 🙃 In other words, using the code flow does not give an attacker that opportunity and therefore is the recommended option for mobile clients.
 
