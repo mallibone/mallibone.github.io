@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Marks Blog
+title: Mark&#39;s Blog
 # email: your-email@example.com
 subtitle: "Contents on this Site are considered to be mobile friendly"
 description: >- # this means to ignore newlines until "baseurl:"
