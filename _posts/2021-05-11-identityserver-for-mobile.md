@@ -10,6 +10,8 @@ slug: "xamarin-identity-server"
 
 Have you ever wondered how hard it would be to set up a minimal viable authentication server that uses industry standards and usable from your mobile Xamarin application? Well, I have, and I believe in having found a solution that can be a great starting point and will allow you to expand the answer should you ever need to do so.
 
+<!--more-->
+
 One common industry standard is [OpenID](https://openid.net/developers/specs/) / [OAuth2](https://tools.ietf.org/html/rfc6749), which provides a standardized authentication mechanism that allows user identification securely and reliably. You can think of the identity service as a web server that identifies a user and provides the client (website/mobile app, etc.) to authenticate itself with another application server that said client uses. 
 
 ![OAuth Code Flow Diagram]({{ site.url }}{{ site.baseurl }}/assets/images/202104_OIDC_Flows.png "OIDC Flow")
