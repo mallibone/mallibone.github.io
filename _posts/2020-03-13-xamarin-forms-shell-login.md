@@ -11,7 +11,9 @@ slug: "xamarin-forms-shell-login"
 
 Since the release of [Xamarin Forms 4.5](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/release-notes/4.5/4.5.0), Shell now supports [modal navigation](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/configuration#set-page-presentation-mode). Since one of my highest ranking blog posts is [how to create a login page with Xamarin Forms](https://www.mallibone.com/post/creating-a-login-screen-with-xamarinforms). I thought it was time to revisit the topic and look at how to implement a login page using the Shell.
 
-So what is so special about a login page? Well, to state the obvious, the user should only be able to exit it after entering a correct login. Further, the user should not be able to leave the login page, i.e. navigate back to a previous page. And finally once successfully authenticated, the user should not find the login page when navigating back.
+So what is so special about a login page? Well, to state the obvious, the user should only be able to exit it after entering a correct login. Further, the user should not be able to leave the login page, i.e. navigate back to a previous page. And finally once successfully authenticated, the user should not find the login page when navigating back. If you are looking for a authentication scenario with a backend check out this [blogpost](https://mallibone.com/post/xamarin-oidc).
+
+<!--more-->
 
 So let's see how we can capture the user on a page and then ensure that this page is no longer on the navigation stack while using Shell. So let's get going with the UI flow of a possible login experience. Our app has the following screen flow:
 

@@ -43,7 +43,7 @@ This step aims to get a code that will allow us to request a token from the iden
 | RedirectUrl  | The login form will forward to this URL once the login has been successful. We will have a closer look at this parameter in a second. |
 | ClientSecret | A secret that the client and server share. Since storing secrets in a mobile app are usually discovered relatively easy after unzipping and decompiling them. Regard this parameter as optional (no additional security benefits) for mobile apps. If, however, the server has defined a secret (usually a string), you have to set it on the client. The undefined value is `null`, which is also the default value and used later on. |
 
-The parameters described above usually differ from app to app. They probably will even vary from environment to environment, i.e. staging vs production. The parameters get defined on the Identity Server, e.g. the backend and have to be inserted accordingly on the client.
+The parameters described above usually differ from app to app. They probably will even vary from environment to environment, i.e. staging vs production. The parameters get defined on the Identity Server, e.g. the backend and have to be inserted accordingly on the client. See my [next blogpost](https://mallibone.com/post/xamarin-identity-server) on how to setup an IdentityServer for your Xamarin.Forms project.
 
 > Authority: This URL points to the root URL of the identity server. The OidcClient library knows by a convention which endpoints it has to call for the authentication and requesting the tokens later on by calling the https://path-to-the-identity-server.ch/.well-known/openid-configuration.
 
