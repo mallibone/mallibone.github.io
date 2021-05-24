@@ -10,9 +10,15 @@ Who would have thought that logging out in your Xamarin.Forms app when using Ope
 
 But back to logging out - first of all let's have a look at what makes a logged in user differ from one that is not. It is actually not that much. Basically it comes down to having a access token or not. So in theory if we simply remove the access token from the app and from the HttpClient header we can no longer make any requests to an API without receiving a [401](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_client_errors). We could implement the logout action as follows:
 
-CCCODE
+```c#
+private async void Logout()
+{
+    _credentials = null;
+    // ...
+}
+```
 
-With that we can no longer call a API and the user would have to log in again. But then something interesting happens.
+With that we can no longer have a valid token to call any API. The user is forced to log in again. But when open the browser for logging in somethign strange happens:
 
 GGGIFFF
 
@@ -22,7 +28,14 @@ It is recommended that mobile apps use the OAuth2 code flow. The code flow will 
 
 In short additionally to deleting the token and cleaning up the request headers, we will also have to logout via the browser. We can do this in a similar fashion as we did the login using the [OIDC client](https://www.nuget.org/packages/IdentityModel.OidcClient/) library.
 
-CCCODE
+```c#
+public async Task<LogoutResult> Logout(string? identityToken)
+{
+        OidcClient oidcClient = CreateOidcClient();
+        LogoutResult logoutResult = await oidcClient.LogoutAsync();
+        return logoutResult;
+}
+```
 
 When we invoke this code on logout the user will then be requested to confirm the logout in the browser and he also has to manually close the browser window.
 
@@ -78,28 +91,67 @@ With these adoptions to the IdentityServer we can now focus on the client.
 
 ## Configuring the client
 
-XXX
+The OIDC Client provides a method XXX which takes all steps necessary. Since we are using the code flow the logout will happen in the browser of the mobile client. We can reuse the browser implementation used for the login LLLINK. The one thing we want to add to our configuraiton is the `PostLogoutRedirectUri` in the client configuration:
 
-We can provide the `PostLogoutRedirectUri` in the client configuration:
+```c#
+var options = new OidcClientOptions
+{
+  // More options ...
+  PostLogoutRedirectUri = "oidcxamarin101:/signout-callback-oidc",
+  Browser = new WebAuthenticatorBrowser()
+};
+```
 
-CCCODE
+Note this is the same URL we already specified on the server. Also note that this will be a deep link into your app. Since the base of the URL stays the same we will only have to register the callback on iOS in the info.plist file:
 
-This also has to be configured in the servers configuration file:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+  <dict>
+  <!-- Other Plist entries -->
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLName</key>
+        <string>authentication</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <!-- login redirect -->
+          <string>oidcxamarin101:/authenticated</string>
+          <!-- logout redirect -->
+          <string>oidcxamarin101:/signout-callback-oidc</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+      </dict>
+    </array>
+  </dict>
+</plist>
+```
 
-CCCODE
+We could leave it at this. But the user will always be prompted in the webview if the logout was intended. This may be exactly what you are looking for. However, should you be looking for a way to logout when tapping logout, we still have to forward the ID Token with the logout request:
 
-And additionally on the server we will want to enable the
+```c#
+public async Task<LogoutResult> Logout(string? identityToken)
+{
+        OidcClient oidcClient = CreateOidcClient();
+        LogoutResult logoutResult = await oidcClient.LogoutAsync(new LogoutRequest{IdTokenHint = identityToken});
+        return logoutResult;
+}
+```
+
+When the user now logs out and then tries to login again. Everything works as you might have expected.
+
+GGGGIFFFF
 
 
 
+## Aftermath
 
+While the code provides additional security and decreases the number of attack vectors, it also provides a few interesting considrations. For one not only your app will remember the authentication but also the browser used on the system the authentication happened. This is also why we will want to open a browser when logging out, because it is the system browser which also has to delete the session or we will see that nice effect from the beginning of the blog post.
 
-Intro
+Remember to still delete the tokens you stored locally since they might still be valid.
 
-Logout by deleting tokens
+You can find a sample application with all the code on GitHub.
 
-Logout via Browser
-
-Making it pretty
-
-Conclusion
+HTH
