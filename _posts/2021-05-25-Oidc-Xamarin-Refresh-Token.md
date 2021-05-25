@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Using OIDC client in Xamarin Forms to refresh your access token"
-date: 2021-05-25 11:10:00
+date: 2021-05-25 08:10:00
 tags: ["Xamarin", "Xamarin Forms", "Authentication", "OIDC", "OAuth"]
 slug: "xamarin-oidc-refresh"
 ---
