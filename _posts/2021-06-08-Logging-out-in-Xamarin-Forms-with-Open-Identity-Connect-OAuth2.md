@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Logging out in Xamarin Forms with Open Identity Connect / OAuth2"
-date: 2021-06-08 11:03:00
+date: 2021-06-08 10:03:00
 tags: ["Xamarin", "Xamarin Forms", "OIDC", "OIDC Client", "OAuth", "OAuth2"]
 slug: "xamarin-oidc"
 ---
