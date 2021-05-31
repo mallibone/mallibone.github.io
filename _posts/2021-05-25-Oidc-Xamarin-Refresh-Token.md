@@ -15,7 +15,7 @@ So you decided to take use OpenIdentity Connect / OAuth for authenticating your 
 
 ## The backstory
 
-I covered how to integrate the [OIDC client](https://github.com/IdentityModel/IdentityModel.OidcClient) into a Xamarin Forms app in a former [post](https://mallibone/post/xamarin-oidc). As described, when the user authenticates him- or herself, we pass along the scopes we require. If we add the `offline_access` scope to the request and the server allows the scope request, we will receive a refresh token. You can configure on the IdentityServer how long a refresh token is valid and if it is enabled.
+I covered how to integrate the [OIDC client](https://github.com/IdentityModel/IdentityModel.OidcClient) into a Xamarin Forms app in a former [post](https://mallibone.com/post/xamarin-oidc). As described, when the user authenticates him- or herself, we pass along the scopes we require. If we add the `offline_access` scope to the request and the server allows the scope request, we will receive a refresh token. You can configure on the IdentityServer how long a refresh token is valid and if it is enabled.
 
 ```c#
 AllowOfflineAccess = true, // allow refresh tokens
