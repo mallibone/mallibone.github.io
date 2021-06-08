@@ -3,7 +3,7 @@ layout: single
 title: "Logging out in Xamarin Forms with Open Identity Connect / OAuth2"
 date: 2021-06-08 10:03:00
 tags: ["Xamarin", "Xamarin Forms", "OIDC", "OIDC Client", "OAuth", "OAuth2"]
-slug: "xamarin-oidc"
+slug: "xamarin-oidc-logout"
 ---
 
 Who would have thought that logging out of your Xamarin Forms app using Open Identity Connect (OIDC) and OAuth would deserve its own blog post? But it just so happens that it took me quite a bit longer than I initially thought it would take. So if you are interested in OAuth and Xamarin, you might also be interested in my blog posts on [getting started](https://mallibone.com/post/xamarin-oidc), [setting up an IdentityServer](https://mallibone.com/post/xamarin-identity-server) for your mobile app and [refreshing your tokens](https://mallibone.com/post/xamarin-oidc-refresh).
