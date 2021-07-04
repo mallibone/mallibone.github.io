@@ -6,6 +6,8 @@ tags: ["blogging", "markdown"]
 slug: "typora"
 ---
 
+![Typora screenshot with this post open.]({{ site.url }}{{ site.baseurl }}/assets/images/2021-07-06-Typora.png "Typora screenshot with this post open.")
+
 I have been using [Typora](https://typora.io/) now for a few years to edit all my markdown documents. And since I have now migrated my blog over to [GitHub pages](https://mallibone.com/post/miniblog-to-jekyll), it has become a tool I use even more. There are many favourite markdown editors out there, but this one is mine. So let me show you a few highlights.
 
 <!--more-->
