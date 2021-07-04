@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Typora - a WYSIWYG markdown editor"
-date: 2021-07-03 10:03:00
+date: 2021-07-06 10:03:00
 tags: ["blogging", "markdown"]
 slug: "typora"
 ---
