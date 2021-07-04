@@ -20,6 +20,10 @@ Alias
 
 
 
+Slow startup times -> Use fake cli (compare startup times)
+
+
+
 Looking back
 
 
