@@ -18,49 +18,11 @@ So if we would have a simple script that greets you according to the time of day
 
 CCCCODE
 
-You see that we are stopping the execution time for this script by using `#time`. When we execute this script I get the following result on my console:
-
-CCCODE
-
-But that is only half of the truth. It takes some time to spin up FSI. The spin up time is not included in the previous stats. But there  we can use the command line to help us out here. For Mac/Linux we can use the `time` tool:
-
-```bash
-time dotnet fsi greetings.fsx
-```
-
-And now we get the actual execution time:
-
-CCCODE
-
-Now we could put on our science hat and put this in a loop and then do some averaging etc. But nothing changes the fact that it seems to take over one second to execute this simple script. And most of the time seems to be due to FSI spinning up.
-
-> FSI is a great tool. While it does allow you to use it for running scripts it is geared towards supporting developers as a Read Eval Print Loop (REPL) tool. And as a REPL the startup costs only hit you once, think of it as your Integrated Development Environment (IDE) starting up - it takes some time. But once the IDE is up and running you get a great productivity boost. And same goes for FSI, it is optimised for a different use case.
-
-Now XXXX
-
-For demonstration purpose I will reuse the script LLLINK I in my previous post that cleans up the `bin` and `obj` folders within a the subdirectories of a given path.
-
-
-
-PATH
-
-
-
-Alias
-
-
-
-Slow startup times -> Use fake cli (compare startup times)
-
-
-
-Looking back
-
 
 
 ## Less typing
 
-With a working script we can now save the file and invoke it from the command line. Only problem is, we kind of have to remember where the script is. One possible solution is putting it into a folder in our users root directory. Let's say we put all our scripts into the `scripts` folder we could then invoke your script like this:
+Once a working script we can now save the file and invoke it from the command line. Only problem is, we kind of have to remember where the script is. One possible solution is putting it into a folder in our users root directory. Let's say we put all our scripts into the `scripts` folder we could then invoke your script like this:
 
 ```bash
 dotnet fsi ~/scripts/cleanBuildDirs.fsx
@@ -81,3 +43,81 @@ CCCODE
 You might have to restart your terminal/shell of choice for the changes to take effect. But then you can simply enter the alias and off your script will run.
 
 Note: If the file does not exist, you can go forward and create it.
+
+
+
+Execution time
+
+You see that we are stopping the execution time for this script by using `#time`. When we execute this script I get the following result on my console:
+
+CCCODE
+
+But that is only half of the truth. It takes some time to spin up FSI. The spin up time is not included in the previous stats. But there  we can use the command line to help us out here. For Mac/Linux we can use the `time` tool:
+
+```bash
+time dotnet fsi greetings.fsx
+```
+
+Side note: On Windows we can use the `Measure-Command {dotnet fsi greetings.fsx}`.
+
+And now we get the actual execution time:
+
+CCCODE
+
+Now we could put on our science hat and put this in a loop and then do some averaging etc. But nothing changes the fact that it seems to take over one second to execute this simple script. And most of the time seems to be due to FSI spinning up.
+
+> FSI is a great tool. While it does allow you to use it for running scripts it is geared towards supporting developers as a Read Eval Print Loop (REPL) tool. And as a REPL the startup costs only hit you once, think of it as your Integrated Development Environment (IDE) starting up - it takes some time. But once the IDE is up and running you get a great productivity boost. And same goes for FSI, it is optimised for a different use case.
+
+On the interwebs one alternative that promises faster execution time is the Fake cli tool. LLLINK On repeating the execution I got roughly XXX. While this is clearly better it still isn't instant.
+
+Doping your scripts
+
+Some might say this is cheating. But this is an option if you are using F#/.NET. Migrate your script to a console application and enjoying the bliss of the .NET runtime performance. After migrating our script to a console app:
+
+CCOOODE
+
+We can compile and package our app:
+
+dotnet publish asdf
+
+> The example above will create a package for macOS. But you can compile your .NET app for Windows and Linux alike by changing the XXXX parameter to one out of the [catalog](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog).
+
+If we now navigate to the output folder XXX (this may vary on the XXX you have set), we see a whole bunch of files. We can execute the app by invoking our command:
+
+CCCODE
+
+This is quite a bit faster than invoking our script with FSI. If we now copy and paste the entire content of our folder to our scripts folder. We use it just like a script file, but with much quicker execution times.
+
+Conclusion
+
+Writing scripts is fun, but using them on a daily bases requires some thoughts and effort into how difficult it will be to use the scripts when going forward. So be sure you have a place where you put your everyday helpers and make use of aliases for those scripts you run over and over.
+
+Another aspect of scripting is execution time. For most scripts I write taking the FSI hit is not that big of a deal, since I am running only once in a while. But when startup time becomes crucial, moving your scripts to console apps might be a good option. Though everything comes at a cost. When moving to compiled helpers, making changes will involve a few more steps.
+
+There are some tradeoffs when using this approach.
+
+For one editing a script file is super straight forward. Once we have a compiled version we now have to edit the source, compile, copy & paste, enjoy the bliss. Compared
+
+
+
+XXXX
+
+For demonstration purpose I will reuse the script LLLINK I in my previous post that cleans up the `bin` and `obj` folders within a the subdirectories of a given path.
+
+
+
+PATH
+
+
+
+Alias
+
+
+
+Slow startup times -> Use fake cli (compare startup times)
+
+
+
+Looking back
+
+
