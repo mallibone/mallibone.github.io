@@ -14,13 +14,11 @@ Since playing around more with F# scripts to ease my daily chores on the compute
 dotnet fsi the-name-of-your-script.fsx
 ```
 
-So if we would have a simple script that greets you according to the time of day:
-
-CCCCODE
+Now this is when we are in the same directory as the script (or have added the directory to the [$PATH](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/) or [%PATH%](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)). I like to put my scripts into a location in my user directory. Something like `~/scripts/`. Which makes the command above even longer. And having to type all those keys for every little helper. Makes you want to write a script just to invoke that script. 😆
 
 
 
-## Less typing
+## Putting scripts at your fingertips
 
 Once a working script we can now save the file and invoke it from the command line. Only problem is, we kind of have to remember where the script is. One possible solution is putting it into a folder in our users root directory. Let's say we put all our scripts into the `scripts` folder we could then invoke your script like this:
 
@@ -119,5 +117,4 @@ Slow startup times -> Use fake cli (compare startup times)
 
 
 Looking back
-
 
