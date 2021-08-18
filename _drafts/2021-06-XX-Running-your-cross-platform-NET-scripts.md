@@ -30,11 +30,11 @@ And although this command looks rather bash-like it actually also works when usi
 
 So with your script at hand how about we simply had to type a few keys hit enter and have it run, where ever we are. While this is not a F# tip per say, it is always good to remember that the command line comes with a few powermoves of it's own. To be more precise we actually have two options. One is adding the script folder to the path variable. With this you can simply type `dotnet fsi cleanBuildDirs.fsx` from where ever you want. Configuring the path depends on your operating system: Windows, macOS and Linux.
 
-But let's say you write a script that you want to execute multiple times a day. You probably want something even faster than that. And this is where setting up an alias comes into play. On macOS you can add the following line to the end of your XXX file:
+But let's say you write a script that you want to execute multiple times a day. You probably want something even faster than that. And this is where setting up an alias comes into play. On macOS you can add the following line to the end of your `.bashrc` file LLLINK. The filename can differ depending on the bash/terminal program used on the system:
 
 CCCODE
 
-For powershell you can add the following line to your XXX file:
+For PowerShell you can add the following line to your XXX file LLLINK:
 
 CCCODE
 
@@ -44,7 +44,7 @@ Note: If the file does not exist, you can go forward and create it.
 
 
 
-Execution time
+## Execution time
 
 You see that we are stopping the execution time for this script by using `#time`. When we execute this script I get the following result on my console:
 
@@ -86,9 +86,9 @@ CCCODE
 
 This is quite a bit faster than invoking our script with FSI. If we now copy and paste the entire content of our folder to our scripts folder. We use it just like a script file, but with much quicker execution times.
 
-Conclusion
+## Conclusion
 
-Writing scripts is fun, but using them on a daily bases requires some thoughts and effort into how difficult it will be to use the scripts when going forward. So be sure you have a place where you put your everyday helpers and make use of aliases for those scripts you run over and over.
+Writing scripts is fun, but using them on a daily bases requires some thought and effort into how easy it will be to use the scripts when going forward. So be sure you have a place where you put your everyday helpers and make use of aliases for those scripts you run over and over.
 
 Another aspect of scripting is execution time. For most scripts I write taking the FSI hit is not that big of a deal, since I am running only once in a while. But when startup time becomes crucial, moving your scripts to console apps might be a good option. Though everything comes at a cost. When moving to compiled helpers, making changes will involve a few more steps.
 
