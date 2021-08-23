@@ -26,11 +26,11 @@ Once a working script we can now save the file and invoke it from the command li
 dotnet fsi ~/scripts/cleanBuildDirs.fsx
 ```
 
-And although this command looks rather bash-like it actually also works when using PowerShell. But it still feels quite long winded, what if you have some scripts you always want at the tip of your fingers. Perhaps the ones that get you through your day just that bit easier and quicker, well for those we want to go one step further.
+And although this command looks rather bash-like it actually also works when using PowerShell. But it still feels quite long winded, what if you have some scripts you always want at the tip of your fingers. Perhaps the ones that get you through your day just that bit easier and quicker?
 
-So with your script at hand how about we simply had to type a few keys hit enter and have it run, where ever we are. While this is not a F# tip per say, it is always good to remember that the command line comes with a few powermoves of it's own. To be more precise we actually have two options. One is adding the script folder to the path variable. With this you can simply type `dotnet fsi cleanBuildDirs.fsx` from where ever you want. Configuring the path depends on your operating system: Windows, macOS and Linux.
+There are two options how this can be achieved. For one adding the script folder to the path variable. With this you can simply type `dotnet fsi cleanBuildDirs.fsx` from where ever you want. Configuring the path depends on your operating system: Windows, macOS and Linux.
 
-But let's say you write a script that you want to execute multiple times a day. You probably want something even faster than that. And this is where setting up an alias comes into play. On macOS you can add the following line to the end of your `.bashrc` file LLLINK. The filename can differ depending on the bash/terminal program used on the system:
+But this is still still requires a fair amount of typing. And for those scripts you have to execute every so often, you want to type as little as possible. And this is what aliases are great for. On macOS you can add the following line to the end of your `.bashrc` file LLLINK. The filename can differ depending on the bash/terminal program used on the system:
 
 CCCODE
 
@@ -40,7 +40,8 @@ CCCODE
 
 You might have to restart your terminal/shell of choice for the changes to take effect. But then you can simply enter the alias and off your script will run.
 
-Note: If the file does not exist, you can go forward and create it.
+> Note: If the file does not exist, you can go forward and create it.
+>
 
 
 
