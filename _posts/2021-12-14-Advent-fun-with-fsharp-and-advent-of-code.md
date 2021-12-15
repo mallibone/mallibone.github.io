@@ -108,7 +108,7 @@ getInput 14
 
 So the FSI really lends itself to working on these problems. For one, it allows to try things out and get quick feedback. But it is also great for narrowing down bugs. 🙈 Plus, once FSI is up and running, it is pretty speedy and much faster than compiling code, running tests, and all. Therefore, lends itself better to fast iterative solutions, as is the case when solving these puzzles. The approach above us solves Part 1 of the puzzle. But you probably have guessed it by now.. part 2 is coming.
 
-## The curveball
+## The curveball
 
 Part 2 is a twist, some catch or, in the case of day 14, the simple bump of the requirement to go from 10 to 40 steps to create a more robust polymer. The naive approach above just will not cut it at this point. Now coding puzzles are a field of development on their own. Some participants in the Advent of Code do coding challenges just like these all year round, and if you do that, you will see that many puzzles have a typical structure. And if you are new to this field or puzzles in general, it can be a great source to learn how to solve particular challenges you might encounter when writing code. There is an entire [subreddit](https://www.reddit.com/r/adventofcode/), and you will find many that solve the challenges while live coding and then uploading them to YouTube. I like to compare my solutions with [Jo van Eyck](https://github.com/jovaneyck/advent-of-code-2021), who has solved every Advent of Code challenge since the start of my Advent of Code journey.
 
