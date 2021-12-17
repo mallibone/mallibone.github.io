@@ -17,30 +17,30 @@ I must confess - while it always felt a bit like overkill at the beginning. At t
 
 The setup is quite straight forward actually add the [NuGet package](https://www.nuget.org/packages/AutoMapper/) of AutoMapper to your Xamarin Forms project. That is until you start compiling for iOS, then it will all blow up due to some reflection issue. Since iOS is compiled Ahead Of Time (AOT), you can't do any runtime operations such as reflections. Now AutoMapper does not use reflection when running on iOS. Still, due to some weird compilation thingy issue - I haven't understood the point in detail - the compiler ends up trying to add reflection which will not work on iOS. So to make things run under iOS, we have to add the following line to our iOS `csproj` file:
 
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-      ...
-      <ItemGroup>
-        ...
-        <PackageReference Include="System.Reflection.Emit" Version="4.7.0">
-          <ExcludeAssets>all</ExcludeAssets>
-          <IncludeAssets>none</IncludeAssets>
-        </PackageReference>
-      </ItemGroup>
-      ...
-    </Project>
-
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  ...
+  <ItemGroup>
+    ...
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0">
+      <ExcludeAssets>all</ExcludeAssets>
+      <IncludeAssets>none</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  ...
+</Project>
+```
 
 Then there is still the Linker under iOS that tries to remove the `System.Convert` assembly. Which is required by AutoMapper. But luckily we can help the linker out here by adding an XML file:
 
-
-    <linker>
-      <assembly fullname="mscorlib">
-        <type fullname="System.Convert" preserve="All" />
-      </assembly>
-    </linker>
-
+```xml
+<linker>
+  <assembly fullname="mscorlib">
+    <type fullname="System.Convert" preserve="All" />
+  </assembly>
+</linker>
+```
 
 And setting the build property to `LinkDescription`:
 
@@ -50,42 +50,43 @@ And setting the build property to `LinkDescription`:
 
 Okay so everything is set up now we still have to tell AutoMapper what which objects we would like to copy from A to B and back again. In the small app I prepared for this blogpost we will copy the note DTO object to it's View Model counterpart. So to get a configured AutoMapper instance, we would write something like this during the start-up of the app:
 
-
-    public static IMapper CreateMapper()
+```csharp
+public static IMapper CreateMapper()
+{
+    var mapperConfiguration = new MapperConfiguration(cfg =>
     {
-        var mapperConfiguration = new MapperConfiguration(cfg =>
-        {
-            cfg.CreateMap<Note, NoteViewModel>();
-            cfg.CreateMap<NoteViewModel, Note>();
-        });
-    
-        return mapperConfiguration.CreateMapper();
-    }jjjjjjj
+        cfg.CreateMap<Note, NoteViewModel>();
+        cfg.CreateMap<NoteViewModel, Note>();
+    });
 
+    return mapperConfiguration.CreateMapper();
+}
+```
 
 Now we could convert the DTO to a View Model by invoking the AutoMapper instance as follows:
 
-
-    var viewModel = _mapper.Map<MainViewModel>(note);
-
+```csharp
+var viewModel = _mapper.Map<MainViewModel>(note);
+```
 
 But what I often end up doing is populating the View Model after creation or when the Page/View it is being used in is getting created. For example, an `Init` method on the View Model might be invoked during the `OnAppearing` of the View. Then we could call a service in the View Model which would return a DTO of that object. In this scenario, we will want to tell AutoMapper to map the DTO directly on the View Model itself:
 
-
-    public async void Init()
-    {
-        var note = (await _noteService.GetNotes()).First();
-        _mapper.Map(note, this);
-    }
+```csharp
+public async void Init()
+{
+    var note = (await _noteService.GetNotes()).First();
+    _mapper.Map(note, this);
+}
+```
 
 
 If you had a List of View Models, i.e. a [CollectionView](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/) or [ListView](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/), we would use [LINQ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) in combination with AutoMapper to quickly convert from DTO to View Model:
 
-
-    Notes = (await _noteService.GetNotes())
-                .Select(_mapper.Map<MainViewModel>)
-                .ToList();
-
+```csharp
+Notes = (await _noteService.GetNotes())
+            .Select(_mapper.Map<MainViewModel>)
+            .ToList();
+```
 
 Having AutoMapper in place you whenever a new DTO has to be presented in your app, you would add a new configuration and then be able to use the mapping. So the more mapping you require, the quicker using AutoMapper will pay itself off.
 
@@ -95,23 +96,24 @@ But there is one more thing I really like when using AutoMapper in my projects, 
 
 "Testing? Are you serious?" - well yes, I actually am. You can check your configuration with a simple test case:
 
-
-    [Fact]
-    public void AppBoostrapper_ValidateMapping_AssertCorrectness()
-    {
-        var mapper = AppBootstrapper.CreateMapper();
-        mapper.ConfigurationProvider.AssertConfigurationIsValid();
-    }
+```csharp
+[Fact]
+public void AppBoostrapper_ValidateMapping_AssertCorrectness()
+{
+    var mapper = AppBootstrapper.CreateMapper();
+    mapper.ConfigurationProvider.AssertConfigurationIsValid();
+}
+```
 
 
 This test will tell you if AutoMapper has all the information necessary to copy your data from one object to the other. So if we start adding Commands to the View Model, the mapping will fail with the information that it can not map the command into our DTO. And we obviously do not want to send an `ICommand` data field back to the server, so we ignore it:
 
-
-    cfg.CreateMap<Note, NoteViewModel>()
-        .ForMember(n => n.ExecuteReset, opt => opt.Ignore())
-        .ForMember(n => n.ExecuteStore, opt => opt.Ignore());
-    cfg.CreateMap<NoteViewModel, Note>();
-
+```csharp
+cfg.CreateMap<Note, NoteViewModel>()
+    .ForMember(n => n.ExecuteReset, opt => opt.Ignore())
+    .ForMember(n => n.ExecuteStore, opt => opt.Ignore());
+cfg.CreateMap<NoteViewModel, Note>();
+```
 
 But what when we add a data field `WriterMood` to the DTO and forget to add it to the View Model? Correct, the test will fail and inform us that we have forgotten to add the field.
 
