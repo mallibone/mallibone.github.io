@@ -1,4 +1,5 @@
 ---
+
 layout: single
 title: "Using the OIDC Client with Azure AD"
 date: 2021-05-08 10:03:00
@@ -13,6 +14,10 @@ Reference the other posts
 The overview
 
 Configuring the OIDC Client
+
+Refreshing tokens
+
+Logging out
 
 Conclusion
 
