@@ -10,7 +10,7 @@ Maybe it is old age or just a lack of attention, but I have felt a lot less flex
 
 Perhaps you might be wondering: What is this countdown button control you are talking about? - Well, thank you for asking. The control starts at 100%. While the seconds are counting down, the circle around the control reduces itself as time passes.
 
-<!--  more -->
+<!-- more -->
 
 ![Progressbutton displaying the remaining seconds and a declining progress ring.]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-26-ProgressButton.png "Progressbutton displaying the remaining seconds and a declining progress ring.")
 
@@ -124,16 +124,18 @@ public partial class MainPage
 This gives us the basics for presenting a static view of the arc. Now we will have to calculate the end angle. It is time for some maths. 🤓 
 
 Given we know the total duration of the countdown, we can calculate the degrees of progress:
-$$
-circleDegree = elapsedTime/totalTime * 360
-$$
+
+```mathematica
+circleDegree = elapsedTime / totalTime * 360
+```
+
 If we use this formula and embed it into our existing `Draw` function, the degrees of our `endAngle` are calculated as follows:
 
 ```c#
 var endAngle = 90 - (int)Math.Round(Progress * 360, MidpointRounding.AwayFromZero);
 ```
 
-All left is to update the progress and invalidate the canvas in the existing `UpdateArc` function. 
+Note the 90° offset that has to be included due to the offset we defined when drawing the arc. All left is to update the progress and invalidate the canvas in the existing `UpdateArc` function. 
 
 ```c#
 private async void UpdateArc()
