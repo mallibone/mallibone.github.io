@@ -12,8 +12,6 @@ Perhaps you might be wondering: What is this countdown button control you are ta
 
 <!--  more -->
 
-IIIIMAGE
-
 ![Progressbutton displaying the remaining seconds and a declining progress ring.]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-26-ProgressButton.png "Progressbutton displaying the remaining seconds and a declining progress ring.")
 
 As you might have already thought. This is the time you are doing a stretch. So how can we implement such a control in .NET MAUI.
@@ -22,7 +20,7 @@ As you might have already thought. This is the time you are doing a stretch. So 
 
 Let's start with the easy bits, a round button control:
 
-```xaml
+```xml
 <Button x:Name="ProgressButton" 
         Text=""
         FontSize="18"
@@ -99,7 +97,7 @@ The default starting point of the arc is at 3 o'clock on a watch face. We, there
 
  Presenting an`IDrawables` is done by adding it to a `GraphicsView`. Let's add a `GraphicsView` to our XAML file:
 
-```xaml
+```xml
 <GraphicsView x:Name="ProgressView"
 							BackgroundColor="{StaticResource Primary}"
 							HeightRequest="100"
@@ -163,7 +161,7 @@ Now to the final step, making the round button and the reducing circle align cor
 
 The alignment usually takes some tinkering. Since we want the circle to be just as big as the button or a tad smaller. In the end, I used this XAML:
 
-```xaml
+```xml
 <Grid>
     <GraphicsView ...
                   HeightRequest="100"
