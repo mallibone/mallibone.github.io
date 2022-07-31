@@ -33,8 +33,6 @@ Let's start with the easy bits, a round button control:
         BackgroundColor="{StaticResource Secondary}"/>
 ```
 
-General rule of thumb a button is a rectangular UI element. If we set the `HeightRequest` and the `WidthRequest` to the same value, we get a square. Further setting the `CornerRadius` half of the value, we get a nice circle.
-
 A general rule of thumb a button is a rectangular UI element. We get a square if we set the `HeightRequest` and the `WidthRequest` to the same value. Further configuring the `CornerRadius` to half of the height/width value, we get a nice circle.
 
 ![A round button showing two remaining seconds.]({{ site.url }}{{ site.baseurl }}/assets/images/2022-07-26-RoundButton.png "A round button showing two remaining seconds.")
