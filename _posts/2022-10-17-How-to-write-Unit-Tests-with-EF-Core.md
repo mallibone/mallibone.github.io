@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Getting started writing automated tests when using EF Core"
-date: 2022-11-08 15:03
+date: 2022-11-15 15:03
 tags: ["EF Core", "Automated Testing", "Unit Testing"]
 slug: "efcore-unittesting-pattern"
 
