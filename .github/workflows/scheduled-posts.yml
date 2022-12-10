@@ -10,5 +10,6 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
+        ref: main
         args: "-X POST -H 'Authorization: token ${{ secrets.ACCESS_TOKEN }}' -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/${{ github.repository }}/pages/builds"
 
