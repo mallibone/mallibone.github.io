@@ -2,7 +2,7 @@ name: Page Build
 
 on:
   schedule:
-   - cron: "*/16 * * * *"
+   - cron: "*/2 * * * *"
 jobs:
   curl:
     runs-on: ubuntu-latest
