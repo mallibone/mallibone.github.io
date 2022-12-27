@@ -32,6 +32,8 @@ WHERE [p].[AttendeeId] IN (1, 2, 3)
 
 As the query above shows, using `attendeeIds.Contains(p => p.AttendeeId)` is correctly translated into an SQL query using an `IN` statement.
 
+**Update:** [Erik](https://twitter.com/ErikEJ) has brought to my attention, that there are limits to this approach. If you have a large set of Ids this approach will fall short. For example the number of parameters for a SQL Server Query is limited to 2100 parameters per call. If you have larger sets of Ids be sure to check out this [Gist](https://gist.github.com/ErikEJ/6ab62e8b9c226ecacf02a5e5713ff7bd) and if you are using SQL Server 2016 or later check out this [Post](https://erikej.github.io/efcore/sqlserver/2021/11/22/efcore-sqlserver-cache-pollution.html). Thanks Erik for pointing this out. 🙂
+
 ## Potential Pitfalls
 
 **Client Evaluation**: There are other ways in LINQ how we could write this filter, and EF Core might even go ahead and execute it but it would most probably be executed by the application. In general executing queries in the application is not desired. SQL database engines are way more efficient in handling these queries. Be sure to consult the [MS Learn](https://learn.microsoft.com/en-us/ef/core/querying/client-eval?WT.mc_id=AZ-MVP-5003494) on Client Evaluation to get a better understanding.
