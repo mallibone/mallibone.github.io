@@ -4,8 +4,6 @@ title: "EF Core - Creating queries with lists"
 date: 2022-12-26 10:03
 tags: ["EF Core"]
 slug: "efcore-filter-list-query"
-
-
 ---
 
 When writing queries towards the database at some point the need arises to filter out all items that are within a collection. For example let's say we have a list of Ids and want to get all the people associated with such an Id. How can we do this using [EF Core](https://learn.microsoft.com/en-us/ef/core/?WT.mc_id=AZ-MVP-5003494)? And what are the pitfalls that lead to the motivation of writing this blogpost? 🙈
