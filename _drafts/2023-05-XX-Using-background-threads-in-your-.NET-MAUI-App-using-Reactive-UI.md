@@ -42,7 +42,15 @@ When looking at Rx.NET there is also the ZZZ. At first this can be a bit confusi
 
 ## Async, parallel and MVVM
 
-A nice thing to note is that whenever you run something in parallel or while waiting for a response from a backend, you seldom want the user to invoke this action again while it is still being executed. If you are using Reactive Commands i.e. ReactiveCommand.XXX or ReactiveComand.YYY the command will automatically be XXXXXX
+A thing to note is that whenever you run something in parallel or while waiting for a response from a backend, you seldom want the user to invoke this action again while it is still being executed. When thinking about MVVM invoking something usually involves a Command. Luckely if you are using Reactive Commands i.e. `ReactiveCommand.CreateFromObservable` or `ReactiveComand.CreateFromTask` the command will automatically be disabled until the Task or IObservable is completed. You can even implement a cancelation, i.e. provide the user with the option to cancel a web request that is taking longer as expected:
+
+CCCCODE
+
+Or if you have implemented the Command for a Task based method:
+
+CCCCODE
+
+You do not always have to use the command, but it is generally good advice to prevent the user from starting a long request multiple times. Especially since computers do not work faster when an attempt is made for the 10th time before it's initial completion. :wink:
 
 ## Conclusion
 
