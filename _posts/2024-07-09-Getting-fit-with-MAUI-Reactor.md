@@ -32,7 +32,7 @@ I decided to use the Shell for navigation - especially since MAUI Reactor comes 
 dotnet new maui-reactor-appshell -n AlohaFit
 ```
 
-## The start page 
+## The start page
 
 With everything setup, let's have a look at the main page.
 
@@ -101,7 +101,7 @@ Especially since the properties we have are simply function parameters for small
 
 When working on apps it is common to extract styles. When working with MAUI Reactor we can do exactly that too. If we look under Resources/Styles, we will find xaml files for the colour and the styles for our components. We can change the styles and the components used in MAUI Reactor will actually use those styles. Which is super neat, because this means you can reuse any existing mobile styles you might already use. But let's get back to our workout timer.
 
-## The workout timer
+## The workout timer
 
 Generally speaking all workout timers require configuring the timer. Once configured the user can start the timer. When running the timer will complete or the user can abort. For now I will focus on the AMRAP timer, but in the near future I will want to add the other timers. Since they all seem very similar in function I will try to create a workout page which will render itself based on the mode and the features each timer will provide. So when choosing a timer I will want to open the workout page and pass in as a parameter which workout has been chosen.
 
@@ -158,7 +158,7 @@ With the navigation and the parameters out of the way. Let's implement the timer
 
 With that out of the way - let's look at what information we need when setting our timer:
 
-```
+```c#
 public class AmrapState
 {
     public DateTimeOffset StartTime { get; set; }
