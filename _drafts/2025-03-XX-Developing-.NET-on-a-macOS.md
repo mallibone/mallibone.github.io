@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Developing .NET on a macOS"
-date: 2025-03-01 00:03:00
+date: 2025-05-01 00:03:00
 tags: [".NET", ".NET MAUI"]
 slug: "dotnet-on-macos"
 ---
@@ -30,29 +30,33 @@ Once you have your essential plugins installed you can start using VS Code. You 
 
 I would be amiss that one of the great features of VS Code is how well GitHub Copilot is integrated. Copilot will autocomplete code you are writing. And you can even write comments in line that Copilot will pick up on. But by using the inline chat `Cmd+I` you can write/ask copilot directly at the line/position your cursour currently is. If you want some more extensive edits, that might involve multiple files you can open the chat window `Shift+Cmd+I`. In the chat you can reference files, terminal, compile error window or even the entire codebase and give Copilot the context it requires to answer your instruction/question best. The ease of integration and that fact that new models/features are introduced first in VS Code has lead me to use VS Code for more and more developement tasks.
 
-Generally VS Code with the .NET extensions, Github Copilot and some personal preferences (like using VIM keybinding) makes it a very snappy editing experience. Are there features missing? Yes - for instance there is no integrated memory analyzer. Generally many of the visual interactions are not 
+With the right plugins you will get way more than some syntaxhighlighting for your .NET apps. You get to browser your code XXXXX
 
-Another feature I have become quite fond of is the integration with GitHub Copilot. XXXXX		
+Generally VS Code with the .NET extensions, Github Copilot and some personal preferences (like using VIM keybinding) makes it a very snappy editing experience. Are there features missing? Yes - it does not have the rich featureset you might know from IDEs such as Visual Studio or Rider. One feature I dearly miss is managing NuGet packages across multiple projects. Can you write large enterpriese applicaitons with it? Absolutely. Will it replace the existing IDEs any time soon? Probably not.
 
-If you come from Visual Studio or VS4Mac this might feel a bit rough at the beginning. However keep in mind that many developers actually prefer developing this way. A command line often gives you options that are difficult to pack into a visual way without bombing the user experience. This is one of the reasons I never bothered to learn how to use Git via Visual Studio/Rider/VS4Mac UI interfaces. Once you know the commands in the terminal you tend to get more options and quicker than the peek and click UI option.
-
-!!!! If you are a .NET MAUI developer I would be amiss to  [Meteor](https://marketplace.visualstudio.com/items?itemName=nromanov.dotnet-meteor) extension by [Nikita Romanov](https://www.linkedin.com/in/nikita-romanov-75b837281/). Which provides not only  Intellisense. It will also enable hot reload. Be sure to check out the GitHub [repo](https://github.com/JaneySprings/DotNet.Meteor).
-
-But what if you are not looking to become the next terminal warrior? Well we still have options. 😉
+So let's look at the other options we have. 😉
 
 ## Jetbrains Rider
 
-Rider is a crossplatform .NET IDE from Jetbrains. LLLINK It comes packed with features that you come to expect from an IDE. If you have been developing .NET for some time you might know Resharper. A tool that also is developed by Jetbrains as a plugin for Visual Studio (Windows). Those features are part of the Rider IDE. There are many features you would expect from IDE such as sourcecontrol integration, NuGet package management, test runners, DB accessors, Docker DevContainer integrations, and [many more](https://www.jetbrains.com/rider/features/). You even get Profiling (CPU and Memory) for .NET applications - though not for .NET MAUI apps. But you also get many cool plugins - for example my much beloved [VIM plugin](https://github.com/JetBrains/ideavim). Not telling you this is a must, but if you know VIM keybindings, be sure to check it out. XXXX
+If you are looking for a propper IDE with many bells and wistles. You would be amiss to not give Rider a try. Rider is a crossplatform .NET IDE from Jetbrains. LLLINK It comes packed with features that you come to expect from an IDE. If you have been developing .NET for some time you might know Resharper. A tool that also is developed by Jetbrains as a plugin for Visual Studio (Windows). Those features are part of the Rider IDE.  Rider features a solution explorer that allows you to navigate through your projects and files.
+
+IIIAMGE
+
+There are many features you would expect from IDE such as sourcecontrol integration, NuGet package management, test runners, DB accessors, Docker DevContainer integrations, and [many more](https://www.jetbrains.com/rider/features/). You even get Profiling (CPU and Memory) for .NET applications - though not for .NET MAUI apps.
+
+So it comes as no surprise that developing .NET apps feels very familiar. You get XXXX
 
 IIMAGE
 
-Rider provides all those refactoring features and many more. To name a few more you will get sourcecontrol (git) Integration, DB management tools, NuGet package management, Profiling (CPU and Memory), Testrunners and many more. Rider can be extended with Plugins LLLINK. And also your AI code buddy is there for you. Jetbrains provides the option to use their own AI XXXX tool. Or you can get access to GitHub Co-Pilot via Plugin.
+Ontop of a reach featureset out of the box you can install additional plugins - for example GitHub Copilot LLLINK, Azure LLLINK and my much beloved [VIM plugin](https://github.com/JetBrains/ideavim). LIke VS Code you can install additional themes to give your Rider installation the look and feel you want. Given the extensive functionality it does not feel quite a snappy as VS Code. But it does fullfill many demands a developer might have. For instance you can not only code .NET but also edit your HTML/JS/CSS web frontend (if that is a thing for you). The extension system is not as vast as VS Code but the features it ships with are greater than what you will get with VS Code. This makes it a great candidate as your daily driver for developing .NET  apps.
 
-If you are looking for a .NET IDE experience on macOS and have been using Visual Studio or Visual Studio for Mac so far. You should give Jetbrains Rider a try. There are some differences, but all in all it will provide you with the IDE experience you have become accustomed to. Out of personal experience it is a nice, snappy and powerful coding tool. And I use it as my daily driver for developing code on my mac. Note that Rider does usually require you to purchase a license.
+The Hotreload experience for .NET MAUI at the time of writing is a bit hit or miss. 
+
+Note that Rider does usually require you to purchase a license.
 
 ## Visual Studio
 
-Another option is using Visual Studio for Windows. For this you will have to run Windows in a VM. Prallels LLLINK or VM Ware Fusion LLLINK are two of the more popular choices that many use. Then install Visual Studio. If you are using a Apple Silicon device (with 16+ GB of RAM), this experience is absolutely doable. The performance is not laggy and you it does not feel like you are waiting for the VM to catch up to your typping. And you will get to use Visual Studio with all of it's many features. LLLINK. I do use this approach for projects that either require Windows (Desktop and/or .Net Framework projects). At the time of writing you will also get the best hot-reload experience using Visual Studio on a VM.
+Another option is using Visual Studio for Windows. For this you will have to run Windows in a VM. Prallels LLLINK or VM Ware Fusion LLLINK are two of the more popular choices that many use. Then install Visual Studio. If you are using a Apple Silicon device (with 16+ GB of RAM), this option is absolutely feasable. The performance is not laggy nor does it feel like you are waiting for the VM to catch up to your typping. And you will get to use Visual Studio with all of it's many features. LLLINK. I do use this approach for projects that either require Windows (Desktop and/or .Net Framework projects). At the time of writing you will also get the best hot-reload experience using Visual Studio on a VM. While
 
 But I fully understand this approach is not for everyone. Especially since you probably would be using a Windows machine if you would want to develop on Windows. But it is an option, and it works really well if your machine has the necessary horse power to run a VM.
 
