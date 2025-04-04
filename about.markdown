@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hey there my name is Mark. I'm a Microsoft MVP living in Switzerland and love to working on mobile and IoT apps. During my day job I work at Rey Automation. Where I get to develop & architect IoT apps or consult clients on their endavours. You can also find me on Twitter [@mallibone](https://twitter.com/mallibone).
+Hey there my name is Mark. I'm a Microsoft MVP living in Switzerland and love to working on mobile and IoT apps. During my day job I work at Rey Automation. Where I get to develop & architect IoT apps or consult clients on their endavours. You can also find me on Bluesky [@mallibone](https://bsky.app/profile/mallibone.com).
 
 Views and opinions are my own.
 
