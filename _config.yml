@@ -26,6 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mallibone.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mallibone
+bluesky_username: mallibone.com
 github_username:  mallibone
 repository: "mallibone/mallibone.github.io"
 author_profile: true
@@ -57,9 +58,9 @@ author:
   bio: "..." # Note: Markdown is allowed
   location: "Switzerland"
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mallibone"
+    - label: "Bluesky"
+      icon: "fab fa-fw fa-bluesky"
+      url: "https://bsky.app/profile/mallibone.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/mallibone"
@@ -93,7 +94,7 @@ defaults:
 # Build settings
 # theme: minima
 # theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes@4.22.0"
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 # plugins:
 #   - jekyll-feed
 #   - jekyll-remote-theme
